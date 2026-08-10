@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cfc4h6br3mf1i"]
+
+[ext_resource type="Texture2D" uid="uid://dxiekbxpodpbl" path="res://Credits/textures/credits.png" id="1_jbgmt"]
+[ext_resource type="Script" uid="uid://ddd0sjbq1n4ga" path="res://Credits/credits.gd" id="1_rxwmx"]
+[ext_resource type="Texture2D" uid="uid://2hsg4v8yskd2" path="res://Credits/textures/link_steam.png" id="3_c5ffn"]
+[ext_resource type="Texture2D" uid="uid://besfsl42mu8te" path="res://Credits/textures/link_insta.png" id="4_xrj5f"]
+[ext_resource type="Texture2D" uid="uid://d4fwxw64cumds" path="res://Credits/textures/credits_discord_hover.png" id="6_ubyop"]
+[ext_resource type="Texture2D" uid="uid://cio1ks4v8xwdo" path="res://common_textures/backmenu.png" id="6_ykgdt"]
+[ext_resource type="Texture2D" uid="uid://t4rjharpf3c4" path="res://common_textures/backmenu_hover.png" id="7_ubyop"]
+[ext_resource type="Texture2D" uid="uid://bs1ubdjlpvwgc" path="res://Credits/textures/credits_catb.png" id="8_w3kvr"]
+[ext_resource type="Texture2D" uid="uid://blqgoow476gw5" path="res://Credits/textures/credits_cata.png" id="9_ieuh8"]
+
+[node name="Credits" type="Control" unique_id=1545632189]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rxwmx")
+
+[node name="Credits" type="Sprite2D" parent="." unique_id=410261572]
+texture = ExtResource("1_jbgmt")
+
+[node name="btn_devcats" type="TextureButton" parent="." unique_id=482030824]
+layout_mode = 0
+offset_left = -245.0
+offset_top = 221.0
+offset_right = -173.0
+offset_bottom = 291.0
+texture_pressed = ExtResource("3_c5ffn")
+texture_hover = ExtResource("3_c5ffn")
+
+[node name="btn_insta" type="TextureButton" parent="." unique_id=1474354472]
+layout_mode = 0
+offset_left = -157.0
+offset_top = 221.0
+offset_right = -85.0
+offset_bottom = 291.0
+texture_pressed = ExtResource("4_xrj5f")
+texture_hover = ExtResource("4_xrj5f")
+
+[node name="btn_discord" type="TextureButton" parent="." unique_id=592378692]
+visible = false
+layout_mode = 0
+offset_left = 152.0
+offset_top = 882.0
+offset_right = 224.0
+offset_bottom = 952.0
+texture_pressed = ExtResource("6_ubyop")
+texture_hover = ExtResource("6_ubyop")
+
+[node name="Close" type="TextureButton" parent="." unique_id=737508695]
+layout_mode = 0
+offset_left = -923.0
+offset_top = 234.0
+offset_right = -879.0
+offset_bottom = 273.0
+texture_normal = ExtResource("6_ykgdt")
+texture_hover = ExtResource("7_ubyop")
+texture_disabled = ExtResource("7_ubyop")
+
+[node name="TimerChange" type="Timer" parent="." unique_id=1457748751]
+one_shot = true
+
+[node name="hiddenCat" type="Area2D" parent="." unique_id=1795213809]
+position = Vector2(-196, -16)
+
+[node name="good" type="Sprite2D" parent="hiddenCat" unique_id=187501386]
+texture = ExtResource("8_w3kvr")
+
+[node name="bad" type="Sprite2D" parent="hiddenCat" unique_id=252538801]
+texture = ExtResource("9_ieuh8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiddenCat" unique_id=1640664258]
+visible = false
+polygon = PackedVector2Array(7.299999, -16.4, 5, -15.3, 5, -14.1, 0, -11.1, -2, -11, -5, -15, -11.2, -15, -15.1, -8, -17, -8, -17, 3.7000008, -12, 9.700001, -12, 11.299999, -9.6, 12.4, 9.5, 15, 13, 15, 18, 8.700001, 18, 0.6000004, 15, -7.5, 15, -9.9)
+
+[connection signal="button_down" from="btn_devcats" to="." method="_on_btn_devcats_button_down"]
+[connection signal="button_down" from="btn_insta" to="." method="_on_btn_insta_button_down"]
+[connection signal="button_down" from="btn_discord" to="." method="_on_btn_discord_button_down"]
+[connection signal="button_down" from="Close" to="." method="_on_close_button_down"]
+[connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
+[connection signal="input_event" from="hiddenCat" to="." method="_on_hidden_cat_input_event"]

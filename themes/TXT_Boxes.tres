@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://b1l6xhhb1ru7j"]
+
+[ext_resource type="FontFile" uid="uid://c5epom3cx0756" path="res://Fonts/FONTES_DEVCATS/ocidental/padrao/Montserrat-Bold.ttf" id="1_3fo0y"]
+[ext_resource type="FontFile" uid="uid://1kxoago2k3p" path="res://Fonts/FONTES_DEVCATS/polones_turco/Nunito-Black.ttf" id="2_wbpm7"]
+[ext_resource type="FontFile" uid="uid://1d3c68pvmhxs" path="res://Fonts/FONTES_DEVCATS/russo/Oswald-Medium.ttf" id="3_7ssgq"]
+[ext_resource type="FontFile" uid="uid://bkw6ji8bes65n" path="res://Fonts/FONTES_DEVCATS/ucraniano/Oswald-SemiBold.ttf" id="4_yws5n"]
+[ext_resource type="FontFile" uid="uid://c8k6thmbwdqxb" path="res://Fonts/FONTES_DEVCATS/chines S/NotoSansSC-Bold.ttf" id="5_laxil"]
+[ext_resource type="FontFile" uid="uid://bc7ymbmawe005" path="res://Fonts/FONTES_DEVCATS/chines T/NotoSansTC-Bold.ttf" id="6_lb4b1"]
+[ext_resource type="FontFile" uid="uid://b3bt814vlfj1o" path="res://Fonts/FONTES_DEVCATS/coreano/GothicA1-Bold.ttf" id="7_06teg"]
+[ext_resource type="FontFile" uid="uid://bujlj0p7hdkvn" path="res://Fonts/FONTES_DEVCATS/Japones/MPLUSRounded1c-ExtraBold.ttf" id="8_tfdes"]
+
+[sub_resource type="FontVariation" id="FontVariation_2bksr"]
+fallbacks = Array[Font]([ExtResource("2_wbpm7"), ExtResource("3_7ssgq"), ExtResource("4_yws5n"), ExtResource("5_laxil"), ExtResource("6_lb4b1"), ExtResource("7_06teg"), ExtResource("8_tfdes")])
+base_font = ExtResource("1_3fo0y")
+
+[resource]
+default_font = SubResource("FontVariation_2bksr")
+default_font_size = 50
+Label/font_sizes/font_size = 50

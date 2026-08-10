@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddyj420wmp6xo"]
+
+[ext_resource type="Script" uid="uid://c4mpa08d05i5b" path="res://GLOBAL/hint.gd" id="1_h6l8u"]
+
+[node name="Hint" type="Node2D"]
+script = ExtResource("1_h6l8u")
+
+[node name="TimerHint" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TimerHint" to="." method="_on_TimerHint_timeout"]

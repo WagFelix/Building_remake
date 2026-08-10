@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dlu4aofe0e03t"]
+
+[ext_resource type="Script" uid="uid://ds8xxr2yhkm6v" path="res://GLOBAL/Elevador/elevador.gd" id="1_62wo1"]
+[ext_resource type="Texture2D" uid="uid://ctvbmqg2ng37n" path="res://GLOBAL/Elevador/textures/elevator-left.png" id="1_rqkc0"]
+[ext_resource type="Texture2D" uid="uid://dl2wvyr5mvuxa" path="res://GLOBAL/Elevador/textures/elevator-right.png" id="2_84icw"]
+[ext_resource type="Texture2D" uid="uid://dsm3ha0xd2ehq" path="res://GLOBAL/Elevador/textures/elevator-leftQuitDut.png" id="3_l53vv"]
+[ext_resource type="Texture2D" uid="uid://dp834kjckxfak" path="res://GLOBAL/Elevador/textures/elevator-rightQuitKor.png" id="5_3qvga"]
+
+[node name="Elevador" type="Control" unique_id=1554484093]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62wo1")
+
+[node name="Container" type="Control" parent="." unique_id=1561375199]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="clickocluder" type="TextureButton" parent="Container" unique_id=85744037]
+layout_mode = 0
+offset_left = -422.0
+offset_top = -233.0
+offset_right = 2539.0
+offset_bottom = 1263.0
+
+[node name="esquerda" type="Sprite2D" parent="Container" unique_id=409172530]
+position = Vector2(-1830, -5)
+texture = ExtResource("1_rqkc0")
+
+[node name="quit" type="Sprite2D" parent="Container/esquerda" unique_id=1768295217]
+visible = false
+position = Vector2(161.5, 0)
+texture = ExtResource("3_l53vv")
+
+[node name="Polygon2D" type="Polygon2D" parent="Container/esquerda" unique_id=455408361]
+color = Color(0.67058825, 0.7411765, 0.87058824, 1)
+polygon = PackedVector2Array(-584, -594, -576, 590, -1903, 663, -1885, -656)
+
+[node name="direita" type="Sprite2D" parent="Container" unique_id=1678853112]
+position = Vector2(1837, 12)
+texture = ExtResource("2_84icw")
+
+[node name="quit" type="Sprite2D" parent="Container/direita" unique_id=534711796]
+visible = false
+position = Vector2(-161.5, 0)
+texture = ExtResource("5_3qvga")
+
+[node name="Polygon2D" type="Polygon2D" parent="Container/direita" unique_id=403054861]
+position = Vector2(2489, -7)
+color = Color(0.67058825, 0.7411765, 0.87058824, 1)
+polygon = PackedVector2Array(-136, -746, -63, 732, -2086, 580, -2134, -563)
+
+[node name="TimerClosed" type="Timer" parent="." unique_id=1512562932]
+one_shot = true
+
+[connection signal="timeout" from="TimerClosed" to="." method="_on_timer_closed_timeout"]

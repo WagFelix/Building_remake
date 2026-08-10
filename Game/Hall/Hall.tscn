@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://clymjjul3w0kb"]
+
+[ext_resource type="Script" uid="uid://d4j0f7y2lp1w6" path="res://Game/Hall/hall.gd" id="1_g55gb"]
+[ext_resource type="Texture2D" uid="uid://xvyertfn2fn5" path="res://Game/Hall/textures/hall05.png" id="2_l54ng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiwne"]
+size = Vector2(627, 992)
+
+[node name="Hall" type="Control" unique_id=1297040263]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g55gb")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1411254522]
+texture = ExtResource("2_l54ng")
+
+[node name="Door" type="Area2D" parent="." unique_id=1301528462]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=390783229]
+position = Vector2(-545.5, -29)
+shape = SubResource("RectangleShape2D_kiwne")
+
+[node name="Stairs" type="Area2D" parent="." unique_id=210334134]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stairs" unique_id=188907778]
+polygon = PackedVector2Array(653, 48, 1596, -457, 1610, 527, 649, 537)
+
+[node name="timer_change" type="Timer" parent="." unique_id=466894598]
+one_shot = true
+
+[connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
+[connection signal="input_event" from="Stairs" to="." method="_on_stairs_input_event"]
+[connection signal="timeout" from="timer_change" to="." method="_on_timer_change_timeout"]

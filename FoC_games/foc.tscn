@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://ceeo2t3k5nxmj"]
+
+[ext_resource type="Script" uid="uid://crv43jel18he0" path="res://FoC_games/foc.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bwma665mhivc6" path="res://FoC_games/textures/capsule_hover.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b58r5ro2ner2y" path="res://FoC_games/textures/timeline.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://f3pd44myfrwg" path="res://Map/textures/quitpause.png" id="5_s3nk7"]
+[ext_resource type="Texture2D" uid="uid://tmw168oax7hi" path="res://FoC_games/textures/timeline_hover.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dn4kj63etip2b" path="res://Map/textures/quitpause_hover.png" id="6_o2de3"]
+[ext_resource type="Texture2D" uid="uid://b37vv7lx2js32" path="res://FoC_games/textures/foc1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bvqujujeom3qw" path="res://FoC_games/textures/foc0.png" id="8"]
+
+[node name="Foc" type="Control" unique_id=2015770824]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+inColor = Color(0.592157, 0.870588, 0.933333, 1)
+outColor = Color(0.592157, 0.870588, 0.933333, 1)
+alternativeOutColor = Color(0.592157, 0.870588, 0.933333, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=688599815]
+color = Color(0.5921569, 0.87058824, 0.93333334, 1)
+polygon = PackedVector2Array(-1821, -882, -1890, 935, 2424, 873, 2176, -871, -1844, -902)
+
+[node name="pages" type="Node2D" parent="." unique_id=857772860]
+position = Vector2(-960, -540)
+
+[node name="Foc0" type="Sprite2D" parent="pages" unique_id=1755570707]
+position = Vector2(960, 540)
+texture = ExtResource("8")
+
+[node name="Btn0" type="TextureButton" parent="pages/Foc0" unique_id=431358476]
+offset_left = -917.0
+offset_top = -372.0
+offset_right = -437.0
+offset_bottom = -132.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn1" type="TextureButton" parent="pages/Foc0" unique_id=1722230834]
+offset_left = -917.0
+offset_top = -70.0
+offset_right = -437.0
+offset_bottom = 170.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn2" type="TextureButton" parent="pages/Foc0" unique_id=2036389996]
+offset_left = -917.0
+offset_top = 232.0
+offset_right = -437.0
+offset_bottom = 472.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn3" type="TextureButton" parent="pages/Foc0" unique_id=192206433]
+offset_left = 58.0
+offset_top = -372.0
+offset_right = 538.0
+offset_bottom = -132.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn4" type="TextureButton" parent="pages/Foc0" unique_id=483413403]
+offset_left = 58.0
+offset_top = -70.0
+offset_right = 538.0
+offset_bottom = 170.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn5" type="TextureButton" parent="pages/Foc0" unique_id=1515157828]
+offset_left = 58.0
+offset_top = 232.0
+offset_right = 538.0
+offset_bottom = 472.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Foc1" type="Sprite2D" parent="pages" unique_id=1237846262]
+position = Vector2(960, 540)
+texture = ExtResource("7")
+
+[node name="Btn6" type="TextureButton" parent="pages/Foc1" unique_id=1011693290]
+offset_left = -917.0
+offset_top = -372.0
+offset_right = -437.0
+offset_bottom = -132.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn7" type="TextureButton" parent="pages/Foc1" unique_id=1850108951]
+offset_left = -917.0
+offset_top = -70.0
+offset_right = -437.0
+offset_bottom = 170.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn8" type="TextureButton" parent="pages/Foc1" unique_id=510323105]
+offset_left = -917.0
+offset_top = 232.0
+offset_right = -437.0
+offset_bottom = 472.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn9" type="TextureButton" parent="pages/Foc1" unique_id=190539545]
+offset_left = 58.0
+offset_top = -372.0
+offset_right = 538.0
+offset_bottom = -132.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Btn10" type="TextureButton" parent="pages/Foc1" unique_id=1323788413]
+offset_left = 58.0
+offset_top = -70.0
+offset_right = 538.0
+offset_bottom = 170.0
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="volta" type="TextureButton" parent="." unique_id=1115658985]
+layout_mode = 0
+offset_left = 846.0
+offset_top = -526.0
+offset_right = 942.0
+offset_bottom = -432.0
+texture_normal = ExtResource("5_s3nk7")
+texture_pressed = ExtResource("6_o2de3")
+texture_hover = ExtResource("6_o2de3")
+
+[node name="pageN" type="TextureButton" parent="." unique_id=1113863124]
+layout_mode = 0
+offset_left = 747.0
+offset_top = -460.0
+offset_right = 809.0
+offset_bottom = -392.0
+texture_normal = ExtResource("5")
+texture_pressed = ExtResource("6")
+texture_hover = ExtResource("6")
+
+[node name="pageA" type="TextureButton" parent="." unique_id=627550933]
+layout_mode = 0
+offset_left = 532.0
+offset_top = -460.0
+offset_right = 594.0
+offset_bottom = -392.0
+texture_normal = ExtResource("5")
+texture_pressed = ExtResource("6")
+texture_hover = ExtResource("6")
+flip_h = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1684228520]
+one_shot = true
+
+[connection signal="button_down" from="pages/Foc0/Btn0" to="." method="_on_Btn_button_down" binds= [0]]
+[connection signal="button_down" from="pages/Foc0/Btn1" to="." method="_on_Btn_button_down" binds= [1]]
+[connection signal="button_down" from="pages/Foc0/Btn2" to="." method="_on_Btn_button_down" binds= [2]]
+[connection signal="button_down" from="pages/Foc0/Btn3" to="." method="_on_Btn_button_down" binds= [3]]
+[connection signal="button_down" from="pages/Foc0/Btn4" to="." method="_on_Btn_button_down" binds= [4]]
+[connection signal="button_down" from="pages/Foc0/Btn5" to="." method="_on_Btn_button_down" binds= [5]]
+[connection signal="button_down" from="pages/Foc1/Btn6" to="." method="_on_Btn_button_down" binds= [6]]
+[connection signal="button_down" from="pages/Foc1/Btn7" to="." method="_on_Btn_button_down" binds= [7]]
+[connection signal="button_down" from="pages/Foc1/Btn8" to="." method="_on_Btn_button_down" binds= [8]]
+[connection signal="button_down" from="pages/Foc1/Btn9" to="." method="_on_Btn_button_down" binds= [9]]
+[connection signal="button_down" from="pages/Foc1/Btn10" to="." method="_on_Btn_button_down" binds= [10]]
+[connection signal="button_down" from="volta" to="." method="_on_volta_button_down"]
+[connection signal="button_down" from="pageN" to="." method="_on_page_button_down" binds= [1]]
+[connection signal="button_down" from="pageA" to="." method="_on_page_button_down" binds= [-1]]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

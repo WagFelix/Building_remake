@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dhtpnm3aivn5b"]
+
+[ext_resource type="Texture2D" uid="uid://s1my3uxl6md4" path="res://common_textures/backoff.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cxdeqitvvbupi" path="res://common_textures/backon.png" id="2"]
+[ext_resource type="Script" uid="uid://cpq5711ew7fkc" path="res://Game/Back.gd" id="3"]
+
+[node name="Back" type="Control" unique_id=1946348250]
+z_index = 4094
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2004118808]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -22.0
+offset_right = 25.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1")
+texture_pressed = ExtResource("2")
+texture_hover = ExtResource("2")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_TextureButton_button_down"]

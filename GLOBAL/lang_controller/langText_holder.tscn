@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjm6teswij48c"]
+
+[ext_resource type="Script" uid="uid://b525tg3p88t34" path="res://GLOBAL/lang_controller/langText.gd" id="1"]
+
+[node name="LangText" type="Node2D"]
+script = ExtResource("1")

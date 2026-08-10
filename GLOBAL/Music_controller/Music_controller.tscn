@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bvexohejhbfat"]
+
+[ext_resource type="Script" uid="uid://6cvro4285vyc" path="res://GLOBAL/Music_controller/Music_controller.gd" id="1"]
+
+[node name="Music_controller" type="Node2D" unique_id=11506420]
+script = ExtResource("1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=879039855]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1910401756]
+
+[node name="AudioStreamSFX" type="AudioStreamPlayer" parent="." unique_id=1936959173]
+
+[node name="AudioStreamSFX2" type="AudioStreamPlayer" parent="." unique_id=1205634672]
+
+[node name="AudioStreamSFX3" type="AudioStreamPlayer" parent="." unique_id=302106524]
+
+[node name="soundTimer" type="Timer" parent="." unique_id=1298705317]
+one_shot = true
+
+[node name="soundTimer2" type="Timer" parent="." unique_id=352326185]
+one_shot = true
+
+[node name="soundTimer3" type="Timer" parent="." unique_id=385588467]
+one_shot = true
+
+[node name="specifcMusic" type="Timer" parent="." unique_id=1936894564]
+one_shot = true
+
+[connection signal="timeout" from="soundTimer" to="." method="_on_soundTimer_timeout"]
+[connection signal="timeout" from="soundTimer2" to="." method="_on_soundTimer2_timeout"]
+[connection signal="timeout" from="soundTimer3" to="." method="_on_soundTimer3_timeout"]
+[connection signal="timeout" from="specifcMusic" to="." method="_on_specifcMusic_timeout"]

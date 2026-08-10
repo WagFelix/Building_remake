@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://6i5hbre6ave2"]
+
+[ext_resource type="Script" uid="uid://cqtr1i2rhksn8" path="res://Intro/intro.gd" id="1_hj3ye"]
+[ext_resource type="Texture2D" uid="uid://dkb28t5d1kbw" path="res://Intro/assets/intro-bg.png" id="1_k2o5b"]
+[ext_resource type="Texture2D" uid="uid://c2kxphf51ri5d" path="res://Intro/assets/maskintro.png" id="2_e0y4x"]
+[ext_resource type="Texture2D" uid="uid://b4jbbhlrlmmxh" path="res://Intro/assets/intro-gate.png" id="3_e0y4x"]
+[ext_resource type="Texture2D" uid="uid://bjpwobygqc0nw" path="res://Intro/assets/intro-fade.png" id="4_k88uh"]
+[ext_resource type="Texture2D" uid="uid://b8q6fhfdryv1n" path="res://Intro/assets/introFre.png" id="5_hj3ye"]
+[ext_resource type="VideoStream" uid="uid://cka0q47x1r4ij" path="res://Intro/assets/gatesound.ogv" id="6_hj3ye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r85xh"]
+size = Vector2(1324, 1103)
+
+[node name="Intro" type="Control" unique_id=1125956493]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hj3ye")
+
+[node name="Intro-bg" type="Sprite2D" parent="." unique_id=2117539660]
+texture = ExtResource("1_k2o5b")
+
+[node name="Maskintro" type="Sprite2D" parent="." unique_id=1302689845]
+texture = ExtResource("2_e0y4x")
+
+[node name="Gate" type="Sprite2D" parent="." unique_id=510301207]
+texture = ExtResource("3_e0y4x")
+
+[node name="GateArea" type="TextureButton" parent="." unique_id=548774828]
+layout_mode = 0
+offset_left = -1330.0
+offset_top = -606.0
+offset_right = 1377.0
+offset_bottom = 604.0
+
+[node name="introText" type="Area2D" parent="." unique_id=1606702075]
+position = Vector2(0, -1288)
+
+[node name="IntroText" type="Sprite2D" parent="introText" unique_id=980559782]
+texture = ExtResource("5_hj3ye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="introText" unique_id=1031026464]
+position = Vector2(-3, -67.5)
+shape = SubResource("RectangleShape2D_r85xh")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=512703541]
+modulate = Color(1, 1, 1, 0.27450982)
+layout_mode = 0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+stream = ExtResource("6_hj3ye")
+expand = true
+
+[node name="IntroFade" type="Sprite2D" parent="." unique_id=513451799]
+visible = false
+position = Vector2(6.1035156e-05, -2)
+scale = Vector2(1.3458334, 1.1018518)
+texture = ExtResource("4_k88uh")
+
+[node name="timer_change" type="Timer" parent="." unique_id=1566776589]
+one_shot = true
+
+[node name="TimerFade" type="Timer" parent="." unique_id=2048897591]
+one_shot = true
+
+[connection signal="button_down" from="GateArea" to="." method="_on_gate_area_button_down"]
+[connection signal="input_event" from="introText" to="." method="_on_intro_text_input_event"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="timeout" from="timer_change" to="." method="_on_timer_change_timeout"]
+[connection signal="timeout" from="TimerFade" to="." method="_on_timer_fade_timeout"]

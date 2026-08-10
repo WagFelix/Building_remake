@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://cw2o4r1rn5s01"]
+
+[ext_resource type="Script" uid="uid://dau7s1whj3ek3" path="res://Game/game.gd" id="1_gmygr"]
+[ext_resource type="Script" uid="uid://c3b56phb85tbc" path="res://GLOBAL/gradient_polygon.gd" id="2_u1ei1"]
+[ext_resource type="Texture2D" uid="uid://lnfikkhg0fre" path="res://Game/five/textures/05bath/05bath.png" id="3_y8mwo"]
+[ext_resource type="Texture2D" uid="uid://c1as44384n3lx" path="res://Game/five/textures/05bath/05bathAMOSTRA.png" id="4_1skj3"]
+[ext_resource type="Script" uid="uid://cj5i6hgw1kcme" path="res://Game/positioner.gd" id="5_1skj3"]
+[ext_resource type="PackedScene" uid="uid://dhtpnm3aivn5b" path="res://Game/Back.tscn" id="13_ohnbe"]
+[ext_resource type="PackedScene" uid="uid://cmxial1jdsoqa" path="res://Game/hud_container.tscn" id="16_c8cpe"]
+
+[sub_resource type="Gradient" id="Gradient_mr0lr"]
+offsets = PackedFloat32Array(0.0361111, 0.25)
+colors = PackedColorArray(1, 1, 0.714569, 1, 1, 1, 1, 1)
+
+[node name="Fivebath" type="Control" unique_id=1264484763]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmygr")
+
+[node name="Room" type="Node2D" parent="." unique_id=464386957]
+
+[node name="BG" type="Polygon2D" parent="Room" unique_id=1594809743]
+polygon = PackedVector2Array(-4812, -1711, -4866, 1693, 4896, 1660, 4822, -1643)
+script = ExtResource("2_u1ei1")
+cor_top = Color(0.98039216, 0.91764706, 0.8, 1)
+cor_bottom = Color(0.9098039, 0.9254902, 0.9647059, 1)
+
+[node name="Border" type="Polygon2D" parent="Room" unique_id=1175974341]
+color = Color(0.6313726, 0.23529412, 0.43137255, 1)
+polygon = PackedVector2Array(-1926, -1086, -1926, 1086, 1926, 1086, 1926, -1086)
+
+[node name="borderNotifiers" type="Node2D" parent="Room" unique_id=535037046]
+
+[node name="XD" type="VisibleOnScreenNotifier2D" parent="Room/borderNotifiers" unique_id=1097747531]
+position = Vector2(1925, -90)
+rect = Rect2(-1, -1, 1, 1)
+
+[node name="XE" type="VisibleOnScreenNotifier2D" parent="Room/borderNotifiers" unique_id=453878361]
+position = Vector2(-1925, -47)
+rect = Rect2(-1, -1, 1, 1)
+
+[node name="YC" type="VisibleOnScreenNotifier2D" parent="Room/borderNotifiers" unique_id=707176519]
+position = Vector2(-317, -1079)
+rect = Rect2(-1, -1, 1, 1)
+
+[node name="YB" type="VisibleOnScreenNotifier2D" parent="Room/borderNotifiers" unique_id=1640240307]
+position = Vector2(-110, 1080)
+rect = Rect2(-1, -1, 1, 1)
+
+[node name="roomLine" type="Node2D" parent="Room" unique_id=420891682]
+
+[node name="sceneA" type="Sprite2D" parent="Room/roomLine" unique_id=1453701809]
+texture = ExtResource("3_y8mwo")
+
+[node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
+texture = ExtResource("4_1skj3")
+
+[node name="AreaClicks" type="Node2D" parent="Room" unique_id=1885924706]
+z_index = 1
+z_as_relative = false
+
+[node name="hiddenAreas" type="Node2D" parent="Room" unique_id=1921735858]
+z_index = 1
+
+[node name="ExtraAreas" type="Node2D" parent="Room" unique_id=1514077829]
+
+[node name="ParticleHint" type="CPUParticles2D" parent="Room" unique_id=1193429257]
+z_index = 4095
+position = Vector2(-4376, 3094)
+emitting = false
+amount = 3333
+lifetime = 1.4
+one_shot = true
+explosiveness = 0.07
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 4
+emission_points = PackedVector2Array(10, 10, 20, 20, 30, 30, 40, -20)
+emission_colors = PackedColorArray()
+gravity = Vector2(0, 0)
+linear_accel_max = 100.0
+radial_accel_max = 0.67
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_mr0lr")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="ParticleHint2" type="CPUParticles2D" parent="Room" unique_id=19395095]
+z_index = 4094
+position = Vector2(-4376, 3094)
+emitting = false
+amount = 3333
+lifetime = 1.4
+one_shot = true
+explosiveness = 0.07
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 4
+emission_points = PackedVector2Array(10, 10, 20, 20, 30, 30, 40, -20)
+emission_colors = PackedColorArray()
+gravity = Vector2(0, 0)
+linear_accel_max = 100.0
+radial_accel_max = 0.67
+scale_amount_max = 1.6
+color = Color(0.686275, 0.435294, 0.00392157, 1)
+color_ramp = SubResource("Gradient_mr0lr")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="TimerCoolDown" type="Timer" parent="." unique_id=1196814168]
+one_shot = true
+
+[node name="TimerChange" type="Timer" parent="." unique_id=2145650433]
+one_shot = true
+
+[node name="shakertimer" type="Timer" parent="." unique_id=258524226]
+one_shot = true
+
+[node name="positioner" type="Node2D" parent="." unique_id=2096514577]
+position = Vector2(-984, -542)
+script = ExtResource("5_1skj3")
+
+[node name="Back" parent="." unique_id=1473559880 instance=ExtResource("13_ohnbe")]
+layout_mode = 1
+offset_top = 478.0
+offset_bottom = 478.0
+preloadScene = "res://Game/five/five.tscn"
+
+[node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
+layout_mode = 1
+
+[connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]

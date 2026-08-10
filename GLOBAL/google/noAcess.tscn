@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b1i8q8qjckldw"]
+
+[ext_resource type="Script" uid="uid://cvv3bjsufy372" path="res://GLOBAL/google/no_acess.gd" id="1_p6gkg"]
+[ext_resource type="Texture2D" uid="uid://b24ku8sy7qo85" path="res://common_textures/no_access.png" id="2_s0ow3"]
+
+[node name="NoAcess" type="Control" unique_id=2074448801]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6gkg")
+
+[node name="NoAccess" type="Sprite2D" parent="." unique_id=426070084]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_s0ow3")
+
+[node name="reload" type="TextureButton" parent="." unique_id=745210054]
+layout_mode = 0
+offset_left = -889.0
+offset_top = 202.0
+offset_right = -628.0
+offset_bottom = 444.0
+
+[node name="exit" type="TextureButton" parent="." unique_id=1610164325]
+layout_mode = 0
+offset_left = -618.0
+offset_top = 195.0
+offset_right = -357.0
+offset_bottom = 437.0
+
+[connection signal="button_down" from="reload" to="." method="_on_reload_button_down"]
+[connection signal="button_down" from="exit" to="." method="_on_exit_button_down"]

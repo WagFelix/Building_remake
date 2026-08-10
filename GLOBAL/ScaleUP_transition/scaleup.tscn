@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cp4xpynl3t4vv"]
+
+[ext_resource type="Script" uid="uid://fciyap3lt5rt" path="res://GLOBAL/ScaleUP_transition/scaleup.gd" id="1_cov78"]
+[ext_resource type="Texture2D" uid="uid://cutglriepup0" path="res://GLOBAL/ScaleUP_transition/textures/ghosts.png" id="1_rexct"]
+[ext_resource type="Texture2D" uid="uid://cghyh71wnpo" path="res://common_textures/load.png" id="2_j3xur"]
+
+[node name="Scaleup" type="Control" unique_id=340134107]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cov78")
+
+[node name="bg" type="Polygon2D" parent="." unique_id=502608614]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2823, -1740, -2845, 1980, 5740, 2035, 5239, -1996)
+
+[node name="spriteScale" type="Sprite2D" parent="." unique_id=1886504349]
+scale = Vector2(3, 3)
+texture = ExtResource("1_rexct")
+
+[node name="Loading" type="Sprite2D" parent="." unique_id=615353731]
+z_index = 4096
+z_as_relative = false
+position = Vector2(-793, 404)
+texture = ExtResource("2_j3xur")

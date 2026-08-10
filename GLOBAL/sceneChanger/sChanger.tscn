@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dygt5635uccfn"]
+
+[ext_resource type="Script" uid="uid://bdl3qddduofy5" path="res://GLOBAL/sceneChanger/sChanger.gd" id="1_81qyw"]
+
+[node name="SChanger" type="Node2D" unique_id=931275072]
+script = ExtResource("1_81qyw")

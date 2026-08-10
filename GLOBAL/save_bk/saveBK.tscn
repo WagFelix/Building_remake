@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://7ai8ideecvh8"]
+
+[ext_resource type="Script" uid="uid://dhdqjm3lxxvxu" path="res://GLOBAL/save_bk/save_bk.gd" id="1_6q3cp"]
+
+[node name="SaveBk" type="Node2D"]
+script = ExtResource("1_6q3cp")
+
+[node name="Timer5" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer13" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="Timer13" to="." method="_on_timer_13_timeout"]

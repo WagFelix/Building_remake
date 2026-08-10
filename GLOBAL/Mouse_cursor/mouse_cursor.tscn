@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1t3gskuvrybs"]
+
+[ext_resource type="Texture2D" uid="uid://bsg05ubqw6310" path="res://common_textures/Cursor.png" id="1"]
+[ext_resource type="Script" uid="uid://dkx3amcbam3en" path="res://GLOBAL/Mouse_cursor/Mouse_Cursor.gd" id="2"]
+
+[sub_resource type="Curve" id="41"]
+_data = [Vector2(0, 0.471591), 0.0, 0.0, 0, 0, Vector2(0.847826, 0.635227), 0.69697, 0.69697, 0, 0, Vector2(1, 0.789773), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="42"]
+offsets = PackedFloat32Array(0.209945, 0.502762, 0.685083, 0.79558, 1)
+colors = PackedColorArray(0.806745, 0.729372, 0.876616, 1, 0.795935, 0.645431, 0.888335, 1, 0.738672, 0.640424, 0.755523, 1, 0.955444, 0.886864, 0.967207, 1, 0.988235, 0.968627, 0.992157, 0)
+
+[node name="Mouse_Cursor" type="Node2D" unique_id=906804816]
+z_index = 4096
+script = ExtResource("2")
+
+[node name="Particles2D" type="CPUParticles2D" parent="." unique_id=995320512]
+visible = false
+emitting = false
+amount = 2
+lifetime = 0.7
+randomness = 0.28
+lifetime_randomness = 1.0
+fract_delta = false
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("41")
+color_ramp = SubResource("42")
+
+[node name="Sprite_Cursor" type="Sprite2D" parent="." unique_id=214902444]
+position = Vector2(-12, -2)
+texture = ExtResource("1")
+centered = false
+
+[node name="Cooldown" type="Timer" parent="." unique_id=82999577]
+one_shot = true

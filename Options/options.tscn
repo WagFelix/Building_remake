@@ -1,0 +1,781 @@
+[gd_scene format=3 uid="uid://pgu2tumbavhj"]
+
+[ext_resource type="Script" uid="uid://woi8iky2tb1c" path="res://Options/options.gd" id="1_ymabl"]
+[ext_resource type="Texture2D" uid="uid://cxh4tw2pnbsiq" path="res://Options/textures/options.png" id="2_0js2d"]
+[ext_resource type="Texture2D" uid="uid://f3pd44myfrwg" path="res://Map/textures/quitpause.png" id="2_ijs52"]
+[ext_resource type="Texture2D" uid="uid://dn4kj63etip2b" path="res://Map/textures/quitpause_hover.png" id="3_ih4eh"]
+[ext_resource type="Texture2D" uid="uid://ndgnourhv86u" path="res://Options/textures/optionsAMOSTRA.png" id="3_k861w"]
+[ext_resource type="Script" uid="uid://bcfg04kq13iu" path="res://Options/MouseSlider.gd" id="4_1hnby"]
+[ext_resource type="Texture2D" uid="uid://dxefl8e37dn8" path="res://Options/textures/mouse_slider_point.png" id="5_jkiyy"]
+[ext_resource type="Script" uid="uid://b8mvyexqb5j2j" path="res://Options/MusicSlider.gd" id="6_0js2d"]
+[ext_resource type="Texture2D" uid="uid://clng1tl2hyj5j" path="res://Options/textures/nosound.png" id="7_erlvw"]
+[ext_resource type="Texture2D" uid="uid://m4rsg1vwvix" path="res://common_textures/cancel.png" id="7_f6t45"]
+[ext_resource type="Texture2D" uid="uid://cg6u02tissgim" path="res://Options/textures/options_slider_empty.png" id="7_k861w"]
+[ext_resource type="Texture2D" uid="uid://dfvn2yied718" path="res://Options/textures/options_slider_frame.png" id="8_f6t45"]
+[ext_resource type="Texture2D" uid="uid://b1ua6o1ajpxyp" path="res://Options/textures/options_slider_full.png" id="9_erlvw"]
+[ext_resource type="Script" uid="uid://btkqxdiu50osx" path="res://Options/SfxSlider.gd" id="10_3a7aq"]
+[ext_resource type="Script" uid="uid://b52ks3q3ohp27" path="res://Options/ambience_slider.gd" id="11_3fggc"]
+[ext_resource type="Texture2D" uid="uid://cmafcfus4cj51" path="res://Options/textures/options_fullscreen_off.png" id="12_on5rx"]
+[ext_resource type="Texture2D" uid="uid://27gwghyr7ksw" path="res://Options/textures/options_fullscreen_on.png" id="13_scspf"]
+[ext_resource type="Texture2D" uid="uid://bbbuh26ru7i5s" path="res://Options/textures/options_window_off.png" id="14_m53ma"]
+[ext_resource type="Texture2D" uid="uid://bjml5djdr46t2" path="res://Options/textures/options_window_on.png" id="15_6p4w6"]
+[ext_resource type="Texture2D" uid="uid://bard2eg8giawy" path="res://Options/textures/options_cursor1off.png" id="16_smkjv"]
+[ext_resource type="Texture2D" uid="uid://5ruiyagccaen" path="res://Options/textures/options_cursor1on.png" id="17_v50pj"]
+[ext_resource type="Texture2D" uid="uid://c7j6lv6tm0akv" path="res://Options/textures/options_cursor2off.png" id="18_napaj"]
+[ext_resource type="Texture2D" uid="uid://drmpilcsjmqbq" path="res://Options/textures/options_cursor2on.png" id="19_uinw2"]
+[ext_resource type="Texture2D" uid="uid://4duthb5dkksn" path="res://Options/textures/languages.png" id="20_om4x7"]
+[ext_resource type="Texture2D" uid="uid://dnu4frx43m015" path="res://Options/textures/options_save1.png" id="21_c37io"]
+[ext_resource type="Texture2D" uid="uid://cni6f8mxeklgq" path="res://Options/textures/options_save2.png" id="22_j8q4w"]
+[ext_resource type="Texture2D" uid="uid://0jfv85o74kep" path="res://Options/textures/deleteoff.png" id="23_76ysa"]
+[ext_resource type="Texture2D" uid="uid://d34wflh86n1mr" path="res://Options/textures/delete/delete_Eng.png" id="24_fj513"]
+[ext_resource type="Texture2D" uid="uid://b0ojbi8tuiccg" path="res://Options/textures/delete/delete-no.png" id="25_fhnja"]
+[ext_resource type="Texture2D" uid="uid://bv3pwdsjruqv1" path="res://Options/textures/delete/delete-yes.png" id="26_mgv2w"]
+[ext_resource type="Texture2D" uid="uid://ddfh212dpulcx" path="res://Options/textures/screen_off.png" id="27_2mi1a"]
+[ext_resource type="Texture2D" uid="uid://dswmkiax7j40m" path="res://Options/textures/screen_on.png" id="28_m2gtq"]
+[ext_resource type="Theme" uid="uid://ctynlj5ft6utu" path="res://themes/screen_choice.tres" id="29_i578d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6n73"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sv1r"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bhd7"]
+bg_color = Color(0.87451, 0.396078, 0.623529, 1)
+border_width_top = 6
+border_width_right = 2
+border_width_bottom = 6
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_7k72d"]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("5_jkiyy")
+HSlider/icons/grabber_disabled = ExtResource("5_jkiyy")
+HSlider/icons/grabber_highlight = ExtResource("5_jkiyy")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_d6n73")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_5sv1r")
+HSlider/styles/slider = SubResource("StyleBoxFlat_8bhd7")
+
+[sub_resource type="Animation" id="6"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fullscreen/OptionsFullscreenOn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsxgp"]
+_data = {
+&"fade": SubResource("6")
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsWindowOn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l0hl"]
+_data = {
+&"fade": SubResource("8")
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsLanguageOn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2msa4"]
+_data = {
+&"fade": SubResource("9")
+}
+
+[sub_resource type="AtlasTexture" id="46"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 0, 529, 150)
+
+[sub_resource type="AtlasTexture" id="47"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 150, 529, 150)
+
+[sub_resource type="AtlasTexture" id="48"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 300, 529, 150)
+
+[sub_resource type="AtlasTexture" id="49"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 450, 529, 150)
+
+[sub_resource type="AtlasTexture" id="50"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 600, 529, 150)
+
+[sub_resource type="AtlasTexture" id="51"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 750, 529, 150)
+
+[sub_resource type="AtlasTexture" id="52"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 900, 529, 150)
+
+[sub_resource type="AtlasTexture" id="53"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1050, 529, 150)
+
+[sub_resource type="AtlasTexture" id="54"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1200, 529, 150)
+
+[sub_resource type="AtlasTexture" id="55"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1350, 529, 150)
+
+[sub_resource type="AtlasTexture" id="56"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1500, 529, 150)
+
+[sub_resource type="AtlasTexture" id="57"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1650, 529, 150)
+
+[sub_resource type="AtlasTexture" id="58"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1800, 529, 150)
+
+[sub_resource type="AtlasTexture" id="59"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 1950, 529, 150)
+
+[sub_resource type="AtlasTexture" id="62"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 2400, 529, 150)
+
+[sub_resource type="AtlasTexture" id="60"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 2100, 529, 150)
+
+[sub_resource type="AtlasTexture" id="61"]
+atlas = ExtResource("20_om4x7")
+region = Rect2(0, 2250, 529, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xueyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("46")
+}, {
+"duration": 1.0,
+"texture": SubResource("47")
+}, {
+"duration": 1.0,
+"texture": SubResource("48")
+}, {
+"duration": 1.0,
+"texture": SubResource("49")
+}, {
+"duration": 1.0,
+"texture": SubResource("50")
+}, {
+"duration": 1.0,
+"texture": SubResource("51")
+}, {
+"duration": 1.0,
+"texture": SubResource("52")
+}, {
+"duration": 1.0,
+"texture": SubResource("53")
+}, {
+"duration": 1.0,
+"texture": SubResource("54")
+}, {
+"duration": 1.0,
+"texture": SubResource("55")
+}, {
+"duration": 1.0,
+"texture": SubResource("56")
+}, {
+"duration": 1.0,
+"texture": SubResource("57")
+}, {
+"duration": 1.0,
+"texture": SubResource("58")
+}, {
+"duration": 1.0,
+"texture": SubResource("59")
+}, {
+"duration": 1.0,
+"texture": SubResource("62")
+}, {
+"duration": 1.0,
+"texture": SubResource("60")
+}, {
+"duration": 1.0,
+"texture": SubResource("61")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Options" type="Control" unique_id=719569424]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ymabl")
+
+[node name="Options" type="Sprite2D" parent="." unique_id=464851442]
+texture = ExtResource("2_0js2d")
+
+[node name="OptionsAmostra" type="Sprite2D" parent="." unique_id=1190008653]
+visible = false
+texture = ExtResource("3_k861w")
+
+[node name="TimerChange" type="Timer" parent="." unique_id=1995623242]
+one_shot = true
+
+[node name="MouseSlider" type="Control" parent="." unique_id=1786445119]
+anchors_preset = 0
+offset_left = 236.0
+offset_top = 1136.0
+offset_right = 236.0
+offset_bottom = 1136.0
+script = ExtResource("4_1hnby")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MouseSlider" unique_id=1284421638]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 311.0
+offset_bottom = 26.0
+
+[node name="TextureProgress" type="HSlider" parent="MouseSlider/HBoxContainer" unique_id=1632041566]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_7k72d")
+value = 80.0
+
+[node name="MusicSlider" type="Control" parent="." unique_id=630606084]
+anchors_preset = 0
+offset_left = -352.0
+offset_top = 91.0
+offset_right = -352.0
+offset_bottom = 91.0
+script = ExtResource("6_0js2d")
+
+[node name="mute" type="TextureButton" parent="MusicSlider" unique_id=1276755011]
+layout_mode = 0
+offset_left = -146.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = 88.0
+
+[node name="Cancel" type="Sprite2D" parent="MusicSlider/mute" unique_id=1032476468]
+position = Vector2(28, 43)
+texture = ExtResource("7_erlvw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MusicSlider" unique_id=1427921691]
+layout_mode = 0
+
+[node name="TextureProgress" type="TextureProgressBar" parent="MusicSlider/HBoxContainer" unique_id=1838835024]
+layout_mode = 2
+texture_under = ExtResource("7_k861w")
+texture_over = ExtResource("8_f6t45")
+texture_progress = ExtResource("9_erlvw")
+
+[node name="SfxSlider" type="Control" parent="." unique_id=1761374070]
+anchors_preset = 0
+offset_left = -352.0
+offset_top = 218.0
+offset_right = -352.0
+offset_bottom = 218.0
+script = ExtResource("10_3a7aq")
+
+[node name="mute" type="TextureButton" parent="SfxSlider" unique_id=1065467277]
+layout_mode = 0
+offset_left = -158.0
+offset_top = 13.0
+offset_right = -5.0
+offset_bottom = 83.0
+
+[node name="Cancel" type="Sprite2D" parent="SfxSlider/mute" unique_id=1950112584]
+position = Vector2(40, 33)
+texture = ExtResource("7_erlvw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SfxSlider" unique_id=1183167551]
+layout_mode = 0
+
+[node name="TextureProgress" type="TextureProgressBar" parent="SfxSlider/HBoxContainer" unique_id=1258277578]
+layout_mode = 2
+texture_under = ExtResource("7_k861w")
+texture_over = ExtResource("8_f6t45")
+texture_progress = ExtResource("9_erlvw")
+
+[node name="AmbienceSlider" type="Control" parent="." unique_id=648961747]
+anchors_preset = 0
+offset_left = -387.0
+offset_top = 1174.0
+offset_right = -347.0
+offset_bottom = 1214.0
+script = ExtResource("11_3fggc")
+
+[node name="mute" type="TextureButton" parent="AmbienceSlider" unique_id=1530732151]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 7.0
+offset_right = -17.0
+offset_bottom = 87.0
+
+[node name="Cancel" type="Sprite2D" parent="AmbienceSlider/mute" unique_id=125166703]
+position = Vector2(40, 40)
+texture = ExtResource("7_f6t45")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AmbienceSlider" unique_id=1990764116]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgress" type="TextureProgressBar" parent="AmbienceSlider/HBoxContainer" unique_id=484028352]
+layout_mode = 2
+texture_under = ExtResource("7_k861w")
+texture_over = ExtResource("8_f6t45")
+texture_progress = ExtResource("9_erlvw")
+
+[node name="Fullscreen" type="TextureButton" parent="." unique_id=826866498]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -72.0
+offset_right = -246.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("12_on5rx")
+
+[node name="FullAnimation" type="AnimationPlayer" parent="Fullscreen" unique_id=994360649]
+root_node = NodePath("")
+libraries/ = SubResource("AnimationLibrary_lsxgp")
+
+[node name="OptionsFullscreenOff" type="Sprite2D" parent="Fullscreen" unique_id=1734506223]
+position = Vector2(94, 62)
+texture = ExtResource("12_on5rx")
+
+[node name="OptionsFullscreenOn" type="Sprite2D" parent="Fullscreen" unique_id=1355865938]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(94, 62)
+texture = ExtResource("13_scspf")
+
+[node name="OptionsFullscreenOn2" type="Sprite2D" parent="Fullscreen" unique_id=2032334108]
+visible = false
+position = Vector2(94, 62)
+texture = ExtResource("13_scspf")
+
+[node name="Windowed" type="TextureButton" parent="." unique_id=347070831]
+layout_mode = 0
+offset_left = -142.0
+offset_top = -63.0
+offset_right = -34.0
+offset_bottom = 43.0
+texture_normal = ExtResource("14_m53ma")
+
+[node name="WindowAnimation" type="AnimationPlayer" parent="Windowed" unique_id=1143899870]
+libraries/ = SubResource("AnimationLibrary_8l0hl")
+
+[node name="OptionsWindowOff" type="Sprite2D" parent="Windowed" unique_id=1154774376]
+position = Vector2(54, 53)
+texture = ExtResource("14_m53ma")
+
+[node name="OptionsWindowOn" type="Sprite2D" parent="Windowed" unique_id=1257684651]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(54, 53)
+texture = ExtResource("15_6p4w6")
+
+[node name="OptionsWindowOn2" type="Sprite2D" parent="Windowed" unique_id=995302327]
+visible = false
+position = Vector2(54, 53)
+texture = ExtResource("15_6p4w6")
+
+[node name="cursorSize1" type="TextureButton" parent="." unique_id=405504528]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 114.0
+offset_right = 189.0
+offset_bottom = 168.0
+texture_normal = ExtResource("16_smkjv")
+
+[node name="off" type="Sprite2D" parent="cursorSize1" unique_id=1066727776]
+position = Vector2(50, 27)
+texture = ExtResource("16_smkjv")
+
+[node name="on" type="Sprite2D" parent="cursorSize1" unique_id=95219968]
+visible = false
+position = Vector2(49, 27)
+texture = ExtResource("17_v50pj")
+
+[node name="on2" type="Sprite2D" parent="cursorSize1" unique_id=2040345105]
+visible = false
+position = Vector2(49, 27)
+texture = ExtResource("17_v50pj")
+
+[node name="cursorSize2" type="TextureButton" parent="." unique_id=724642717]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 113.0
+offset_right = 295.0
+offset_bottom = 167.0
+texture_normal = ExtResource("18_napaj")
+
+[node name="off" type="Sprite2D" parent="cursorSize2" unique_id=88191030]
+position = Vector2(50, 27)
+texture = ExtResource("18_napaj")
+
+[node name="on" type="Sprite2D" parent="cursorSize2" unique_id=484433150]
+visible = false
+position = Vector2(50, 27)
+texture = ExtResource("19_uinw2")
+
+[node name="on2" type="Sprite2D" parent="cursorSize2" unique_id=398922594]
+visible = false
+position = Vector2(50, 27)
+texture = ExtResource("19_uinw2")
+
+[node name="Language" type="TextureButton" parent="." unique_id=2077191284]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 89.0
+offset_top = 231.0
+offset_right = 561.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="Language" unique_id=2077161867]
+visible = false
+color = Color(0.54901963, 0.36078432, 0.8980392, 1)
+polygon = PackedVector2Array(90, 12, 88, 70, 277, 65, 271, 6)
+
+[node name="LangAnimation" type="AnimationPlayer" parent="Language" unique_id=1495333411]
+libraries/ = SubResource("AnimationLibrary_2msa4")
+
+[node name="OptionsLanguageOff" type="Sprite2D" parent="Language" unique_id=1736895058]
+visible = false
+position = Vector2(42, 40)
+
+[node name="OptionsLanguageOn" type="Sprite2D" parent="Language" unique_id=1969379156]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(42, 41)
+
+[node name="SpriteLang" type="AnimatedSprite2D" parent="Language" unique_id=656031805]
+position = Vector2(222, 37)
+sprite_frames = SubResource("SpriteFrames_xueyo")
+frame = 9
+
+[node name="Slot1" type="TextureButton" parent="." unique_id=1670654925]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -66.0
+offset_right = 208.0
+offset_bottom = 38.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot1" unique_id=1255040416]
+position = Vector2(85, 57)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Slot1" unique_id=1575774798]
+position = Vector2(60, 58)
+texture = ExtResource("21_c37io")
+
+[node name="Slot2" type="TextureButton" parent="." unique_id=849889159]
+layout_mode = 0
+offset_left = 269.0
+offset_top = -67.0
+offset_right = 389.0
+offset_bottom = 37.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot2" unique_id=1291929051]
+position = Vector2(85, 57)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Slot2" unique_id=1387808932]
+position = Vector2(60, 59)
+texture = ExtResource("22_j8q4w")
+
+[node name="DeleteBtn" type="TextureButton" parent="." unique_id=181905301]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = -31.0
+offset_right = 261.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("23_76ysa")
+
+[node name="Sprite" type="Sprite2D" parent="DeleteBtn" unique_id=1262190576]
+position = Vector2(19.5, 24.5)
+texture = ExtResource("23_76ysa")
+
+[node name="DeleteBtn2" type="TextureButton" parent="." unique_id=282394034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = -31.0
+offset_right = 442.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("23_76ysa")
+
+[node name="Sprite" type="Sprite2D" parent="DeleteBtn2" unique_id=727251405]
+position = Vector2(19, 25)
+texture = ExtResource("23_76ysa")
+
+[node name="Delete" type="Node2D" parent="." unique_id=715384995]
+z_index = 333
+
+[node name="Popup" type="Sprite2D" parent="Delete" unique_id=1062783532]
+visible = false
+texture = ExtResource("24_fj513")
+
+[node name="Ocluder" type="TextureButton" parent="Delete/Popup" unique_id=441211498]
+offset_left = -1353.0
+offset_top = -420.0
+offset_right = 1712.0
+offset_bottom = 632.0
+
+[node name="No" type="TextureButton" parent="Delete/Popup" unique_id=1708759304]
+offset_left = 168.0
+offset_top = 45.0
+offset_right = 328.0
+offset_bottom = 125.0
+
+[node name="Sprite" type="Sprite2D" parent="Delete/Popup/No" unique_id=514381511]
+position = Vector2(78, 40)
+texture = ExtResource("25_fhnja")
+
+[node name="Yes" type="TextureButton" parent="Delete/Popup" unique_id=1419320730]
+offset_left = -312.0
+offset_top = 45.0
+offset_right = 104.0
+offset_bottom = 117.0
+
+[node name="Sprite" type="Sprite2D" parent="Delete/Popup/Yes" unique_id=735666772]
+position = Vector2(184, 40)
+texture = ExtResource("26_mgv2w")
+
+[node name="timerpop" type="Timer" parent="Delete/Popup" unique_id=807891948]
+one_shot = true
+
+[node name="multiScreen" type="Node2D" parent="." unique_id=609146385]
+position = Vector2(341, 112)
+
+[node name="screen1" type="TextureButton" parent="multiScreen" unique_id=2044597416]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("27_2mi1a")
+texture_pressed = ExtResource("28_m2gtq")
+texture_hover = ExtResource("28_m2gtq")
+texture_focused = ExtResource("28_m2gtq")
+
+[node name="Label" type="Label" parent="multiScreen/screen1" unique_id=1868307304]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 4.0
+offset_right = 69.0
+offset_bottom = 61.0
+theme = ExtResource("29_i578d")
+theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="screen2" type="TextureButton" parent="multiScreen" unique_id=866835814]
+offset_left = 120.0
+offset_right = 214.0
+offset_bottom = 77.0
+texture_normal = ExtResource("27_2mi1a")
+texture_pressed = ExtResource("28_m2gtq")
+texture_hover = ExtResource("28_m2gtq")
+texture_focused = ExtResource("28_m2gtq")
+
+[node name="Label" type="Label" parent="multiScreen/screen2" unique_id=2072533701]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 62.0
+theme = ExtResource("29_i578d")
+theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="screen3" type="TextureButton" parent="multiScreen" unique_id=1810388673]
+offset_left = 240.0
+offset_right = 334.0
+offset_bottom = 77.0
+texture_normal = ExtResource("27_2mi1a")
+texture_pressed = ExtResource("28_m2gtq")
+texture_hover = ExtResource("28_m2gtq")
+texture_focused = ExtResource("28_m2gtq")
+
+[node name="Label" type="Label" parent="multiScreen/screen3" unique_id=1784984405]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 62.0
+theme = ExtResource("29_i578d")
+theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="TextureButton" parent="." unique_id=1158362534]
+layout_mode = 0
+offset_left = 840.0
+offset_top = -520.0
+offset_right = 936.0
+offset_bottom = -426.0
+texture_normal = ExtResource("2_ijs52")
+texture_pressed = ExtResource("3_ih4eh")
+texture_hover = ExtResource("3_ih4eh")
+
+[node name="Label" type="Label" parent="." unique_id=1776702411]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 351.0
+offset_right = 958.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0.2784314, 0.8745098, 1, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.43137255, 0.8156863, 1)
+theme_override_constants/outline_size = 1
+text = "V.1.0.3"
+
+[connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
+[connection signal="mouse_entered" from="MouseSlider/HBoxContainer/TextureProgress" to="MouseSlider" method="_on_TextureProgress_mouse_entered"]
+[connection signal="mouse_exited" from="MouseSlider/HBoxContainer/TextureProgress" to="MouseSlider" method="_on_TextureProgress_mouse_exited"]
+[connection signal="button_down" from="MusicSlider/mute" to="MusicSlider" method="_on_mute_button_down"]
+[connection signal="mouse_entered" from="MusicSlider/HBoxContainer/TextureProgress" to="MusicSlider" method="_on_TextureProgress_mouse_entered"]
+[connection signal="mouse_exited" from="MusicSlider/HBoxContainer/TextureProgress" to="MusicSlider" method="_on_TextureProgress_mouse_exited"]
+[connection signal="button_down" from="SfxSlider/mute" to="SfxSlider" method="_on_mute_button_down"]
+[connection signal="mouse_entered" from="SfxSlider/HBoxContainer/TextureProgress" to="SfxSlider" method="_on_TextureProgress_mouse_entered"]
+[connection signal="mouse_exited" from="SfxSlider/HBoxContainer/TextureProgress" to="SfxSlider" method="_on_TextureProgress_mouse_exited"]
+[connection signal="button_down" from="AmbienceSlider/mute" to="AmbienceSlider" method="_on_mute_button_down"]
+[connection signal="mouse_entered" from="AmbienceSlider/HBoxContainer/TextureProgress" to="AmbienceSlider" method="_on_TextureProgress_mouse_entered"]
+[connection signal="mouse_exited" from="AmbienceSlider/HBoxContainer/TextureProgress" to="AmbienceSlider" method="_on_TextureProgress_mouse_exited"]
+[connection signal="button_down" from="Fullscreen" to="." method="_on_fullscreen_button_down"]
+[connection signal="mouse_entered" from="Fullscreen" to="." method="_on_fullscreen_mouse_entered"]
+[connection signal="mouse_exited" from="Fullscreen" to="." method="_on_fullscreen_mouse_exited"]
+[connection signal="button_down" from="Windowed" to="." method="_on_windowed_button_down"]
+[connection signal="mouse_entered" from="Windowed" to="." method="_on_windowed_mouse_entered"]
+[connection signal="mouse_exited" from="Windowed" to="." method="_on_windowed_mouse_exited"]
+[connection signal="button_down" from="cursorSize1" to="." method="_on_cursor_size_1_button_down"]
+[connection signal="mouse_entered" from="cursorSize1" to="." method="_on_cursor_size_1_mouse_entered"]
+[connection signal="mouse_exited" from="cursorSize1" to="." method="_on_cursor_size_1_mouse_exited"]
+[connection signal="button_down" from="cursorSize2" to="." method="_on_cursor_size_2_button_down"]
+[connection signal="mouse_entered" from="cursorSize2" to="." method="_on_cursor_size_2_mouse_entered"]
+[connection signal="mouse_exited" from="cursorSize2" to="." method="_on_cursor_size_2_mouse_exited"]
+[connection signal="button_down" from="Language" to="." method="_on_language_button_down"]
+[connection signal="mouse_entered" from="Language" to="." method="_on_language_mouse_entered"]
+[connection signal="mouse_exited" from="Language" to="." method="_on_language_mouse_exited"]
+[connection signal="button_down" from="Slot1" to="." method="_on_slot_1_button_down"]
+[connection signal="mouse_entered" from="Slot1" to="." method="_on_slot_1_mouse_entered"]
+[connection signal="mouse_exited" from="Slot1" to="." method="_on_slot_1_mouse_exited"]
+[connection signal="button_down" from="Slot2" to="." method="_on_slot_2_button_down"]
+[connection signal="mouse_entered" from="Slot2" to="." method="_on_slot_2_mouse_entered"]
+[connection signal="mouse_exited" from="Slot2" to="." method="_on_slot_2_mouse_exited"]
+[connection signal="button_down" from="DeleteBtn" to="." method="_on_Delete_input_event" binds= [1]]
+[connection signal="mouse_entered" from="DeleteBtn" to="." method="_on_Delete_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="DeleteBtn" to="." method="_on_Delete_mouse_exited" binds= [1]]
+[connection signal="button_down" from="DeleteBtn2" to="." method="_on_Delete_input_event" binds= [2]]
+[connection signal="mouse_entered" from="DeleteBtn2" to="." method="_on_Delete_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="DeleteBtn2" to="." method="_on_Delete_mouse_exited" binds= [2]]
+[connection signal="button_down" from="Delete/Popup/No" to="." method="_on_no_input_event"]
+[connection signal="mouse_entered" from="Delete/Popup/No" to="." method="_on_no_mouse_entered"]
+[connection signal="mouse_exited" from="Delete/Popup/No" to="." method="_on_no_mouse_exited"]
+[connection signal="button_down" from="Delete/Popup/Yes" to="." method="_on_yes_input_event"]
+[connection signal="mouse_entered" from="Delete/Popup/Yes" to="." method="_on_yes_mouse_entered"]
+[connection signal="mouse_exited" from="Delete/Popup/Yes" to="." method="_on_yes_mouse_exited"]
+[connection signal="button_down" from="multiScreen/screen1" to="." method="_on_screen_button_down" binds= [0]]
+[connection signal="button_down" from="multiScreen/screen2" to="." method="_on_screen_button_down" binds= [1]]
+[connection signal="button_down" from="multiScreen/screen3" to="." method="_on_screen_button_down" binds= [2]]
+[connection signal="button_down" from="Close" to="." method="_on_close_button_down"]

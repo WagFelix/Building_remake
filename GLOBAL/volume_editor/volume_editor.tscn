@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://dihgtj4huu7i1"]
+
+[ext_resource type="Script" uid="uid://cf4uepy1gou40" path="res://GLOBAL/volume_editor/volume_editor.gd" id="1_g1ftw"]
+[ext_resource type="Texture2D" uid="uid://d363pq2cma2tl" path="res://GLOBAL/volume_editor/textures/play_hover.png" id="2_6esld"]
+[ext_resource type="Texture2D" uid="uid://bxl33r4ygrpdv" path="res://GLOBAL/volume_editor/textures/play.png" id="3_2honw"]
+[ext_resource type="Script" uid="uid://caww6he7o0dvo" path="res://GLOBAL/volume_editor/mouse_slider.gd" id="4_2honw"]
+[ext_resource type="Texture2D" uid="uid://cbsjsfiwyuajx" path="res://GLOBAL/volume_editor/textures/mouse_slider_point.png" id="4_cfo56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6ntf"]
+bg_color = Color(0.925257, 0.553093, 0.716459, 0.470588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_6esld"]
+Label/styles/normal = SubResource("StyleBoxFlat_n6ntf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7jfa"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fagp4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbyps"]
+bg_color = Color(0.87451, 0.396078, 0.623529, 1)
+border_width_top = 6
+border_width_right = 2
+border_width_bottom = 6
+border_color = Color(0.87451, 0.396078, 0.623529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_pt2v2"]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("4_cfo56")
+HSlider/icons/grabber_disabled = ExtResource("4_cfo56")
+HSlider/icons/grabber_highlight = ExtResource("4_cfo56")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_l7jfa")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_fagp4")
+HSlider/styles/slider = SubResource("StyleBoxFlat_hbyps")
+
+[node name="VolumeEditor" type="Node2D"]
+z_index = 4096
+script = ExtResource("1_g1ftw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1580.0
+offset_top = 943.0
+offset_right = 1896.0
+offset_bottom = 1052.0
+
+[node name="Sound" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 250.0
+offset_bottom = 68.0
+theme = SubResource("Theme_6esld")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="btnPlay" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 22.0
+offset_right = 304.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_6esld")
+texture_pressed = ExtResource("3_2honw")
+texture_hover = ExtResource("3_2honw")
+
+[node name="MouseSlider" type="Control" parent="Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 61.0
+offset_right = -1.0
+offset_bottom = 61.0
+script = ExtResource("4_2honw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MouseSlider"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 311.0
+offset_bottom = 26.0
+
+[node name="TextureProgress" type="HSlider" parent="Panel/MouseSlider/HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_pt2v2")
+value = 100.0
+rounded = true
+scrollable = false
+
+[connection signal="button_down" from="Panel/btnPlay" to="." method="_on_btn_play_button_down"]
+[connection signal="mouse_entered" from="Panel/MouseSlider/HBoxContainer/TextureProgress" to="Panel/MouseSlider" method="_on_TextureProgress_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MouseSlider/HBoxContainer/TextureProgress" to="Panel/MouseSlider" method="_on_TextureProgress_mouse_exited"]

@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://cferdw2td78xe"]
+
+[ext_resource type="Script" uid="uid://p488s5iqdroj" path="res://Menu/menu.gd" id="1_jf1j2"]
+[ext_resource type="Texture2D" uid="uid://cs6q6wtogagpa" path="res://Menu/textures/menubg.png" id="2_crea4"]
+[ext_resource type="Texture2D" uid="uid://b6n53ybjayx1l" path="res://Menu/textures/menuAMOSTRA.png" id="3_w32jx"]
+[ext_resource type="Texture2D" uid="uid://ds8wdstmsfuuq" path="res://Menu/textures/windowclosed.png" id="4_0cyjp"]
+[ext_resource type="Texture2D" uid="uid://dgx6til17l73x" path="res://Menu/textures/windowopen.png" id="5_m87qx"]
+[ext_resource type="Texture2D" uid="uid://c7fhg3cc0xklp" path="res://Menu/textures/01l.png" id="6_3c4i7"]
+[ext_resource type="Texture2D" uid="uid://dh2j1sxbwmkxf" path="res://Menu/textures/01r.png" id="7_fipr7"]
+[ext_resource type="Texture2D" uid="uid://dqnrjjgmfqam7" path="res://Menu/textures/02l.png" id="8_8iu1u"]
+[ext_resource type="Texture2D" uid="uid://c5lsnj8hv2b3l" path="res://Menu/textures/02r.png" id="9_xc4fn"]
+[ext_resource type="Texture2D" uid="uid://mkj4smu5fltk" path="res://Menu/textures/03l.png" id="10_b7iep"]
+[ext_resource type="Texture2D" uid="uid://dqomq2hj01t0m" path="res://Menu/textures/03r.png" id="11_e4kd3"]
+[ext_resource type="Texture2D" uid="uid://cu5vil2e0ve72" path="res://Menu/textures/04l.png" id="12_b7iep"]
+[ext_resource type="Texture2D" uid="uid://xwehw8hhpbch" path="res://Menu/textures/04r.png" id="13_e4kd3"]
+[ext_resource type="Texture2D" uid="uid://dbr77pws1rtfj" path="res://Menu/textures/05l.png" id="14_p7c5i"]
+[ext_resource type="Texture2D" uid="uid://dl7kuy1mjnvef" path="res://Menu/textures/05r.png" id="15_v7enl"]
+[ext_resource type="Texture2D" uid="uid://6x421innurfm" path="res://Menu/textures/06.png" id="16_tgfpa"]
+[ext_resource type="Texture2D" uid="uid://cyxkygwko4b4j" path="res://Menu/textures/main_logo.png" id="17_v7enl"]
+[ext_resource type="Script" uid="uid://cog65cao5cewa" path="res://Menu/logo.gd" id="18_tgfpa"]
+[ext_resource type="Texture2D" uid="uid://bg02be4m8wnca" path="res://Menu/textures/cata.png" id="19_oyhu1"]
+[ext_resource type="Texture2D" uid="uid://dp628pf1347hl" path="res://Menu/textures/catb.png" id="20_kkqmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmy56"]
+size = Vector2(196, 186)
+
+[node name="Menu" type="Control" unique_id=108244221]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf1j2")
+
+[node name="Label" type="Label" parent="." unique_id=1875047016]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "menu"
+
+[node name="Menubg" type="Sprite2D" parent="." unique_id=413985585]
+texture = ExtResource("2_crea4")
+
+[node name="Windows" type="Node2D" parent="." unique_id=639252726]
+
+[node name="01" type="Sprite2D" parent="Windows" unique_id=353584300]
+position = Vector2(320, 210)
+texture = ExtResource("4_0cyjp")
+
+[node name="02" type="Sprite2D" parent="Windows" unique_id=294350769]
+position = Vector2(562, 210)
+texture = ExtResource("4_0cyjp")
+
+[node name="03" type="Sprite2D" parent="Windows" unique_id=1997248350]
+position = Vector2(320, 71)
+texture = ExtResource("4_0cyjp")
+
+[node name="04" type="Sprite2D" parent="Windows" unique_id=2015989263]
+position = Vector2(562, 71)
+texture = ExtResource("4_0cyjp")
+
+[node name="05" type="Sprite2D" parent="Windows" unique_id=747156395]
+position = Vector2(320, -67)
+texture = ExtResource("4_0cyjp")
+
+[node name="06" type="Sprite2D" parent="Windows" unique_id=801494575]
+position = Vector2(562, -67)
+texture = ExtResource("4_0cyjp")
+
+[node name="07" type="Sprite2D" parent="Windows" unique_id=94800150]
+position = Vector2(320, -202)
+texture = ExtResource("4_0cyjp")
+
+[node name="08" type="Sprite2D" parent="Windows" unique_id=1124851853]
+position = Vector2(562, -202)
+texture = ExtResource("4_0cyjp")
+
+[node name="09" type="Sprite2D" parent="Windows" unique_id=861039346]
+position = Vector2(320, -340)
+texture = ExtResource("4_0cyjp")
+
+[node name="10" type="Sprite2D" parent="Windows" unique_id=1676751344]
+position = Vector2(562, -340)
+texture = ExtResource("4_0cyjp")
+
+[node name="MenuAmostra" type="Sprite2D" parent="." unique_id=1784472725]
+visible = false
+texture = ExtResource("3_w32jx")
+
+[node name="Main" type="Node2D" parent="." unique_id=704332068]
+
+[node name="00" type="Node2D" parent="Main" unique_id=394986521]
+
+[node name="01" type="Node2D" parent="Main" unique_id=1668549410]
+
+[node name="Main01l" type="Sprite2D" parent="Main/01" unique_id=266500373]
+position = Vector2(320, 210)
+texture = ExtResource("5_m87qx")
+
+[node name="01l" type="Sprite2D" parent="Main/01/Main01l" unique_id=1478765929]
+position = Vector2(40, 13)
+texture = ExtResource("6_3c4i7")
+
+[node name="Main01r" type="Sprite2D" parent="Main/01" unique_id=959355531]
+position = Vector2(562, 210)
+texture = ExtResource("5_m87qx")
+
+[node name="01r" type="Sprite2D" parent="Main/01/Main01r" unique_id=697671169]
+position = Vector2(41, 22)
+texture = ExtResource("7_fipr7")
+
+[node name="02" type="Node2D" parent="Main" unique_id=2030423022]
+
+[node name="Main02l" type="Sprite2D" parent="Main/02" unique_id=1277449518]
+position = Vector2(320, 71)
+texture = ExtResource("5_m87qx")
+
+[node name="02l" type="Sprite2D" parent="Main/02/Main02l" unique_id=1454894055]
+position = Vector2(27, 19)
+texture = ExtResource("8_8iu1u")
+
+[node name="Main02r" type="Sprite2D" parent="Main/02" unique_id=408610896]
+position = Vector2(562, 71)
+texture = ExtResource("5_m87qx")
+
+[node name="02r" type="Sprite2D" parent="Main/02/Main02r" unique_id=1032575678]
+position = Vector2(59, 58)
+texture = ExtResource("9_xc4fn")
+
+[node name="03" type="Node2D" parent="Main" unique_id=431888036]
+
+[node name="Main03l" type="Sprite2D" parent="Main/03" unique_id=1534122465]
+position = Vector2(320, -67)
+texture = ExtResource("5_m87qx")
+
+[node name="03l" type="Sprite2D" parent="Main/03/Main03l" unique_id=602472014]
+position = Vector2(42, 25)
+texture = ExtResource("10_b7iep")
+
+[node name="Main03r" type="Sprite2D" parent="Main/03" unique_id=444390316]
+position = Vector2(562, -67)
+texture = ExtResource("5_m87qx")
+
+[node name="03r" type="Sprite2D" parent="Main/03/Main03r" unique_id=101212270]
+position = Vector2(45, 29)
+texture = ExtResource("11_e4kd3")
+
+[node name="04" type="Node2D" parent="Main" unique_id=1003685773]
+
+[node name="Main04l" type="Sprite2D" parent="Main/04" unique_id=482757145]
+position = Vector2(320, -202)
+texture = ExtResource("5_m87qx")
+
+[node name="04l" type="Sprite2D" parent="Main/04/Main04l" unique_id=1713964946]
+position = Vector2(43, 11)
+texture = ExtResource("12_b7iep")
+
+[node name="Main04r" type="Sprite2D" parent="Main/04" unique_id=377470382]
+position = Vector2(562, -202)
+texture = ExtResource("5_m87qx")
+
+[node name="04r" type="Sprite2D" parent="Main/04/Main04r" unique_id=1326192028]
+position = Vector2(33, -3)
+texture = ExtResource("13_e4kd3")
+
+[node name="05" type="Node2D" parent="Main" unique_id=1431777639]
+
+[node name="Main05l" type="Sprite2D" parent="Main/05" unique_id=1062659135]
+position = Vector2(320, -340)
+texture = ExtResource("5_m87qx")
+
+[node name="05l" type="Sprite2D" parent="Main/05/Main05l" unique_id=1248831331]
+position = Vector2(39, 9)
+texture = ExtResource("14_p7c5i")
+
+[node name="Main05r" type="Sprite2D" parent="Main/05" unique_id=2063691285]
+position = Vector2(562, -340)
+texture = ExtResource("5_m87qx")
+
+[node name="05r" type="Sprite2D" parent="Main/05/Main05r" unique_id=1819580118]
+position = Vector2(40, 23)
+texture = ExtResource("15_v7enl")
+
+[node name="06" type="Node2D" parent="Main" unique_id=178012183]
+
+[node name="Main06Roof" type="Sprite2D" parent="Main/06" unique_id=21120332]
+position = Vector2(454, -498)
+texture = ExtResource("16_tgfpa")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1452341626]
+position = Vector2(-404, -47)
+texture = ExtResource("17_v7enl")
+script = ExtResource("18_tgfpa")
+
+[node name="Door" type="Area2D" parent="." unique_id=230369720]
+position = Vector2(442, 388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=280866750]
+position = Vector2(1, -10)
+shape = SubResource("RectangleShape2D_tmy56")
+
+[node name="hiddenCat" type="Area2D" parent="." unique_id=1460606952]
+position = Vector2(143, 379)
+
+[node name="good" type="Sprite2D" parent="hiddenCat" unique_id=169363935]
+texture = ExtResource("20_kkqmy")
+
+[node name="bad" type="Sprite2D" parent="hiddenCat" unique_id=1413604080]
+texture = ExtResource("19_oyhu1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiddenCat" unique_id=249789388]
+visible = false
+polygon = PackedVector2Array(0, -26.1, 0, -22.8, -5, -17.8, -5, -13.299999, -8, -11.799999, -10.5, -13, -17.9, -13, -22.9, -7, -26.1, -7, -20.3, 6, -20, 22, -14.700001, 26, -12.6, 26, 0, 20.3, 0, 19.5, 5.799999, 21, 10.299999, 21, 17, 5.4000015, 17, 3.7999992, 25, -3.0999985, 25, -7.799999, 15, -17.8, 15, -19.3)
+
+[node name="TimerCoolDown" type="Timer" parent="." unique_id=612493902]
+one_shot = true
+
+[connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
+[connection signal="input_event" from="hiddenCat" to="." method="_on_hidden_cat_input_event"]

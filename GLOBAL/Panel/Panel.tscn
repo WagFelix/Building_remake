@@ -1,0 +1,268 @@
+[gd_scene format=3 uid="uid://djchuwyaw436h"]
+
+[ext_resource type="Texture2D" uid="uid://7aukra8s7mv3" path="res://GLOBAL/Panel/textures/panel_bg.png" id="1_5u6pt"]
+[ext_resource type="Script" uid="uid://838526iewuer" path="res://GLOBAL/Panel/panel.gd" id="1_irine"]
+[ext_resource type="Texture2D" uid="uid://bywla5yvumr4d" path="res://GLOBAL/Panel/textures/panelAMOSTRA.png" id="2_pvbkj"]
+[ext_resource type="Texture2D" uid="uid://hbgyno4j0voo" path="res://GLOBAL/Panel/textures/edoor.png" id="2_tvifq"]
+[ext_resource type="Texture2D" uid="uid://d4n2csby61mjr" path="res://GLOBAL/Panel/textures/quit.png" id="3_3klaf"]
+[ext_resource type="Texture2D" uid="uid://b43wlyj7w3e7l" path="res://GLOBAL/Panel/textures/edoor_hover.png" id="3_dwy6x"]
+[ext_resource type="Texture2D" uid="uid://bn80ojj6wawn" path="res://GLOBAL/Panel/textures/quit_hover.png" id="4_eyt3o"]
+[ext_resource type="Texture2D" uid="uid://clt03qjmspwil" path="res://GLOBAL/Panel/textures/options.png" id="5_i7kvd"]
+[ext_resource type="Texture2D" uid="uid://mj8c2jxgtr3m" path="res://GLOBAL/Panel/textures/options_hover.png" id="6_m7l6i"]
+[ext_resource type="Texture2D" uid="uid://5pksy6ggmk3v" path="res://GLOBAL/Panel/textures/credits.png" id="7_iyitk"]
+[ext_resource type="Texture2D" uid="uid://dou557fff3yny" path="res://GLOBAL/Panel/textures/credits_hover.png" id="8_oa6p2"]
+[ext_resource type="Texture2D" uid="uid://cns828t4emdyo" path="res://GLOBAL/Panel/textures/bunker.png" id="9_l7s07"]
+[ext_resource type="Texture2D" uid="uid://fuesfvxoxuf3" path="res://GLOBAL/Panel/textures/bunker_hover.png" id="10_172lh"]
+[ext_resource type="Texture2D" uid="uid://bk4oywbcx5lkc" path="res://GLOBAL/Panel/textures/00.png" id="11_4wfpx"]
+[ext_resource type="Texture2D" uid="uid://ba0gherdoly56" path="res://GLOBAL/Panel/textures/00_hover.png" id="12_4d8ni"]
+[ext_resource type="Texture2D" uid="uid://bsyps1vymqnqd" path="res://GLOBAL/Panel/textures/01.png" id="13_kbdcn"]
+[ext_resource type="Texture2D" uid="uid://b6cb7tjdjnat7" path="res://GLOBAL/Panel/textures/01_hover.png" id="14_2dsgl"]
+[ext_resource type="Texture2D" uid="uid://bpqw8htttutyt" path="res://GLOBAL/Panel/textures/02.png" id="15_ldqe3"]
+[ext_resource type="Texture2D" uid="uid://c6h7ocl2cmq12" path="res://GLOBAL/Panel/textures/02_hover.png" id="16_irine"]
+[ext_resource type="Texture2D" uid="uid://c5eg124i4ncm1" path="res://GLOBAL/Panel/textures/03.png" id="17_h0pbm"]
+[ext_resource type="Texture2D" uid="uid://dgmmyju4giyr4" path="res://GLOBAL/Panel/textures/03_hover.png" id="18_tvifq"]
+[ext_resource type="Texture2D" uid="uid://ddi48k2e3u1my" path="res://GLOBAL/Panel/textures/04.png" id="19_dwy6x"]
+[ext_resource type="Texture2D" uid="uid://b3d7rv10sqk4w" path="res://GLOBAL/Panel/textures/04_hover.png" id="20_udlgm"]
+[ext_resource type="Texture2D" uid="uid://dxcvwcg1bjy4v" path="res://GLOBAL/Panel/textures/05.png" id="21_s2v2q"]
+[ext_resource type="Texture2D" uid="uid://cl78lc5qst68d" path="res://GLOBAL/Panel/textures/05_hover.png" id="22_1u5ci"]
+
+[node name="RootElevador" type="Control" unique_id=1210575427]
+z_index = 4095
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_irine")
+
+[node name="Call" type="TextureButton" parent="." unique_id=477670058]
+layout_mode = 0
+offset_left = 769.0
+offset_top = -446.0
+offset_right = 889.0
+offset_bottom = -310.0
+texture_normal = ExtResource("2_tvifq")
+texture_pressed = ExtResource("3_dwy6x")
+texture_hover = ExtResource("3_dwy6x")
+texture_focused = ExtResource("3_dwy6x")
+
+[node name="Panel" type="Node2D" parent="." unique_id=782739767]
+position = Vector2(443, 13)
+
+[node name="ocluder" type="TextureButton" parent="Panel" unique_id=1244513370]
+offset_left = -274.0
+offset_top = -468.0
+offset_right = 259.0
+offset_bottom = 470.0
+
+[node name="PanelBg" type="Sprite2D" parent="Panel" unique_id=1352459157]
+texture = ExtResource("1_5u6pt")
+
+[node name="PanelAmostra" type="Sprite2D" parent="Panel" unique_id=830937270]
+texture = ExtResource("2_pvbkj")
+
+[node name="Botoes" type="Node2D" parent="Panel" unique_id=2117571115]
+
+[node name="Power" type="TextureButton" parent="Panel/Botoes" unique_id=1274392594]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 243.0
+offset_right = 48.0
+offset_bottom = 339.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_3klaf")
+texture_pressed = ExtResource("4_eyt3o")
+texture_hover = ExtResource("4_eyt3o")
+texture_focused = ExtResource("4_eyt3o")
+stretch_mode = 3
+
+[node name="Options" type="TextureButton" parent="Panel/Botoes" unique_id=1364639764]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 122.0
+offset_right = 48.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_i7kvd")
+texture_pressed = ExtResource("6_m7l6i")
+texture_hover = ExtResource("6_m7l6i")
+texture_focused = ExtResource("6_m7l6i")
+stretch_mode = 3
+
+[node name="Credits" type="TextureButton" parent="Panel/Botoes" unique_id=960202784]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_iyitk")
+texture_pressed = ExtResource("8_oa6p2")
+texture_hover = ExtResource("8_oa6p2")
+texture_focused = ExtResource("8_oa6p2")
+stretch_mode = 3
+
+[node name="Bunker" type="TextureButton" parent="Panel/Botoes" unique_id=344048703]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = 324.0
+offset_right = 210.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_l7s07")
+texture_pressed = ExtResource("10_172lh")
+texture_hover = ExtResource("10_172lh")
+texture_focused = ExtResource("10_172lh")
+stretch_mode = 3
+
+[node name="0" type="TextureButton" parent="Panel/Botoes" unique_id=1800267848]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -117.0
+offset_right = -20.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("11_4wfpx")
+texture_pressed = ExtResource("12_4d8ni")
+texture_hover = ExtResource("12_4d8ni")
+texture_focused = ExtResource("12_4d8ni")
+stretch_mode = 3
+
+[node name="1" type="TextureButton" parent="Panel/Botoes" unique_id=1331566768]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -117.0
+offset_right = 115.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("13_kbdcn")
+texture_pressed = ExtResource("14_2dsgl")
+texture_hover = ExtResource("14_2dsgl")
+texture_focused = ExtResource("14_2dsgl")
+stretch_mode = 3
+
+[node name="2" type="TextureButton" parent="Panel/Botoes" unique_id=1111437727]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -240.0
+offset_right = -20.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("15_ldqe3")
+texture_pressed = ExtResource("16_irine")
+texture_hover = ExtResource("16_irine")
+texture_focused = ExtResource("16_irine")
+stretch_mode = 3
+
+[node name="3" type="TextureButton" parent="Panel/Botoes" unique_id=589730321]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -240.0
+offset_right = 115.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("17_h0pbm")
+texture_pressed = ExtResource("18_tvifq")
+texture_hover = ExtResource("18_tvifq")
+texture_focused = ExtResource("18_tvifq")
+stretch_mode = 3
+
+[node name="4" type="TextureButton" parent="Panel/Botoes" unique_id=1642126197]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -359.0
+offset_right = -20.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("19_dwy6x")
+texture_pressed = ExtResource("20_udlgm")
+texture_hover = ExtResource("20_udlgm")
+texture_focused = ExtResource("20_udlgm")
+stretch_mode = 3
+
+[node name="5" type="TextureButton" parent="Panel/Botoes" unique_id=791266158]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -359.0
+offset_right = 115.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("21_s2v2q")
+texture_pressed = ExtResource("22_1u5ci")
+texture_hover = ExtResource("22_1u5ci")
+texture_focused = ExtResource("22_1u5ci")
+stretch_mode = 3
+
+[node name="TimerCoolDown" type="Timer" parent="." unique_id=228021185]
+one_shot = true
+
+[node name="timer_change" type="Timer" parent="." unique_id=699398853]
+one_shot = true
+
+[node name="TimerQuit" type="Timer" parent="." unique_id=1323099810]
+one_shot = true
+
+[connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
+[connection signal="button_down" from="Panel/Botoes/Power" to="." method="_on_power_button_down"]
+[connection signal="button_down" from="Panel/Botoes/Credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="Panel/Botoes/Bunker" to="." method="_on_panel_button_down" binds= [0]]
+[connection signal="button_down" from="Panel/Botoes/0" to="." method="_go_home"]
+[connection signal="button_down" from="Panel/Botoes/1" to="." method="_on_panel_button_down" binds= [1]]
+[connection signal="button_down" from="Panel/Botoes/2" to="." method="_on_panel_button_down" binds= [2]]
+[connection signal="button_down" from="Panel/Botoes/3" to="." method="_on_panel_button_down" binds= [3]]
+[connection signal="button_down" from="Panel/Botoes/4" to="." method="_on_panel_button_down" binds= [4]]
+[connection signal="button_down" from="Panel/Botoes/5" to="." method="_on_panel_button_down" binds= [5]]
+[connection signal="timeout" from="timer_change" to="." method="_on_timer_change_timeout"]
+[connection signal="timeout" from="TimerQuit" to="." method="_on_timer_quit_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://h74aj20jvhvg"]
+
+[ext_resource type="Script" uid="uid://bswitj48blc2q" path="res://GLOBAL/Curtain/curtain.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cghyh71wnpo" path="res://common_textures/load.png" id="2_h5wg3"]
+[ext_resource type="Texture2D" uid="uid://dv78qs74gfawm" path="res://common_textures/hud_menu.png" id="3_njnsv"]
+[ext_resource type="Texture2D" uid="uid://g8bqnm1k4lqf" path="res://common_textures/hud_menu_hover.png" id="4_ecjo8"]
+[ext_resource type="Script" uid="uid://dxta38pyk2tsi" path="res://GLOBAL/pause_menu_button.gd" id="5_hj8tb"]
+
+[sub_resource type="SpriteFrames" id="61"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="curtain" type="Node2D"]
+z_index = 4096
+script = ExtResource("1")
+
+[node name="PauseMenu" type="TextureButton" parent="."]
+visible = false
+offset_left = 1813.0
+offset_top = 19.0
+offset_right = 1893.0
+offset_bottom = 99.0
+texture_normal = ExtResource("3_njnsv")
+texture_pressed = ExtResource("4_ecjo8")
+texture_hover = ExtResource("4_ecjo8")
+script = ExtResource("5_hj8tb")
+
+[node name="nodebuds" type="Node2D" parent="."]
+
+[node name="Loading_BK" type="AnimatedSprite2D" parent="."]
+z_index = 4096
+z_as_relative = false
+position = Vector2(-350, 1235)
+sprite_frames = SubResource("61")
+frame_progress = 0.909287
+
+[node name="Loading" type="Sprite2D" parent="."]
+z_index = 4096
+z_as_relative = false
+position = Vector2(125, 971)
+texture = ExtResource("2_h5wg3")
+
+[node name="StopAnimLoad" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="button_down" from="PauseMenu" to="PauseMenu" method="_on_button_down"]
+[connection signal="timeout" from="StopAnimLoad" to="." method="_on_stop_anim_load_timeout"]

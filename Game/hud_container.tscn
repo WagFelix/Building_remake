@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cmxial1jdsoqa"]
+
+[ext_resource type="Script" uid="uid://c0uvky3kyvjas" path="res://Game/hud_container.gd" id="1_qmilo"]
+[ext_resource type="Texture2D" uid="uid://be8ggslq62qyl" path="res://Game/_common_textures/counter/floor00-counter.png" id="2_qoaqp"]
+[ext_resource type="Theme" uid="uid://do4rw8vwqdmy" path="res://themes/counter.tres" id="4_6p4g3"]
+[ext_resource type="Texture2D" uid="uid://cmpxq4i7fl8mk" path="res://Game/_common_textures/fofinopaw.png" id="5_lkqmd"]
+[ext_resource type="FontFile" uid="uid://b03yf73o1q4j" path="res://Fonts/Adca.ttf" id="5_qoaqp"]
+[ext_resource type="Texture2D" uid="uid://dqj7m0sqfvoxu" path="res://Game/_common_textures/glass/floor0-hint.png" id="10_ylt41"]
+[ext_resource type="Script" uid="uid://8tgk30hjqcde" path="res://Game/HintCharge.gd" id="11_bnr1d"]
+[ext_resource type="Shader" uid="uid://dlwoq8llka43y" path="res://Game/hintShader.gdshader" id="12_q8ag1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b4284"]
+shader = ExtResource("12_q8ag1")
+shader_parameter/percentage = 0.0
+shader_parameter/masked_alpha = 1.0
+shader_parameter/unmasked_alpha = 0.0
+shader_parameter/horizontal = false
+shader_parameter/invert = true
+
+[node name="HudContainer" type="Control" unique_id=1891576038]
+z_index = 4095
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("1_qmilo")
+
+[node name="Counters" type="Node2D" parent="." unique_id=1961605048]
+
+[node name="bg" type="Sprite2D" parent="Counters" unique_id=753916067]
+position = Vector2(161, 100)
+texture = ExtResource("2_qoaqp")
+
+[node name="Counter" type="Label" parent="Counters" unique_id=973326764]
+auto_translate_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = 71.0
+offset_right = 172.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+theme = ExtResource("4_6p4g3")
+theme_override_colors/font_color = Color(0.8862616, 0.88626146, 0.8862615, 1)
+text = "66"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hidden" type="Node2D" parent="Counters" unique_id=1716863148]
+
+[node name="CounterHid" type="Label" parent="Counters/Hidden" unique_id=300809565]
+auto_translate_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 211.0
+offset_top = 82.0
+offset_right = 260.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("5_qoaqp")
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fofinopaw" type="Sprite2D" parent="Counters" unique_id=1882520191]
+visible = false
+position = Vector2(139, 136)
+texture = ExtResource("5_lkqmd")
+
+[node name="Hint" type="Node2D" parent="." unique_id=1979318826]
+
+[node name="Hint" type="Area2D" parent="Hint" unique_id=1504551854]
+position = Vector2(50.5, 99.5)
+
+[node name="HintButton" type="TextureButton" parent="Hint/Hint" unique_id=804761458]
+offset_left = -38.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Hint2" type="Sprite2D" parent="Hint/Hint" unique_id=609017935]
+position = Vector2(-1, 9)
+texture = ExtResource("10_ylt41")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hint/Hint" unique_id=1885777784]
+visible = false
+position = Vector2(-1, 9)
+polygon = PackedVector2Array(17.5, -39.3, 15.9, -39.5, -3.8, -39.5, -12.8, -36.5, -15.5, -36.5, -26.5, -21.5, -28.1, -21.5, -30.5, -10.7, -30.5, -4.1, -23.5, 10.8, -34.5, 25.5, -35.5, 25.5, -35.5, 38.6, -34.2, 39.5, -20.9, 39.5, -7.5, 24.3, 3.3, 26.5, 4.8, 26.5, 17.8, 22.5, 20.4, 22.5, 31.4, 10.5, 33.1, 10.5, 35.5, 0.5, 35.5, -20.2, 28.5, -29.2, 28.5, -31.7, 17.5, -37.8)
+
+[node name="TimerUnhint" type="Timer" parent="Hint/Hint" unique_id=795750545]
+one_shot = true
+
+[node name="TimerZoom" type="Timer" parent="Hint/Hint" unique_id=2073474111]
+one_shot = true
+
+[node name="HintCharge" type="Sprite2D" parent="Hint" unique_id=2098765106 node_paths=PackedStringArray("Hud")]
+self_modulate = Color(1, 1, 1, 0.341176)
+position = Vector2(49.5, 108.5)
+texture = ExtResource("10_ylt41")
+script = ExtResource("11_bnr1d")
+Hud = NodePath("../..")
+
+[node name="HintCharge" type="Sprite2D" parent="Hint/HintCharge" unique_id=1393935504]
+material = SubResource("ShaderMaterial_b4284")
+texture = ExtResource("10_ylt41")
+
+[node name="CoolDown" type="Timer" parent="Hint/HintCharge" unique_id=1126614603]
+one_shot = true
+
+[node name="hide_area" type="Area2D" parent="." unique_id=1199281966]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hide_area" unique_id=32667284]
+visible = false
+position = Vector2(161, 100)
+polygon = PackedVector2Array(-8.599998, -79, -31.5, -79, -49, -71.3, -57.9, -72, -70, -59.2, -82.5, -52, -106, -30, -112, -18.099998, -112, 19.199997, -108, 28.800003, -96, 41.800003, -69, 63.899994, -62, 69.899994, -47.800003, 71, -31.5, 79, -8.199997, 79, 7.5999985, 71.8, 18.800003, 73, 30, 61.800003, 44.699997, 52, 57, 41, 64.5, 41, 83.5, 41, 91.5, 37, 108.399994, 24, 112, 15, 112, -17.8, 105, -28, 95, -35, 77, -40.7, 58.800003, -38, 50, -46.8, 30.600006, -60, 29, -64, 20, -71, 7.5999985, -71)
+
+[connection signal="button_down" from="Hint/Hint/HintButton" to="." method="_on_hint_button_button_down"]
+[connection signal="timeout" from="Hint/Hint/TimerUnhint" to="." method="_on_timer_unhint_timeout"]
+[connection signal="timeout" from="Hint/Hint/TimerZoom" to="." method="_on_timer_zoom_timeout"]
+[connection signal="mouse_entered" from="hide_area" to="." method="_on_hide_area_mouse_entered"]
+[connection signal="mouse_exited" from="hide_area" to="." method="_on_hide_area_mouse_exited"]

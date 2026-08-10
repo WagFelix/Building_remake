@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bsqr1f6k0n504"]
+
+[ext_resource type="Script" uid="uid://bijgl3umdau8" path="res://GLOBAL/google/googleplay.gd" id="1_cgfb1"]
+[ext_resource type="Script" uid="uid://dnk14usarrmn0" path="res://addons/GodotPlayGameServices/scripts/sign_in/sign_in_client.gd" id="2_y6h3q"]
+[ext_resource type="Script" uid="uid://cy1p4kxg1yupn" path="res://addons/GodotPlayGameServices/scripts/achievements/achievements_client.gd" id="3_y6h3q"]
+
+[node name="Googleplay" type="Node2D" unique_id=1330767300]
+z_index = 4096
+script = ExtResource("1_cgfb1")
+
+[node name="PlayGamesSignInClient" type="Node" parent="." unique_id=1480507698]
+script = ExtResource("2_y6h3q")
+metadata/_custom_type_script = "uid://dnk14usarrmn0"
+
+[node name="Label" type="Label" parent="." unique_id=1033325085]
+visible = false
+z_index = 4096
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = ":"
+
+[node name="PlayGamesAchievementsClient" type="Node" parent="." unique_id=533153100]
+script = ExtResource("3_y6h3q")
+metadata/_custom_type_script = "uid://cy1p4kxg1yupn"

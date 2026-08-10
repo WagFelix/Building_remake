@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cws458u43yxkp"]
+
+[ext_resource type="Script" uid="uid://fdq2dja28qv0" path="res://GLOBAL/steam/steam.gd" id="1"]
+
+[node name="SteamHolder" type="Node"]
+script = ExtResource("1")
