@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://woi8iky2tb1c" path="res://Options/options.gd" id="1_ymabl"]
 [ext_resource type="Texture2D" uid="uid://cxh4tw2pnbsiq" path="res://Options/textures/options.png" id="2_0js2d"]
-[ext_resource type="Texture2D" uid="uid://f3pd44myfrwg" path="res://Map/textures/quitpause.png" id="2_ijs52"]
-[ext_resource type="Texture2D" uid="uid://dn4kj63etip2b" path="res://Map/textures/quitpause_hover.png" id="3_ih4eh"]
 [ext_resource type="Texture2D" uid="uid://ndgnourhv86u" path="res://Options/textures/optionsAMOSTRA.png" id="3_k861w"]
 [ext_resource type="Script" uid="uid://bcfg04kq13iu" path="res://Options/MouseSlider.gd" id="4_1hnby"]
 [ext_resource type="Texture2D" uid="uid://dxefl8e37dn8" path="res://Options/textures/mouse_slider_point.png" id="5_jkiyy"]
@@ -33,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://ddfh212dpulcx" path="res://Options/textures/screen_off.png" id="27_2mi1a"]
 [ext_resource type="Texture2D" uid="uid://dswmkiax7j40m" path="res://Options/textures/screen_on.png" id="28_m2gtq"]
 [ext_resource type="Theme" uid="uid://ctynlj5ft6utu" path="res://themes/screen_choice.tres" id="29_i578d"]
+[ext_resource type="Texture2D" uid="uid://cio1ks4v8xwdo" path="res://common_textures/backmenu.png" id="32_f6t45"]
+[ext_resource type="Texture2D" uid="uid://t4rjharpf3c4" path="res://common_textures/backmenu_hover.png" id="33_erlvw"]
+[ext_resource type="Texture2D" uid="uid://cqu71bg10mrb5" path="res://Options/textures/options_cat.png" id="34_erlvw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6n73"]
 bg_color = Color(1, 1, 1, 1)
@@ -200,21 +201,9 @@ region = Rect2(0, 1650, 529, 150)
 atlas = ExtResource("20_om4x7")
 region = Rect2(0, 1800, 529, 150)
 
-[sub_resource type="AtlasTexture" id="59"]
-atlas = ExtResource("20_om4x7")
-region = Rect2(0, 1950, 529, 150)
-
 [sub_resource type="AtlasTexture" id="62"]
 atlas = ExtResource("20_om4x7")
 region = Rect2(0, 2400, 529, 150)
-
-[sub_resource type="AtlasTexture" id="60"]
-atlas = ExtResource("20_om4x7")
-region = Rect2(0, 2100, 529, 150)
-
-[sub_resource type="AtlasTexture" id="61"]
-atlas = ExtResource("20_om4x7")
-region = Rect2(0, 2250, 529, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xueyo"]
 animations = [{
@@ -259,18 +248,9 @@ animations = [{
 "texture": SubResource("58")
 }, {
 "duration": 1.0,
-"texture": SubResource("59")
-}, {
-"duration": 1.0,
 "texture": SubResource("62")
-}, {
-"duration": 1.0,
-"texture": SubResource("60")
-}, {
-"duration": 1.0,
-"texture": SubResource("61")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -298,10 +278,10 @@ one_shot = true
 
 [node name="MouseSlider" type="Control" parent="." unique_id=1786445119]
 anchors_preset = 0
-offset_left = 236.0
-offset_top = 1136.0
-offset_right = 236.0
-offset_bottom = 1136.0
+offset_left = 308.0
+offset_top = 1188.0
+offset_right = 308.0
+offset_bottom = 1188.0
 script = ExtResource("4_1hnby")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MouseSlider" unique_id=1284421638]
@@ -312,27 +292,27 @@ offset_right = 311.0
 offset_bottom = 26.0
 
 [node name="TextureProgress" type="HSlider" parent="MouseSlider/HBoxContainer" unique_id=1632041566]
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+layout_direction = 2
 theme = SubResource("Theme_7k72d")
 value = 80.0
 
 [node name="MusicSlider" type="Control" parent="." unique_id=630606084]
 anchors_preset = 0
-offset_left = -352.0
-offset_top = 91.0
-offset_right = -352.0
-offset_bottom = 91.0
+offset_left = -562.0
+offset_top = -156.0
+offset_right = -562.0
+offset_bottom = -156.0
 script = ExtResource("6_0js2d")
 
 [node name="mute" type="TextureButton" parent="MusicSlider" unique_id=1276755011]
 layout_mode = 0
-offset_left = -146.0
-offset_top = 7.0
-offset_right = -8.0
-offset_bottom = 88.0
+offset_left = -79.0
+offset_top = 8.0
+offset_right = 2.0
+offset_bottom = 89.0
 
 [node name="Cancel" type="Sprite2D" parent="MusicSlider/mute" unique_id=1032476468]
 position = Vector2(28, 43)
@@ -349,18 +329,18 @@ texture_progress = ExtResource("9_erlvw")
 
 [node name="SfxSlider" type="Control" parent="." unique_id=1761374070]
 anchors_preset = 0
-offset_left = -352.0
-offset_top = 218.0
-offset_right = -352.0
-offset_bottom = 218.0
+offset_left = -562.0
+offset_top = 43.0
+offset_right = -562.0
+offset_bottom = 43.0
 script = ExtResource("10_3a7aq")
 
 [node name="mute" type="TextureButton" parent="SfxSlider" unique_id=1065467277]
 layout_mode = 0
-offset_left = -158.0
-offset_top = 13.0
-offset_right = -5.0
-offset_bottom = 83.0
+offset_left = -87.0
+offset_top = 15.0
+offset_right = -6.0
+offset_bottom = 85.0
 
 [node name="Cancel" type="Sprite2D" parent="SfxSlider/mute" unique_id=1950112584]
 position = Vector2(40, 33)
@@ -412,10 +392,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -434.0
-offset_top = -72.0
-offset_right = -246.0
-offset_bottom = 52.0
+offset_left = -646.0
+offset_top = -393.0
+offset_right = -458.0
+offset_bottom = -269.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("12_on5rx")
@@ -440,10 +420,10 @@ texture = ExtResource("13_scspf")
 
 [node name="Windowed" type="TextureButton" parent="." unique_id=347070831]
 layout_mode = 0
-offset_left = -142.0
-offset_top = -63.0
-offset_right = -34.0
-offset_bottom = 43.0
+offset_left = -354.0
+offset_top = -384.0
+offset_right = -246.0
+offset_bottom = -278.0
 texture_normal = ExtResource("14_m53ma")
 
 [node name="WindowAnimation" type="AnimationPlayer" parent="Windowed" unique_id=1143899870]
@@ -465,10 +445,10 @@ texture = ExtResource("15_6p4w6")
 
 [node name="cursorSize1" type="TextureButton" parent="." unique_id=405504528]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 114.0
-offset_right = 189.0
-offset_bottom = 168.0
+offset_left = -722.0
+offset_top = 223.0
+offset_right = -622.0
+offset_bottom = 277.0
 texture_normal = ExtResource("16_smkjv")
 
 [node name="off" type="Sprite2D" parent="cursorSize1" unique_id=1066727776]
@@ -487,10 +467,10 @@ texture = ExtResource("17_v50pj")
 
 [node name="cursorSize2" type="TextureButton" parent="." unique_id=724642717]
 layout_mode = 0
-offset_left = 195.0
-offset_top = 113.0
-offset_right = 295.0
-offset_bottom = 167.0
+offset_left = -624.0
+offset_top = 222.0
+offset_right = -524.0
+offset_bottom = 276.0
 texture_normal = ExtResource("18_napaj")
 
 [node name="off" type="Sprite2D" parent="cursorSize2" unique_id=88191030]
@@ -514,10 +494,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 89.0
-offset_top = 231.0
-offset_right = 561.0
-offset_bottom = 315.0
+offset_left = -447.0
+offset_top = 213.0
+offset_right = 25.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -540,14 +520,14 @@ position = Vector2(42, 41)
 [node name="SpriteLang" type="AnimatedSprite2D" parent="Language" unique_id=656031805]
 position = Vector2(222, 37)
 sprite_frames = SubResource("SpriteFrames_xueyo")
-frame = 9
+frame = 13
 
 [node name="Slot1" type="TextureButton" parent="." unique_id=1670654925]
 layout_mode = 0
-offset_left = 88.0
-offset_top = -66.0
-offset_right = 208.0
-offset_bottom = 38.0
+offset_left = 410.0
+offset_top = -319.0
+offset_right = 530.0
+offset_bottom = -215.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot1" unique_id=1255040416]
 position = Vector2(85, 57)
@@ -558,10 +538,10 @@ texture = ExtResource("21_c37io")
 
 [node name="Slot2" type="TextureButton" parent="." unique_id=849889159]
 layout_mode = 0
-offset_left = 269.0
-offset_top = -67.0
-offset_right = 389.0
-offset_bottom = 37.0
+offset_left = 591.0
+offset_top = -320.0
+offset_right = 711.0
+offset_bottom = -216.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot2" unique_id=1291929051]
 position = Vector2(85, 57)
@@ -577,10 +557,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 201.0
-offset_top = -31.0
-offset_right = 261.0
-offset_bottom = 47.0
+offset_left = 523.0
+offset_top = -284.0
+offset_right = 583.0
+offset_bottom = -206.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("23_76ysa")
@@ -596,10 +576,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 382.0
-offset_top = -31.0
-offset_right = 442.0
-offset_bottom = 47.0
+offset_left = 704.0
+offset_top = -284.0
+offset_right = 764.0
+offset_bottom = -206.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("23_76ysa")
@@ -628,7 +608,7 @@ offset_right = 328.0
 offset_bottom = 125.0
 
 [node name="Sprite" type="Sprite2D" parent="Delete/Popup/No" unique_id=514381511]
-position = Vector2(78, 40)
+position = Vector2(59, 40)
 texture = ExtResource("25_fhnja")
 
 [node name="Yes" type="TextureButton" parent="Delete/Popup" unique_id=1419320730]
@@ -638,14 +618,14 @@ offset_right = 104.0
 offset_bottom = 117.0
 
 [node name="Sprite" type="Sprite2D" parent="Delete/Popup/Yes" unique_id=735666772]
-position = Vector2(184, 40)
+position = Vector2(224, 40)
 texture = ExtResource("26_mgv2w")
 
 [node name="timerpop" type="Timer" parent="Delete/Popup" unique_id=807891948]
 one_shot = true
 
 [node name="multiScreen" type="Node2D" parent="." unique_id=609146385]
-position = Vector2(341, 112)
+position = Vector2(-423, 414)
 
 [node name="screen1" type="TextureButton" parent="multiScreen" unique_id=2044597416]
 offset_right = 40.0
@@ -711,13 +691,13 @@ vertical_alignment = 1
 
 [node name="Close" type="TextureButton" parent="." unique_id=1158362534]
 layout_mode = 0
-offset_left = 840.0
-offset_top = -520.0
-offset_right = 936.0
-offset_bottom = -426.0
-texture_normal = ExtResource("2_ijs52")
-texture_pressed = ExtResource("3_ih4eh")
-texture_hover = ExtResource("3_ih4eh")
+offset_left = -942.0
+offset_top = 419.0
+offset_right = -898.0
+offset_bottom = 458.0
+texture_normal = ExtResource("32_f6t45")
+texture_pressed = ExtResource("33_erlvw")
+texture_hover = ExtResource("33_erlvw")
 
 [node name="Label" type="Label" parent="." unique_id=1776702411]
 layout_mode = 0
@@ -728,7 +708,22 @@ offset_bottom = 374.0
 theme_override_colors/font_color = Color(0.2784314, 0.8745098, 1, 1)
 theme_override_colors/font_outline_color = Color(0.11372549, 0.43137255, 0.8156863, 1)
 theme_override_constants/outline_size = 1
-text = "V.1.0.3"
+text = "V.1.0.0"
+
+[node name="hiddenCat" type="Area2D" parent="." unique_id=1288104999]
+position = Vector2(432, 387)
+
+[node name="good" type="Sprite2D" parent="hiddenCat" unique_id=627884103]
+position = Vector2(160, -47)
+texture = ExtResource("34_erlvw")
+
+[node name="bad" type="Sprite2D" parent="hiddenCat" unique_id=433419650]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiddenCat" unique_id=505199816]
+polygon = PackedVector2Array(14, -17, 5, -12, -3, -5, -6, 9, -1, 18, 10, 19, 26, 10, 28, -18)
+
+[node name="TimerCoolDown" type="Timer" parent="." unique_id=1889641208]
+one_shot = true
 
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
 [connection signal="mouse_entered" from="MouseSlider/HBoxContainer/TextureProgress" to="MouseSlider" method="_on_TextureProgress_mouse_entered"]
@@ -764,11 +759,7 @@ text = "V.1.0.3"
 [connection signal="mouse_entered" from="Slot2" to="." method="_on_slot_2_mouse_entered"]
 [connection signal="mouse_exited" from="Slot2" to="." method="_on_slot_2_mouse_exited"]
 [connection signal="button_down" from="DeleteBtn" to="." method="_on_Delete_input_event" binds= [1]]
-[connection signal="mouse_entered" from="DeleteBtn" to="." method="_on_Delete_mouse_entered" binds= [1]]
-[connection signal="mouse_exited" from="DeleteBtn" to="." method="_on_Delete_mouse_exited" binds= [1]]
 [connection signal="button_down" from="DeleteBtn2" to="." method="_on_Delete_input_event" binds= [2]]
-[connection signal="mouse_entered" from="DeleteBtn2" to="." method="_on_Delete_mouse_entered" binds= [2]]
-[connection signal="mouse_exited" from="DeleteBtn2" to="." method="_on_Delete_mouse_exited" binds= [2]]
 [connection signal="button_down" from="Delete/Popup/No" to="." method="_on_no_input_event"]
 [connection signal="mouse_entered" from="Delete/Popup/No" to="." method="_on_no_mouse_entered"]
 [connection signal="mouse_exited" from="Delete/Popup/No" to="." method="_on_no_mouse_exited"]
@@ -779,3 +770,4 @@ text = "V.1.0.3"
 [connection signal="button_down" from="multiScreen/screen2" to="." method="_on_screen_button_down" binds= [1]]
 [connection signal="button_down" from="multiScreen/screen3" to="." method="_on_screen_button_down" binds= [2]]
 [connection signal="button_down" from="Close" to="." method="_on_close_button_down"]
+[connection signal="input_event" from="hiddenCat" to="." method="_on_hidden_cat_input_event"]

@@ -256,6 +256,7 @@ one_shot = true
 
 [connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Power" to="." method="_on_power_button_down"]
+[connection signal="button_down" from="Panel/Botoes/Options" to="." method="_on_options_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Bunker" to="." method="_on_panel_button_down" binds= [0]]
 [connection signal="button_down" from="Panel/Botoes/0" to="." method="_go_home"]

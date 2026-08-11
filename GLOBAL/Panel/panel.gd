@@ -126,3 +126,8 @@ func _on_credits_button_down() -> void:
 	SChanger._LoadNewScene("res://Credits/credits.tscn", self)
 	tweenChange()
 	
+
+
+func _on_options_button_down() -> void:
+	SChanger._LoadNewScene("res://Options/options.tscn", self)
+	tweenChange()

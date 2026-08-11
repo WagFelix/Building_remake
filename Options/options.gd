@@ -5,6 +5,7 @@ extends Control
 @onready var mouseslider := $MouseSlider/HBoxContainer/TextureProgress
 @onready var ambienceslider := $AmbienceSlider/HBoxContainer/TextureProgress
 
+@export var changeType : int =1
 
 var poptimer : float = .3 #timer before options is clickable
 @onready var timerpop :=$Delete/Popup/timerpop
@@ -12,7 +13,7 @@ var poptimer : float = .3 #timer before options is clickable
 var arquivoCFG = ConfigFile.new()
 
 
-var optLang = ["Eng", "Por", "Kor", "Sch", "Jap",  "Rus", "Spa", "Spa", "Ger", "Fre", "Tur", "Pol", "Ita", "Ukr", "Tsh"]
+var optLang = ["Eng", "Por", "Kor", "Sch", "Jap",  "Rus", "Spa", "Spa", "Ger", "Fre", "Tur", "Pol", "Ita", "Tsh"]
 #var optLang = ["Eng"]
 
 	
@@ -23,7 +24,7 @@ var slotDelete : int = 0
 
 var stopscene = false
 @onready var timer := $TimerChange
-var timeTrans := .6
+var timeTrans := 1.2
 @export var inColor := Color(0.784, 0.733, 0.965, 1)
 @export var outColor := Color(0.784, 0.733, 0.965, 1)
 @export var alternativeOutColor := Color(1.0, 0.835, 0.949, 1)
@@ -31,10 +32,39 @@ var timeTrans := .6
 
 var changing := false
 
+
+@onready var tdown := $TimerCoolDown
+#@onready var timer := $TimerChange
+@export var coolDown := 0.123
+var mouse_pos := Vector2(0,0) # pra evitar clique falso
+var safe_distance : float = 20 # pra evitar clique falso
+var timeFadeBad := .29
+
 func _ready() -> void:
-	Map.whereIAm = "0"
-	Map.enterRoom("0")
+	#Map.whereIAm = "0"
+	#Map.enterRoom("0")
+	
+	
+	GlobalPanel._hidePanel()
 	SChanger._LoadNewScene("res://Menu/Menu.tscn", self)
+	Elevador._openE()
+	var credits = functions.loadGeneral("options", "StrayCats")
+	if credits==null:
+		credits=false
+	if credits == true:
+		$hiddenCat/bad.visible=false
+		$hiddenCat/good.visible=true
+		GlobalSteam._give("Options") #credits
+	else:
+		$hiddenCat/bad.visible=true
+		$hiddenCat/good.visible=false
+	
+	
+	
+	
+	
+	
+
 	if DisplayServer.get_screen_count()>1:
 		$multiScreen.visible=true
 		if DisplayServer.get_screen_count()<3:
@@ -176,9 +206,9 @@ func _on_language_button_down() -> void:
 		$Delete/Popup.set_texture(tDel)
 	functions.save_settings(false)
 	LangText.loadLanguage()
-	Map.change_lang() #aqui trocar os textos do mapa/tela de pause
-	LangText.loadLanguage()#so pra carregar mais uma vez depois do mapa
-	Map.change_lang()
+	#Map.change_lang() #aqui trocar os textos do mapa/tela de pause
+	#LangText.loadLanguage()#so pra carregar mais uma vez depois do mapa
+	#Map.change_lang()
 	#langChange()
 
 
@@ -402,8 +432,6 @@ func _on_screen_button_down(extra: int) -> void:
 	
 func _on_close_button_down() -> void:
 	if changing!=true:
-		MusicController.playSFX(backSound)
-		changing=true
 		tweenChange()
 
 
@@ -412,11 +440,22 @@ func _on_close_button_down() -> void:
 	
 func tweenChange(prel=""):
 	stopscene=true
+	functions.inMenu==true
+	#PauseMenu.mostra(false)
 	if prel!="":
 		#print("OREL: ", prel)
 		SChanger._LoadNewScene(prel, self)
 	timer.start(timeTrans) 
-	Curtain.showCurtain(inColor, outColor, .6, 1)
+	
+	
+	SChanger.changeType=changeType # pra troca sem preloader
+	
+	if changeType==0: #cortina
+		Curtain.showCurtain(inColor, outColor, .6, 1)
+	elif changeType==1: #elevador
+		Elevador._closeE()
+	else: #failsafe
+		Elevador._closeE()
 		
 			
 func _on_timer_change_timeout():
@@ -429,3 +468,20 @@ func _on_timer_change_timeout():
 		
 	else:
 		timer.start(.05)	
+
+
+func _on_hidden_cat_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false):
+			if $hiddenCat/bad.visible==true and $hiddenCat/bad.modulate==Color(1,1,1,1):
+				tdown.start(coolDown)
+				$hiddenCat/good.visible=true
+				var TweenCat2 : Tween
+				TweenCat2 = create_tween()
+				TweenCat2.stop()
+				TweenCat2.set_trans(Tween.TRANS_LINEAR)
+				TweenCat2.set_ease(Tween.EASE_IN_OUT)
+				TweenCat2.tween_property($hiddenCat/bad, "modulate", Color(1,1,1,0), timeFadeBad)
+				TweenCat2.play()
+				MusicController.playSFX("res://SFX/cats.mp3", 1, 0.001)
+				functions.saveGeneral("options", true, "StrayCats")
+				GlobalSteam._give("Options") #cradits

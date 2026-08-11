@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://bw7uo58esqdb1"
 [autoload]
 
 functions="*uid://bgtit1f7afh6w"
+LangText="*uid://b525tg3p88t34"
 GlobalSteam="*uid://fdq2dja28qv0"
 SChanger="*uid://bdl3qddduofy5"
 MusicController="*uid://bvexohejhbfat"
