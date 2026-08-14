@@ -73,8 +73,15 @@ func _on_tweenmostra() -> void:
 
 
 func _on_power_button_down() -> void:
-	Elevador.get_node("Container/esquerda/quit").visible=true
-	Elevador.get_node("Container/direita/quit").visible=true
+	var eEsquerda = Elevador.get_node("Container/esquerda/quit")
+	var eDireita = Elevador.get_node("Container/direita/quit")
+	eEsquerda.visible=true
+	eDireita.visible=true
+	var spriteD = "res://GLOBAL/Elevador/textures/elevator-leftQuit"+functions.langChoice+".png"
+	var spriteE = "res://GLOBAL/Elevador/textures/elevator-rightQuit"+functions.langChoice+".png"
+	eEsquerda.set_texture(load(spriteE))
+	eDireita.set_texture(load(spriteD))
+	
 	Elevador._closeE()
 	$TimerQuit.start(5.666)
 

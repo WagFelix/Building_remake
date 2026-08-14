@@ -61,6 +61,9 @@
 [ext_resource type="Texture2D" uid="uid://ch3wcbyp4vn3s" path="res://Game/one/textures/01bath/hidden/hidden01a.png" id="56_ukqyp"]
 [ext_resource type="Texture2D" uid="uid://b5kd0pvei6apn" path="res://Game/one/textures/01bath/hidden/hidden02.png" id="57_ogp40"]
 [ext_resource type="Texture2D" uid="uid://bjowlpbwumlpg" path="res://Game/one/textures/01bath/hidden/hidden02a.png" id="58_nwxs4"]
+[ext_resource type="Texture2D" uid="uid://bptves7v7vrpf" path="res://Game/one/textures/01bath/fo01.png" id="59_1wmb4"]
+[ext_resource type="Texture2D" uid="uid://6tf1vsy2n0nm" path="res://Game/one/textures/01bath/hidden/hidden03.png" id="59_ukqyp"]
+[ext_resource type="Texture2D" uid="uid://cta5jlf6vgsbu" path="res://Game/one/textures/01bath/hidden/hidden03a.png" id="60_ogp40"]
 
 [sub_resource type="Gradient" id="Gradient_mr0lr"]
 offsets = PackedFloat32Array(0.0361111, 0.25)
@@ -113,10 +116,10 @@ rect = Rect2(-1, -1, 1, 1)
 texture = ExtResource("3_y4cl6")
 
 [node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
+visible = false
 texture = ExtResource("4_kir30")
 
 [node name="AreaClicks" type="Node2D" parent="Room" unique_id=1885924706]
-visible = false
 z_index = 1
 z_as_relative = false
 
@@ -421,10 +424,6 @@ texture = ExtResource("58_nwxs4")
 visible = false
 polygon = PackedVector2Array(30, -189.7, 30, -186.8, 27.199997, -184, 25.399994, -184, 23, -173.2, 23, -161.5, 20.899994, -158, 18.199997, -158, 21, -149.7, 21, -146.6, 28.899994, -143.7, 26.199997, -125, 24.800003, -125, 26, -109.79999, 26, -108.70001, 17, -97, 14.800003, -97, 16, -81.79999, 16, -79.100006, 22, -74.100006, 22, -72.399994, 35.800003, -69, 39.800003, -69, 47, -76.20001, 47, -83.899994, 38.699997, -91, 35.5, -91, 37, -93.399994, 37, -94.899994, 40, -96.899994, 70.3, -97, 75.3, -108, 77.399994, -108, 70.100006, -146.4, 73.5, -148, 75.7, -148, 77, -155.8, 77, -159.8, 73.8, -163, 71.7, -163, 69, -180.3, 69, -182.8, 62.800003, -189, 57.300003, -189, 49.100006, -182, 43.800003, -182, 41, -184.8, 41, -186.5)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Room/hiddenAreas/02/hidden/catarea" unique_id=1920966529]
-visible = false
-polygon = PackedVector2Array(53, 147.79999, 39, 154.79999, 34.800003, 155, 32, 152.20001, 32, 150.29999, 21, 148.70001, 21, 151.20001, 19.199997, 153, 17.399994, 153, 13, 171.79999, 13, 174, 10.300003, 176, 6.800003, 176, 9.899994, 182.20001, 9, 183.20001, 9, 187.29999, 16.399994, 190.40002, 12.600006, 202, 10.399994, 202, 12, 208, 12, 211, 17, 214.90002, 17, 217.20001, 40, 214.79999, 47.800003, 216, 60.5, 216, 70, 211.20001, 80.2, 210, 87.100006, 210, 89.100006, 207, 91.100006, 207, 90, 175.90002, 90, 171.90002, 87, 169.90002, 87, 167.59998, 62.600006, 172, 60.699997, 172, 58, 158.59998, 58, 155, 53, 151)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/02" unique_id=2087435644]
 visible = false
 polygon = PackedVector2Array(-9, 259, -20, 235, -25, 214, -25, -213, -16, -220, -2, -254, 8, -271, 32, -324, 43, -356, 72, -373, 85, -345, 117, -331, 130, -298, 149, -298, 166, -248, 159, 230, 151, 245, 123, 263, 111, 321, 84, 328, 67, 357, 46, 358, 26, 338, 19, 306)
@@ -435,7 +434,44 @@ texture = ExtResource("57_ogp40")
 hframes = 3
 frame = 2
 
+[node name="03" type="Area2D" parent="Room/hiddenAreas" unique_id=1419993686]
+position = Vector2(1040, -144)
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1912706441]
+texture = ExtResource("59_ukqyp")
+hframes = 3
+frame = 1
+
+[node name="hidden" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1741916613]
+texture = ExtResource("59_ukqyp")
+hframes = 3
+
+[node name="catarea" type="Area2D" parent="Room/hiddenAreas/03/hidden" unique_id=557577639]
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/03/hidden/catarea" unique_id=1539153925]
+texture = ExtResource("60_ogp40")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Room/hiddenAreas/03/hidden/catarea" unique_id=1202849747]
+visible = false
+polygon = PackedVector2Array(53, 147.79999, 39, 154.79999, 34.800003, 155, 32, 152.20001, 32, 150.29999, 21, 148.70001, 21, 151.20001, 19.199997, 153, 17.399994, 153, 13, 171.79999, 13, 174, 10.300003, 176, 6.800003, 176, 9.899994, 182.20001, 9, 183.20001, 9, 187.29999, 16.399994, 190.40002, 12.600006, 202, 10.399994, 202, 12, 208, 12, 211, 17, 214.90002, 17, 217.20001, 40, 214.79999, 47.800003, 216, 60.5, 216, 70, 211.20001, 80.2, 210, 87.100006, 210, 89.100006, 207, 91.100006, 207, 90, 175.90002, 90, 171.90002, 87, 169.90002, 87, 167.59998, 62.600006, 172, 60.699997, 172, 58, 158.59998, 58, 155, 53, 151)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/03" unique_id=989870499]
+visible = false
+polygon = PackedVector2Array(-9, 259, -20, 235, -25, 214, -25, -213, -16, -220, -2, -254, 8, -271, 32, -324, 43, -356, 72, -373, 85, -345, 117, -331, 130, -298, 149, -298, 166, -248, 159, 230, 151, 245, 123, 263, 111, 321, 84, 328, 67, 357, 46, 358, 26, 338, 19, 306)
+
+[node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1933833109]
+z_index = -1
+texture = ExtResource("57_ogp40")
+hframes = 3
+frame = 2
+
 [node name="ExtraAreas" type="Node2D" parent="Room" unique_id=1514077829]
+
+[node name="01" type="Area2D" parent="Room/ExtraAreas" unique_id=961293021]
+position = Vector2(983, 209)
+
+[node name="fofis" type="Sprite2D" parent="Room/ExtraAreas/01" unique_id=1285537628]
+texture = ExtResource("59_1wmb4")
 
 [node name="ParticleHint" type="CPUParticles2D" parent="Room" unique_id=1193429257]
 z_index = 4095
@@ -503,4 +539,6 @@ preloadScene = "res://Game/one/one.tscn"
 [node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
 layout_mode = 1
 
+[connection signal="input_event" from="Room/hiddenAreas/02" to="." method="_on_HiddenOpen" binds= [2, 3]]
+[connection signal="input_event" from="Room/hiddenAreas/03" to="." method="_on_HiddenOpen" binds= [3, 2]]
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]

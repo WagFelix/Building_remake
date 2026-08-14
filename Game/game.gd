@@ -2,7 +2,8 @@ extends Control
 #ATENÇAO, nao usar o Building Remake como modelo pra jogos futuros. É um modelo muito simpplificado. Usar Flats ou Building 2 mobile de ferefencia...
 
 var thisRoom := "0"
-
+@export var has_fofinho := true
+@export var wAndar := "one"
 
 
 @export var from_center:=false # define se os limites da tela são calculados a partir do centro, util pra cenas que possuem bordas mascaradas, como o Altered Kitty do Building 2
@@ -25,6 +26,7 @@ var lerptime :float= .06
 
 @export var catSound := "res://SFX/cats.mp3"
 @export var hidSound := "res://SFX/hidden.mp3"
+@export var extrasSound := "res://SFX/fofinho.mp3"
 
 ################ scroll #####################
 var zoom_pos := Vector2(0,0)
@@ -101,15 +103,15 @@ var nsp:=Vector2(0,0)
 
 @export var hideBad := false
 @export var hideGood := false
-@export var hideBadExtra := true
-@export var scaleExtra := true
+#@export var hideBadExtra := true
+#@export var scaleExtra := false
 
 var lockDrag := false
 var hudTrans := [false,false]
 var allowFind := true
 @export var allowFindExtra := true
 @export var extraItem = ""
-@export var dissolveExtra = true #se true, usa o shader de dissolver
+#@export var dissolveExtra = true #se true, usa o shader de dissolver
 
 
 
@@ -162,9 +164,15 @@ func _ready() -> void:
 			pass
 		else:
 			hintLeft=tudo[3]
-	if tudo[4]!=null:
-		roomExtras = tudo[4]
-	
+	#if tudo[4]!=null:
+		#roomExtras = tudo[4]
+	var buscaExtras = functions.loadGeneral(wAndar,"roomExtras")
+	if buscaExtras!=null:
+		roomExtras=buscaExtras
+	else:
+		roomExtras=[false, false, false]
+		
+	functions.saveGeneral(wAndar,roomExtras,"roomExtras")
 	var contaCats = 0
 	
 	#$Room/AreaClicks.visible=false
@@ -286,13 +294,8 @@ func _ready() -> void:
 	######################## pre definida, entre as    ########################
 	######################## duas salas do apartamento ########################
 	###########################################################################
-	var extraAreas = $Room.get_node_or_null("ExtraAreas")
-	if extraAreas:
-		contaCats = 0
-		var roomcatsH = extraAreas.get_children()
-		for child in roomcatsH:
-			var areaNodes = child.get_children()
-			####continuar programação do fofinho aqui
+	if has_fofinho==true:
+		_mostrafofinho(false)
 	
 	
 	if hintLeft==0 :
@@ -310,8 +313,116 @@ func _ready() -> void:
 	nsp=room_pos_init
 	reposiciona_limitadores()
 
+
+func _mostrafofinho(tocasom=false) -> void :
+	var extraAreas = $Room.get_node_or_null("ExtraAreas")
+	if roomExtras==[true,true,true]:
+		$HudContainer/Counters/Fofinopaw.visible=true
+		if tocasom==true:
+			MusicController.playSFX("res://SFX/yes.mp3")
+	if extraAreas:
+		#contaCats = 0
+		var roomcatsH = extraAreas.get_children()
+		for child in roomcatsH:
+			var areaNodes = child.get_children()
+			var selfNode = int(child.name)
+			var criaArea := false
+			if selfNode==0:
+				if roomExtras[0]==false and roomExtras[1]!=true and roomExtras[2]!=true:
+					child.visible=true
+					criaArea=true
+				else:
+					child.visible=false
+					criaArea=false
+			if selfNode==1:
+				if roomExtras[0]==true and roomExtras[1]!=true and roomExtras[2]!=true:
+					child.visible=true
+					criaArea=true
+				else:
+					child.visible=false
+					criaArea=false
+			if selfNode==2:
+				if roomExtras[0]==true and roomExtras[1]==true and roomExtras[2]!=true:
+					child.visible=true
+					criaArea=true
+				else:
+					child.visible=false
+					criaArea=false
+					
+			if criaArea==true:
+				############## Criação automatica de collision ###################
+				if not functions.has_collision_polygon(child): #so vai criar se a area nao tiver um collisionpoligon custom
+					functions.create_collision_from_sprite(areaNodes[0]) # isso cria a area de clique collisionpolygon2d
+				############# isso aqui cria o bind, se ele nao tiver sido criado manualmente #############
+				var cb := Callable(self, "_on_ExtraClickRoom_event").bind(str(child.name))#isso será feito manualmente só em casos específicos em que precisemos passar mais parametros, ou parametros custom
+				if not child.input_event.is_connected(cb):
+					child.input_event.connect(cb)
+				###################################################################
+				###################################################################
 	
 	
+func _on_ExtraClickRoom_event(_viewport, event, _shape_idx, extra): #extra no building remake vem o nome do node
+	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFindExtra==true):
+		print("Gato: ", extra, " tdown: ",tdown.is_stopped())
+		var dist = mouse_pos-get_viewport().get_mouse_position()
+		var distx = abs(dist.x)
+		var disty = abs(dist.y)
+		
+		
+		if distx<safe_distance and disty<safe_distance:
+			tdown.start(coolDown)
+			#var roomcats = $Room/ExtraAreas.get_children()
+			print("nomedonode: ", extra)
+			var theCat = $Room/ExtraAreas.get_node(extra)
+			if theCat.modulate==Color(1,1,1,1):
+				#theCat.modulate = Color(1,1,1,0)
+				#theCat.visible = true
+				#
+				#var TweenCat2 : Tween
+				#TweenCat2 = create_tween()
+				#TweenCat2.stop()
+				#TweenCat2.set_trans(Tween.TRANS_LINEAR)
+				#TweenCat2.set_ease(Tween.EASE_IN_OUT)
+				#
+				#TweenCat2.tween_property(theCat, "modulate", Color(1,1,1,1), timeFadeBad)
+				#
+				#TweenCat2.play()
+
+				var TweenCat : Tween
+				TweenCat = create_tween()
+				TweenCat.stop()
+				TweenCat.set_trans(Tween.TRANS_EXPO)
+				TweenCat.set_ease(Tween.EASE_IN_OUT)
+				TweenCat.tween_property(theCat, "modulate", Color(1,1,1,0), timeFadeBad*2.666)
+				#_mostrafofinho()
+				TweenCat.finished.connect(_mostrafofinho)
+				TweenCat.play()
+					
+				
+
+				
+				#extrasLeft-=1
+				
+				
+				#print("GATOAMENOS")
+				#$hud/CounterExtras.set_text(str(extrasLeft))
+				var eSound = extrasSound
+				if extra=="03":
+					eSound="res://SFX/fofinho2.mp3"				
+				MusicController.playSFX(eSound, 1.2, 0.001)
+				roomExtras[int(extra)]=true
+				functions.saveGeneral(wAndar,roomExtras,"roomExtras")
+
+					
+
+					
+				wingChange()
+
+		mouse_pos = get_viewport().get_mouse_position()
+		
+		
+		
+		
 
 func wingChange(): #nao sei ainda no que vou usar no remake do Building, mas deixemos aqui
 	pass
@@ -753,66 +864,6 @@ func _input(event):
 			nsp = (mousepos * zoomA - (mousepos - scenepos) * des_zoom) / zoomA
 
 
-func tween_shader(tween: Tween, node: Node, param: String, from, to, duration: float, trans := Tween.TRANS_LINEAR, wease := Tween.EASE_IN):
-	var mat := node.material as ShaderMaterial
-	if not mat:
-		push_warning("Material não é ShaderMaterial")
-		return
-
-	mat.set_shader_parameter(param, from)
-	tween.tween_method(func(v): mat.set_shader_parameter(param, v), from, to, duration).set_trans(trans).set_ease(wease)
-
-func _fimShader(theCat) -> void:
-	theCat.visible=false
-	#var TweenCat : Tween
-	#TweenCat = create_tween().parallel()
-	#TweenCat.set_parallel(true)
-	#TweenCat.stop()
-	#TweenCat.set_trans(Tween.TRANS_LINEAR)
-	#TweenCat.set_ease(Tween.EASE_IN_OUT)
-	#TweenCat.tween_property(theCat.get_parent(), "modulate", Color(1,1,1,0), 6.66)
-	#TweenCat.play()
-			
-func _on_tShader_timeout(extra) -> void: #connected by script
-	var roomcats = $Room/ExtraAreas.get_children()
-	var theCat = roomcats[extra].get_children()
-
-	var wShader = load("res://Game/horiz_wave_double.gdshader")
-	theCat[0].visible=true #pra impedir o clique novamente na mesma área
-	
-	var wMaterial := ShaderMaterial.new()
-	wMaterial.shader = wShader
-	theCat[1].material = wMaterial
-
-	var sHeight = theCat[1].texture.get_height() / 4
-
-	theCat[1].material.set_shader_parameter("screen_height", sHeight)
-	theCat[1].material.set_shader_parameter("screen_height",sHeight)
-	theCat[1].material.set_shader_parameter("screen_height", sHeight)
-	theCat[1].material.set_shader_parameter("tint_color", $Room.modulate)
-	#theCat[1].material.set_shader_parameter("tempo",1)
-	#theCat[1].material.set_shader_parameter("ampli",0.01)
-	#wMaterial.set_shader_parameter("wavy",5)
-	
-	var TweenShader : Tween
-	TweenShader = create_tween().parallel()
-	TweenShader.set_parallel(true)
-	TweenShader.stop()
-	TweenShader.set_trans(Tween.TRANS_LINEAR)
-	TweenShader.set_ease(Tween.EASE_IN)
-	
-	
-	tween_shader(TweenShader, theCat[1], "wavy", 5, 36, timeFadeBad) #usei uma funçao custom pra isso, pra facilitar
-	tween_shader(TweenShader, theCat[1], "tempo", 1, 12, timeFadeBad)
-	tween_shader(TweenShader, theCat[1], "ampli", 0.01, 0.08, timeFadeBad)
-	#tween_shader(TweenShader, theCat[1], "tint_color", $Room.modulate, Color($Room.modulate.r,$Room.modulate.g,$Room.modulate.b,0), timeFadeBad)
-	tween_shader(TweenShader, theCat[1], "tint_color", $Room.modulate, Color(.2,.2,.2,0), timeFadeBad)
-	
-	TweenShader.finished.connect(_fimShader.bind(theCat[1]))
-	
-	
-	
-	TweenShader.play()
 
 
 func _on_catClickRoom_event(_viewport, event, _shape_idx, extra, firula_nao_some=false): #firula nao some é a gambiarra de ultima hora pros gatos falsos(poster, etc) nao sumirem
@@ -1043,8 +1094,8 @@ func _on_HiddenOpen(_viewport, event, _shape_idx, extra1, extra2=null, extra3=fa
 		#tdown.start(.001)
 		mouse_pos = get_viewport().get_mouse_position()
 
-		
-		
+
+
 func hintGo():
 	if hintLeft<=0:
 		return
@@ -1059,7 +1110,7 @@ func _on_Hint_input_event_Button():
 	if stopscene==false:
 		print("HIIIIIIIIIINTbutton")
 		hintGo()
-		
+
 
 func _on_Hint_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT) and stopscene==false:
@@ -1067,7 +1118,6 @@ func _on_Hint_input_event(_viewport, event, _shape_idx):
 		hintGo()
 
 
-	
 func _findHint():
 	des_zoom=zoom_max
 	var zoomA = zoom
@@ -1077,8 +1127,6 @@ func _findHint():
 	zooming=true
 	nsp= (mousepos*zoomA-(mousepos-scenepos)*des_zoom)/zoomA
 	$HudContainer/Hint/Hint/TimerZoom.start(.75)
-	
-		
 
 
 func _on_timer_zoom_timeout(): #hint system
@@ -1156,7 +1204,7 @@ func _on_timer_zoom_timeout(): #hint system
 		TweenCat2.tween_property($Room, "position", Vector2(newroompositionx, newroompositiony), .9)
 		TweenCat2.finished.connect(_on_TweenHint_tween_all_completed)
 		TweenCat2.play()
-		
+
 
 func _on_TweenHint_tween_all_completed():
 	print("NOME DO NODE: ", nodefind.name)

@@ -21,7 +21,7 @@ func _on_mute_button_down() -> void:
 	
 func _input(_event):
 	if(mouseInSlider && Input.is_mouse_button_pressed((MOUSE_BUTTON_LEFT))):
-		print("DENTRO")
+		# print("DENTRO")
 		setValue($HBoxContainer/TextureProgress)
 		var newvolume = int($HBoxContainer/TextureProgress.value)
 #		functions.save_config=true

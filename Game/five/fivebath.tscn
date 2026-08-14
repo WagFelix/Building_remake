@@ -5,8 +5,65 @@
 [ext_resource type="Texture2D" uid="uid://lnfikkhg0fre" path="res://Game/five/textures/05bath/05bath.png" id="3_y8mwo"]
 [ext_resource type="Texture2D" uid="uid://c1as44384n3lx" path="res://Game/five/textures/05bath/05bathAMOSTRA.png" id="4_1skj3"]
 [ext_resource type="Script" uid="uid://cj5i6hgw1kcme" path="res://Game/positioner.gd" id="5_1skj3"]
+[ext_resource type="Texture2D" uid="uid://cv8ujf4kod6hq" path="res://Game/five/textures/05bath/normal/00b.png" id="5_ykw2n"]
+[ext_resource type="Texture2D" uid="uid://cuhfiqlccl448" path="res://Game/five/textures/05bath/normal/00a.png" id="6_38cvg"]
+[ext_resource type="Texture2D" uid="uid://bilsycevglm4e" path="res://Game/five/textures/05bath/normal/01b.png" id="7_3hthn"]
+[ext_resource type="Texture2D" uid="uid://dnlrr84tjflpo" path="res://Game/five/textures/05bath/normal/01a.png" id="8_1o03p"]
+[ext_resource type="Texture2D" uid="uid://j3t0wmx4dow1" path="res://Game/five/textures/05bath/normal/02b.png" id="9_mrsgs"]
+[ext_resource type="Texture2D" uid="uid://b8xgkxgwogfso" path="res://Game/five/textures/05bath/normal/02a.png" id="10_ueu48"]
+[ext_resource type="Texture2D" uid="uid://c4xhgse7iion3" path="res://Game/five/textures/05bath/normal/03b.png" id="11_o05mg"]
+[ext_resource type="Texture2D" uid="uid://casxojmk800uf" path="res://Game/five/textures/05bath/normal/03a.png" id="12_rutw2"]
+[ext_resource type="Texture2D" uid="uid://sttyrxcea3n2" path="res://Game/five/textures/05bath/normal/04b.png" id="13_4kcxi"]
 [ext_resource type="PackedScene" uid="uid://dhtpnm3aivn5b" path="res://Game/Back.tscn" id="13_ohnbe"]
+[ext_resource type="Texture2D" uid="uid://cltvvqlkd3h8k" path="res://Game/five/textures/05bath/normal/04a.png" id="14_3e0xm"]
+[ext_resource type="Texture2D" uid="uid://c7yt58xt05k0b" path="res://Game/five/textures/05bath/normal/05b.png" id="15_vjwyo"]
 [ext_resource type="PackedScene" uid="uid://cmxial1jdsoqa" path="res://Game/hud_container.tscn" id="16_c8cpe"]
+[ext_resource type="Texture2D" uid="uid://bsb6kiwk7o70g" path="res://Game/five/textures/05bath/normal/05a.png" id="16_rkst6"]
+[ext_resource type="Texture2D" uid="uid://b1p2nyiwuervg" path="res://Game/five/textures/05bath/normal/06b.png" id="17_62on7"]
+[ext_resource type="Texture2D" uid="uid://djp3l5jnn4gql" path="res://Game/five/textures/05bath/normal/06a.png" id="18_ntvoj"]
+[ext_resource type="Texture2D" uid="uid://tph8g4nft1r" path="res://Game/five/textures/05bath/normal/07b.png" id="19_y3yuy"]
+[ext_resource type="Texture2D" uid="uid://v741jsbooan2" path="res://Game/five/textures/05bath/normal/07a.png" id="20_2p8lo"]
+[ext_resource type="Texture2D" uid="uid://3uxaculbwsp8" path="res://Game/five/textures/05bath/normal/08b.png" id="21_l7o3d"]
+[ext_resource type="Texture2D" uid="uid://dartlckbf3hb4" path="res://Game/five/textures/05bath/normal/08a.png" id="22_uojtc"]
+[ext_resource type="Texture2D" uid="uid://cmnjgej0s8a3t" path="res://Game/five/textures/05bath/normal/09b.png" id="23_ka0tv"]
+[ext_resource type="Texture2D" uid="uid://bytpgvuu3wg0s" path="res://Game/five/textures/05bath/normal/09a.png" id="24_5tk1g"]
+[ext_resource type="Texture2D" uid="uid://d0504eqdkm8sw" path="res://Game/five/textures/05bath/normal/10b.png" id="25_5ndng"]
+[ext_resource type="Texture2D" uid="uid://2621nilpah4v" path="res://Game/five/textures/05bath/normal/10a.png" id="26_r5aiq"]
+[ext_resource type="Texture2D" uid="uid://bhis7ccde2q7l" path="res://Game/five/textures/05bath/normal/11b.png" id="27_4b8uf"]
+[ext_resource type="Texture2D" uid="uid://boirklnbfxh4i" path="res://Game/five/textures/05bath/normal/11a.png" id="28_eivfv"]
+[ext_resource type="Texture2D" uid="uid://dw7mxulquav8" path="res://Game/five/textures/05bath/normal/12b.png" id="29_sr8d5"]
+[ext_resource type="Texture2D" uid="uid://bwrr5xtl5nqvi" path="res://Game/five/textures/05bath/normal/12a.png" id="30_gdok5"]
+[ext_resource type="Texture2D" uid="uid://d30hh1fj7btl0" path="res://Game/five/textures/05bath/normal/13b.png" id="31_dyaur"]
+[ext_resource type="Texture2D" uid="uid://i35mgebb4p8j" path="res://Game/five/textures/05bath/normal/13a.png" id="32_gm0xa"]
+[ext_resource type="Texture2D" uid="uid://dkg1qn6oac5hd" path="res://Game/five/textures/05bath/normal/14b.png" id="33_1vt35"]
+[ext_resource type="Texture2D" uid="uid://qgrltj35l488" path="res://Game/five/textures/05bath/normal/14a.png" id="34_d8016"]
+[ext_resource type="Texture2D" uid="uid://bhwweqvmvy5hp" path="res://Game/five/textures/05bath/normal/15b.png" id="35_jwwje"]
+[ext_resource type="Texture2D" uid="uid://biinrkxhe4av0" path="res://Game/five/textures/05bath/normal/15a.png" id="36_vmbp5"]
+[ext_resource type="Texture2D" uid="uid://bwml3t7ileblw" path="res://Game/five/textures/05bath/normal/16b.png" id="37_vhs88"]
+[ext_resource type="Texture2D" uid="uid://cxy7rq16l6dgy" path="res://Game/five/textures/05bath/normal/16a.png" id="38_fuxms"]
+[ext_resource type="Texture2D" uid="uid://7lx6idkut0wk" path="res://Game/five/textures/05bath/normal/17b.png" id="39_xspe0"]
+[ext_resource type="Texture2D" uid="uid://1p0idn3aausi" path="res://Game/five/textures/05bath/normal/17a.png" id="40_fx8qu"]
+[ext_resource type="Texture2D" uid="uid://cv32fnykf487j" path="res://Game/five/textures/05bath/normal/18b.png" id="41_k1uyl"]
+[ext_resource type="Texture2D" uid="uid://d3lf5i0erfrma" path="res://Game/five/textures/05bath/normal/18a.png" id="42_sl5e2"]
+[ext_resource type="Texture2D" uid="uid://dvscmuqxxywdm" path="res://Game/five/textures/05bath/normal/19b.png" id="43_l7mgx"]
+[ext_resource type="Texture2D" uid="uid://ywe5cajnua8p" path="res://Game/five/textures/05bath/normal/19a.png" id="44_hthap"]
+[ext_resource type="Texture2D" uid="uid://cg7b53e3tc3pu" path="res://Game/five/textures/05bath/normal/20b.png" id="45_4mw01"]
+[ext_resource type="Texture2D" uid="uid://burhuhbdm8kqv" path="res://Game/five/textures/05bath/normal/20a.png" id="46_7dpc2"]
+[ext_resource type="Texture2D" uid="uid://cxdsovxbrj68o" path="res://Game/five/textures/05bath/normal/21b.png" id="47_c2ywn"]
+[ext_resource type="Texture2D" uid="uid://b3igq2x47kots" path="res://Game/five/textures/05bath/normal/21a.png" id="48_by57d"]
+[ext_resource type="Texture2D" uid="uid://dkothghrsn07p" path="res://Game/five/textures/05bath/normal/22b.png" id="49_mkb2x"]
+[ext_resource type="Texture2D" uid="uid://bcctg0rwtss0b" path="res://Game/five/textures/05bath/normal/22a.png" id="50_5jylm"]
+[ext_resource type="Texture2D" uid="uid://7nbwhw5qqep1" path="res://Game/five/textures/05bath/normal/23b.png" id="51_fqwj6"]
+[ext_resource type="Texture2D" uid="uid://bcsdp1iypf455" path="res://Game/five/textures/05bath/normal/23a.png" id="52_wrgja"]
+[ext_resource type="Texture2D" uid="uid://3oemfb8ecnwb" path="res://Game/five/textures/05bath/hidden/hidden00.png" id="53_33uip"]
+[ext_resource type="Texture2D" uid="uid://b0jt7yfchn1o5" path="res://Game/five/textures/05bath/hidden/hidden00a.png" id="54_5hcft"]
+[ext_resource type="Texture2D" uid="uid://82wdhoy5gwni" path="res://Game/five/textures/05bath/hidden/hidden01.png" id="55_al7xn"]
+[ext_resource type="Texture2D" uid="uid://c3f82aqoyqrjx" path="res://Game/five/textures/05bath/hidden/hidden01a.png" id="56_v4opw"]
+[ext_resource type="Texture2D" uid="uid://8p01jp15pm7h" path="res://Game/five/textures/05bath/hidden/hidden02.png" id="57_yevo6"]
+[ext_resource type="Texture2D" uid="uid://xkea2ciiwnvf" path="res://Game/five/textures/05bath/hidden/hidden02a.png" id="58_ky5y2"]
+[ext_resource type="Texture2D" uid="uid://buokq86852m3l" path="res://Game/five/textures/05bath/hidden/hidden03.png" id="59_jf5k8"]
+[ext_resource type="Texture2D" uid="uid://ce36nh4l3ck70" path="res://Game/five/textures/05bath/hidden/hidden03a.png" id="60_t3ac3"]
+[ext_resource type="Texture2D" uid="uid://7yepk4kuj8i1" path="res://Game/five/textures/05bath/fo00.png" id="61_38cvg"]
 
 [sub_resource type="Gradient" id="Gradient_mr0lr"]
 offsets = PackedFloat32Array(0.0361111, 0.25)
@@ -22,6 +79,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gmygr")
+wAndar = "five"
 
 [node name="Room" type="Node2D" parent="." unique_id=464386957]
 
@@ -59,16 +117,368 @@ rect = Rect2(-1, -1, 1, 1)
 texture = ExtResource("3_y8mwo")
 
 [node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
+visible = false
 texture = ExtResource("4_1skj3")
 
 [node name="AreaClicks" type="Node2D" parent="Room" unique_id=1885924706]
 z_index = 1
 z_as_relative = false
 
+[node name="00" type="Area2D" parent="Room/AreaClicks" unique_id=483373943]
+position = Vector2(-1173, 1019)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/00" unique_id=1796216835]
+texture = ExtResource("5_ykw2n")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/00" unique_id=1205217934]
+texture = ExtResource("6_38cvg")
+
+[node name="01" type="Area2D" parent="Room/AreaClicks" unique_id=722861445]
+position = Vector2(-926, -980)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/01" unique_id=1650783722]
+texture = ExtResource("7_3hthn")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/01" unique_id=823288954]
+texture = ExtResource("8_1o03p")
+
+[node name="02" type="Area2D" parent="Room/AreaClicks" unique_id=522946431]
+position = Vector2(-730, 82)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/02" unique_id=1710691688]
+texture = ExtResource("9_mrsgs")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/02" unique_id=907753941]
+texture = ExtResource("10_ueu48")
+
+[node name="03" type="Area2D" parent="Room/AreaClicks" unique_id=21983678]
+position = Vector2(-655, 539)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/03" unique_id=1156648664]
+texture = ExtResource("11_o05mg")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/03" unique_id=876123711]
+texture = ExtResource("12_rutw2")
+
+[node name="04" type="Area2D" parent="Room/AreaClicks" unique_id=2042610288]
+position = Vector2(-572, 826)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/04" unique_id=336790478]
+texture = ExtResource("13_4kcxi")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/04" unique_id=1230728652]
+texture = ExtResource("14_3e0xm")
+
+[node name="05" type="Area2D" parent="Room/AreaClicks" unique_id=675015442]
+position = Vector2(-240, -605)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/05" unique_id=100115112]
+texture = ExtResource("15_vjwyo")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/05" unique_id=807051551]
+texture = ExtResource("16_rkst6")
+
+[node name="06" type="Area2D" parent="Room/AreaClicks" unique_id=1396113385]
+position = Vector2(-566, -78)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/06" unique_id=1459826125]
+texture = ExtResource("17_62on7")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/06" unique_id=405030270]
+texture = ExtResource("18_ntvoj")
+
+[node name="07" type="Area2D" parent="Room/AreaClicks" unique_id=249404335]
+position = Vector2(-327, 59)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/07" unique_id=1835931383]
+texture = ExtResource("19_y3yuy")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/07" unique_id=1225861052]
+texture = ExtResource("20_2p8lo")
+
+[node name="08" type="Area2D" parent="Room/AreaClicks" unique_id=1519709528]
+position = Vector2(-127, 865)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/08" unique_id=181854447]
+texture = ExtResource("21_l7o3d")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/08" unique_id=1749530934]
+texture = ExtResource("22_uojtc")
+
+[node name="09" type="Area2D" parent="Room/AreaClicks" unique_id=1965727979]
+position = Vector2(56, -94)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/09" unique_id=710112112]
+texture = ExtResource("23_ka0tv")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/09" unique_id=929221840]
+texture = ExtResource("24_5tk1g")
+
+[node name="10" type="Area2D" parent="Room/AreaClicks" unique_id=391352384]
+position = Vector2(254, 75)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/10" unique_id=1366256889]
+texture = ExtResource("25_5ndng")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/10" unique_id=623437337]
+texture = ExtResource("26_r5aiq")
+
+[node name="11" type="Area2D" parent="Room/AreaClicks" unique_id=494375354]
+position = Vector2(252, 781)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/11" unique_id=2096681805]
+texture = ExtResource("27_4b8uf")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/11" unique_id=686436925]
+texture = ExtResource("28_eivfv")
+
+[node name="12" type="Area2D" parent="Room/AreaClicks" unique_id=443337029]
+position = Vector2(377, -374)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/12" unique_id=365631825]
+texture = ExtResource("29_sr8d5")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/12" unique_id=1014157832]
+texture = ExtResource("30_gdok5")
+
+[node name="13" type="Area2D" parent="Room/AreaClicks" unique_id=1297551970]
+position = Vector2(566, -318)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/13" unique_id=14524492]
+texture = ExtResource("31_dyaur")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/13" unique_id=2119663658]
+texture = ExtResource("32_gm0xa")
+
+[node name="14" type="Area2D" parent="Room/AreaClicks" unique_id=1676441382]
+position = Vector2(498, -79)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/14" unique_id=2116536708]
+texture = ExtResource("33_1vt35")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/14" unique_id=1687347669]
+texture = ExtResource("34_d8016")
+
+[node name="15" type="Area2D" parent="Room/AreaClicks" unique_id=1803275172]
+position = Vector2(511, 60)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/15" unique_id=129862314]
+texture = ExtResource("35_jwwje")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/15" unique_id=1614740533]
+texture = ExtResource("36_vmbp5")
+
+[node name="16" type="Area2D" parent="Room/AreaClicks" unique_id=1110267030]
+position = Vector2(885, -745)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/16" unique_id=2112291903]
+texture = ExtResource("37_vhs88")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/16" unique_id=1907092356]
+texture = ExtResource("38_fuxms")
+
+[node name="17" type="Area2D" parent="Room/AreaClicks" unique_id=113841840]
+position = Vector2(987, -537)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/17" unique_id=1814495402]
+visible = false
+texture = ExtResource("39_xspe0")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/17" unique_id=713074251]
+texture = ExtResource("40_fx8qu")
+
+[node name="18" type="Area2D" parent="Room/AreaClicks" unique_id=1856148492]
+position = Vector2(844, -301)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/18" unique_id=2065192076]
+texture = ExtResource("41_k1uyl")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/18" unique_id=2105408486]
+texture = ExtResource("42_sl5e2")
+
+[node name="19" type="Area2D" parent="Room/AreaClicks" unique_id=788273111]
+position = Vector2(813, 358)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/19" unique_id=1214594874]
+texture = ExtResource("43_l7mgx")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/19" unique_id=1618445694]
+texture = ExtResource("44_hthap")
+
+[node name="20" type="Area2D" parent="Room/AreaClicks" unique_id=2009809872]
+position = Vector2(736, 639)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/20" unique_id=1512069460]
+texture = ExtResource("45_4mw01")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/20" unique_id=1188119427]
+texture = ExtResource("46_7dpc2")
+
+[node name="21" type="Area2D" parent="Room/AreaClicks" unique_id=1251252220]
+position = Vector2(1089, -858)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/21" unique_id=617576184]
+texture = ExtResource("47_c2ywn")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/21" unique_id=385289633]
+texture = ExtResource("48_by57d")
+
+[node name="22" type="Area2D" parent="Room/AreaClicks" unique_id=277731247]
+position = Vector2(1291, -859)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/22" unique_id=1568994497]
+texture = ExtResource("49_mkb2x")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/22" unique_id=1356985123]
+texture = ExtResource("50_5jylm")
+
+[node name="23" type="Area2D" parent="Room/AreaClicks" unique_id=1200443232]
+position = Vector2(1277, 1038)
+
+[node name="good" type="Sprite2D" parent="Room/AreaClicks/23" unique_id=839099692]
+texture = ExtResource("51_fqwj6")
+
+[node name="bad" type="Sprite2D" parent="Room/AreaClicks/23" unique_id=254264200]
+texture = ExtResource("52_wrgja")
+
 [node name="hiddenAreas" type="Node2D" parent="Room" unique_id=1921735858]
 z_index = 1
 
+[node name="00" type="Area2D" parent="Room/hiddenAreas" unique_id=1565257208]
+position = Vector2(-1038, -358)
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/00" unique_id=934414654]
+texture = ExtResource("53_33uip")
+hframes = 3
+frame = 1
+
+[node name="hidden" type="Sprite2D" parent="Room/hiddenAreas/00" unique_id=910318054]
+texture = ExtResource("53_33uip")
+hframes = 3
+
+[node name="catarea" type="Area2D" parent="Room/hiddenAreas/00/hidden" unique_id=2018644569]
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=1712239183]
+texture = ExtResource("54_5hcft")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=162396771]
+visible = false
+polygon = PackedVector2Array(-52, -44.799988, -56.800003, -40, -58.399994, -40, -62, -29.299988, -62, -18.299988, -58, -13.299988, -58, -11.099976, -41.100006, -10, -36.600006, -10, -34, -17.700012, -34, -24.400024, -26.100006, -34, -22.800003, -34, -25, -38.5, -25, -42, -34.300003, -49, -38, -49)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=1288103936]
+visible = false
+polygon = PackedVector2Array(-54, 10, -54, 12.200012, -54.800003, 13, -58, 13, -55, 20.400024, -55, 27.5, -60, 41.700012, -60, 42.900024, -63, 44.900024, -76.100006, 46, -79, 46, -86, 55, -87.8, 55, -88.8, 66, -90, 66, -90, 81.29999, -82.5, 107, -81.8, 107, -78, 138.20001, -78, 146.59998, -74.8, 151.40002, -78.3, 153, -80.2, 153, -81.3, 155.09998, -77.399994, 161.09998, -80.5, 163, -84.399994, 163, -77.600006, 175.29999, -79, 179.70001, -79, 191.5, -76, 197.5, -76, 199.90002, -63, 211.90002, -63, 214.5, -50, 211.59998, -50, 211, -22, 212, -15.899994, 212, -13.899994, 209, -12.800003, 209, -3.800003, 191, -1.800003, 191, -3, 179.79999, -3, 174.20001, -6, 171.20001, -6, 168.20001, 1, 165.29999, 1, 160.20001, -1.199997, 158, 1.2000122, 158, -2, 151.5, -2, 149, -9.199997, 149, -7, 145.59998, -7, 131.79999, -14, 99.599976, -14, 93.099976, -12.300003, 92, -9.899994, 92, -4, 82.599976, -4, 81, -1.1000061, 81, 3.899994, 75, 6.299988, 75, 5, 64.79999, 5, 62.299988, -10, 44.299988, -10, 42.5, -17, 40.5, -17, 38.599976, -31.300003, 41, -33.399994, 41, -31.5, 34, -29.800003, 34, -31, 19.799988, -31, 14.599976, -39, 11.5, -39, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/00" unique_id=879035289]
+visible = false
+polygon = PackedVector2Array(-231, -316, 220, -154, 232, 440, -228, 395)
+
+[node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/00" unique_id=366266671]
+z_index = -1
+texture = ExtResource("53_33uip")
+hframes = 3
+frame = 2
+
+[node name="01" type="Area2D" parent="Room/hiddenAreas" unique_id=1495666505]
+position = Vector2(-562, -475)
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/01" unique_id=1448731630]
+texture = ExtResource("55_al7xn")
+hframes = 3
+frame = 1
+
+[node name="hidden" type="Sprite2D" parent="Room/hiddenAreas/01" unique_id=971988957]
+texture = ExtResource("55_al7xn")
+hframes = 3
+
+[node name="catarea" type="Area2D" parent="Room/hiddenAreas/01/hidden" unique_id=676154877]
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/01/hidden/catarea" unique_id=21035341]
+texture = ExtResource("56_v4opw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/01/hidden/catarea" unique_id=855414768]
+visible = false
+polygon = PackedVector2Array(-6.299999, -24, -7.700001, -25, -13, -25, -24.5, -18, -26.4, -18, -31.4, -3, -33, -3, -33, 7.799999, -28.8, 12, -28, 12, -28, 18.8, -22, 24.8, -8.6, 25, -3, 16.599998, -0.20000076, 17, 4.799999, 17, 5, 17.5, 5, 20.900002, 9.900002, 25, 22.5, 25, 25.900002, 21, 28, 21, 28, 9.700001, 28.7, 10, 31.099998, 10, 33.1, 7, 35, 7, 35, -3.7999992, 31.800003, -7, 28.400002, -7, 26, -13.5, 26, -16, 17.7, -16, 9, -23, 9, -25, 6.5999985, -25, 3.7000008, -24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/01" unique_id=703317984]
+visible = false
+polygon = PackedVector2Array(-40, 15, -50, 8, -54, -5, -51, -18, -39, -19, -21, -60, -18, -75, 1, -83, 24, -77, 30, -61, 29, -49, 38, -19, 50, -17, 59, 2, 55, 14, 42, 25, 26, 28, 5, 27, -15, 29, -28, 24)
+
+[node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/01" unique_id=1900995429]
+z_index = -1
+texture = ExtResource("55_al7xn")
+hframes = 3
+frame = 2
+
+[node name="02" type="Area2D" parent="Room/hiddenAreas" unique_id=1003715552]
+position = Vector2(18, 473)
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/02" unique_id=1615774978]
+texture = ExtResource("57_yevo6")
+hframes = 3
+frame = 1
+
+[node name="hidden" type="Sprite2D" parent="Room/hiddenAreas/02" unique_id=1273186975]
+texture = ExtResource("57_yevo6")
+hframes = 3
+
+[node name="catarea" type="Area2D" parent="Room/hiddenAreas/02/hidden" unique_id=1373287348]
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/02/hidden/catarea" unique_id=1847183210]
+texture = ExtResource("58_ky5y2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/02/hidden/catarea" unique_id=1836847771]
+visible = false
+polygon = PackedVector2Array(-9.700012, -140.3, -12, -139.3, -12, -138.3, -25, -131.2, -40.100006, -131, -50, -137.1, -50, -139.4, -57.399994, -138, -60.199997, -138, -66, -126.5, -66, -113.5, -72.2, -101, -75.2, -101, -72.3, -95, -73.7, -94, -76, -94, -76, -86.4, -70.2, -85, -69.399994, -85, -71, -75.2, -71, -70.1, -62, -62.199997, -62, -59.699997, -51.799988, -61, -48.799988, -61, -41.299988, -76, -19, -76, -19, -72.1, -12, -66.1, -12, -64, -1.1000061, -64, 8.399994, -75.7, 11.799988, -75, 16.100006, -75, 18.100006, -78, 19.200012, -78, 20.299988, -80.1, 18, -83.7, 18, -86.8, 6.799988, -98, 2, -127.3, 2, -131)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/02" unique_id=348619696]
+visible = false
+polygon = PackedVector2Array(-251, 53, -251, -132, 277, -131, 275, 53)
+
+[node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/02" unique_id=2130187426]
+z_index = -1
+texture = ExtResource("57_yevo6")
+hframes = 3
+frame = 2
+
+[node name="03" type="Area2D" parent="Room/hiddenAreas" unique_id=125127784]
+position = Vector2(551, 268)
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1640127299]
+texture = ExtResource("59_jf5k8")
+hframes = 3
+frame = 1
+
+[node name="hidden" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1201107636]
+texture = ExtResource("59_jf5k8")
+hframes = 3
+
+[node name="catarea" type="Area2D" parent="Room/hiddenAreas/03/hidden" unique_id=32697019]
+
+[node name="cat" type="Sprite2D" parent="Room/hiddenAreas/03/hidden/catarea" unique_id=1171398451]
+texture = ExtResource("60_t3ac3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/03/hidden/catarea" unique_id=1355947923]
+visible = false
+polygon = PackedVector2Array(-71.8, 0.69999695, -74, 1.800003, -87.1, 2, -89.1, 5, -91, 5, -91, 24.400002, -94, 29.400002, -94, 30.300003, -97.4, 31, -99.7, 31, -101, 38.800003, -101, 42, -95.7, 46, -94.8, 46, -97, 52.699997, -97, 56.899994, -90, 62.899994, -90, 64.5, -60.300003, 73, -49.199997, 73, -49, 73.5, -49, 76.899994, -40.699997, 84, -33.300003, 84, -23, 76, 4.300003, 72, 7.800003, 72, 15.800003, 64, 17.5, 64, 19.5, 57, 21.399994, 57, 17, 33.6, 17, 30.199997, 4, 17.199997, 4, 15.5, -6, 12.5, -6, 11, -24.300003, 11, -37.300003, 15, -38, 13.699997, -38, 9.300003, -43, 3.300003, -43, 1, -59, 1, -63.5, 6.5999985)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/03" unique_id=1397897316]
+visible = false
+polygon = PackedVector2Array(-215, -103, 211, -101, 209, 102, -212, 103)
+
+[node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/03" unique_id=1950342177]
+z_index = -1
+texture = ExtResource("59_jf5k8")
+hframes = 3
+frame = 2
+
 [node name="ExtraAreas" type="Node2D" parent="Room" unique_id=1514077829]
+
+[node name="00" type="Area2D" parent="Room/ExtraAreas" unique_id=941496424]
+position = Vector2(181, -218)
+
+[node name="fofis" type="Sprite2D" parent="Room/ExtraAreas/00" unique_id=1760790897]
+texture = ExtResource("61_38cvg")
 
 [node name="ParticleHint" type="CPUParticles2D" parent="Room" unique_id=1193429257]
 z_index = 4095

@@ -115,6 +115,8 @@
 [ext_resource type="Texture2D" uid="uid://b1a6v8xifh3go" path="res://Game/one/textures/01living/hidden/hidden04a.png" id="109_fk7qt"]
 [ext_resource type="Texture2D" uid="uid://ml4kykoq3220" path="res://Game/one/textures/01living/hidden/hidden05.png" id="110_b2k50"]
 [ext_resource type="Texture2D" uid="uid://ceg0jeucduk21" path="res://Game/one/textures/01living/hidden/hidden05a.png" id="111_b07gh"]
+[ext_resource type="Texture2D" uid="uid://kpwwv4wxvrtv" path="res://Game/one/textures/01living/fo00.png" id="112_cyq12"]
+[ext_resource type="Texture2D" uid="uid://4511kgbdj4ux" path="res://Game/one/textures/01living/fo02.png" id="113_0jkuc"]
 
 [sub_resource type="Gradient" id="Gradient_mr0lr"]
 offsets = PackedFloat32Array(0.0361111, 0.25)
@@ -172,6 +174,7 @@ position = Vector2(1700, 0)
 texture = ExtResource("4_xm8ag")
 
 [node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
+visible = false
 texture = ExtResource("5_nprfa")
 
 [node name="AreaClicks" type="Node2D" parent="Room" unique_id=1885924706]
@@ -790,6 +793,18 @@ frame = 2
 
 [node name="ExtraAreas" type="Node2D" parent="Room" unique_id=1514077829]
 
+[node name="00" type="Area2D" parent="Room/ExtraAreas" unique_id=495947095]
+position = Vector2(3045, 187)
+
+[node name="fofis" type="Sprite2D" parent="Room/ExtraAreas/00" unique_id=828872973]
+texture = ExtResource("112_cyq12")
+
+[node name="02" type="Area2D" parent="Room/ExtraAreas" unique_id=1199384144]
+position = Vector2(-2815, 1013)
+
+[node name="fofis" type="Sprite2D" parent="Room/ExtraAreas/02" unique_id=715424512]
+texture = ExtResource("113_0jkuc")
+
 [node name="HallDoor" type="Area2D" parent="Room" unique_id=788195196]
 position = Vector2(-2379, 149)
 script = ExtResource("13_wpdls")
@@ -870,6 +885,8 @@ offset_bottom = 478.0
 [node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
 layout_mode = 1
 
+[connection signal="input_event" from="Room/hiddenAreas/04" to="." method="_on_HiddenOpen" binds= [4, 5]]
+[connection signal="input_event" from="Room/hiddenAreas/05" to="." method="_on__input_event" binds= [4, 5]]
 [connection signal="input_event" from="Room/HallDoor" to="Room/HallDoor" method="_on_door_input_event"]
 [connection signal="input_event" from="Room/BathDoor" to="Room/BathDoor" method="_on_door_input_event"]
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
