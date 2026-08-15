@@ -26,6 +26,8 @@ var stopscene := false
 
 func _ready() -> void:
 	GlobalPanel._hidePanel()
+	GlobalPanel.eCall.visible=true
+	GlobalPanel.eCall.modulate=Color(1,1,1,1)
 	functions.inMenu=false
 	andar = GlobalPanel.andar
 	MusicController._playMusic(qMusic[andar])

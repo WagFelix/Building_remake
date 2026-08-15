@@ -51,7 +51,8 @@ func mostra() -> void:
 		mostrar=true
 		
 	var TweenMostra : Tween
-	TweenMostra = create_tween()
+	TweenMostra = create_tween().parallel()
+	TweenMostra.set_parallel(true)
 	TweenMostra.stop()
 	TweenMostra.set_trans(Tween.TRANS_SINE)
 
@@ -59,9 +60,11 @@ func mostra() -> void:
 		ePanel.visible=true
 		TweenMostra.set_ease(Tween.EASE_OUT)
 		TweenMostra.tween_property(ePanel, "modulate", Color(1,1,1,1), ttween)
+		TweenMostra.tween_property(eCall, "modulate", Color(1,1,1,0), ttween)
 	else:
 		TweenMostra.set_ease(Tween.EASE_IN)
 		TweenMostra.tween_property(ePanel, "modulate", Color(1,1,1,0), ttween)
+		TweenMostra.tween_property(eCall, "modulate", Color(1,1,1,1), ttween)
 
 	TweenMostra.finished.connect(_on_tweenmostra)
 	TweenMostra.play()

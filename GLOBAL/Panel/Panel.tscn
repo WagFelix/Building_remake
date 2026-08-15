@@ -41,9 +41,9 @@ script = ExtResource("1_irine")
 [node name="Call" type="TextureButton" parent="." unique_id=477670058]
 layout_mode = 0
 offset_left = 769.0
-offset_top = -446.0
+offset_top = -518.0
 offset_right = 889.0
-offset_bottom = -310.0
+offset_bottom = -382.0
 texture_normal = ExtResource("2_tvifq")
 texture_pressed = ExtResource("3_dwy6x")
 texture_hover = ExtResource("3_dwy6x")
@@ -53,10 +53,38 @@ texture_focused = ExtResource("3_dwy6x")
 position = Vector2(443, 13)
 
 [node name="ocluder" type="TextureButton" parent="Panel" unique_id=1244513370]
-offset_left = -274.0
-offset_top = -468.0
-offset_right = 259.0
-offset_bottom = 470.0
+offset_left = -2153.0
+offset_top = -900.0
+offset_right = 1932.0
+offset_bottom = 1132.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Panel/ocluder" unique_id=1957790669]
+color = Color(0, 0, 0, 0.45490196)
+polygon = PackedVector2Array(-470, -406, -566, 2236, 5003, 2153, 4805, -590)
+
+[node name="call" type="TextureButton" parent="Panel" unique_id=1926517040]
+offset_left = -2153.0
+offset_top = -893.0
+offset_right = -259.0
+offset_bottom = 1589.0
+
+[node name="call2" type="TextureButton" parent="Panel" unique_id=1131566063]
+offset_left = 260.0
+offset_top = -858.0
+offset_right = 2154.0
+offset_bottom = 1624.0
+
+[node name="call3" type="TextureButton" parent="Panel" unique_id=433569171]
+offset_left = -1449.0
+offset_top = -2941.0
+offset_right = 445.0
+offset_bottom = -459.0
+
+[node name="call4" type="TextureButton" parent="Panel" unique_id=113764924]
+offset_left = -1364.0
+offset_top = 459.0
+offset_right = 530.0
+offset_bottom = 2941.0
 
 [node name="PanelBg" type="Sprite2D" parent="Panel" unique_id=1352459157]
 texture = ExtResource("1_5u6pt")
@@ -255,6 +283,10 @@ one_shot = true
 one_shot = true
 
 [connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
+[connection signal="button_down" from="Panel/call" to="." method="_on_call_button_down"]
+[connection signal="button_down" from="Panel/call2" to="." method="_on_call_button_down"]
+[connection signal="button_down" from="Panel/call3" to="." method="_on_call_button_down"]
+[connection signal="button_down" from="Panel/call4" to="." method="_on_call_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Power" to="." method="_on_power_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Options" to="." method="_on_options_button_down"]
 [connection signal="button_down" from="Panel/Botoes/Credits" to="." method="_on_credits_button_down"]

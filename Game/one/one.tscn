@@ -878,15 +878,17 @@ position = Vector2(-984, -542)
 script = ExtResource("15_v22an")
 
 [node name="Back" parent="." unique_id=1473559880 instance=ExtResource("13_ohnbe")]
+visible = false
 layout_mode = 1
-offset_top = 478.0
-offset_bottom = 478.0
+offset_left = 111.0
+offset_top = 2490.0
+offset_right = 111.0
+offset_bottom = 2490.0
 
 [node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
 layout_mode = 1
 
 [connection signal="input_event" from="Room/hiddenAreas/04" to="." method="_on_HiddenOpen" binds= [4, 5]]
-[connection signal="input_event" from="Room/hiddenAreas/05" to="." method="_on__input_event" binds= [4, 5]]
 [connection signal="input_event" from="Room/HallDoor" to="Room/HallDoor" method="_on_door_input_event"]
 [connection signal="input_event" from="Room/BathDoor" to="Room/BathDoor" method="_on_door_input_event"]
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]

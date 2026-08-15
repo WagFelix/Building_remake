@@ -5,6 +5,15 @@ var thisRoom := "0"
 @export var has_fofinho := true
 @export var wAndar := "one"
 
+var apartamentos := [[null],
+	["One", "Onebath"],
+	["Two", "Twobath"],
+	["Three", "Threebath"],
+	["Four", "Fourbath"],
+	["Five", "Fivebath"],
+	["Roof"],
+	["Bunker", "Bunkerbath"]
+]
 
 @export var from_center:=false # define se os limites da tela são calculados a partir do centro, util pra cenas que possuem bordas mascaradas, como o Altered Kitty do Building 2
 #É Possivel que from_center seja SEMPRE a melhor forma de fazer isso, deixando os valores em 0 quando quisermos que os limites sejam os limites da tela... testando... por enquanto ta dando ruim no reposicionamento dos limitadores
@@ -124,7 +133,8 @@ func _ready() -> void:
 		Elevador._openE()
 	elif SChanger.changeType==0:
 		Curtain.hideCurtain()
-
+	GlobalPanel.eCall.visible=true
+	GlobalPanel.eCall.modulate=Color(1,1,1,1)
 	catsLeft=0
 	middleScreenX = functions.viewport_size.x/2
 	middleScreenY = functions.viewport_size.y/2
@@ -318,6 +328,25 @@ func _mostrafofinho(tocasom=false) -> void :
 	var extraAreas = $Room.get_node_or_null("ExtraAreas")
 	if roomExtras==[true,true,true]:
 		$HudContainer/Counters/Fofinopaw.visible=true
+		
+		var wfofis := "nenhumAchievement"
+		if wAndar=="one":
+			wfofis = "01fofo"
+		if wAndar=="two":
+			wfofis = "02fofo"
+		if wAndar=="three":
+			wfofis = "03fofo"
+		if wAndar=="four":
+			wfofis = "04fofo"
+		if wAndar=="five":
+			wfofis = "05fofo"
+
+		
+		GlobalSteam._give(wfofis)
+		
+			
+		
+		
 		if tocasom==true:
 			MusicController.playSFX("res://SFX/yes.mp3")
 	if extraAreas:
@@ -362,7 +391,7 @@ func _mostrafofinho(tocasom=false) -> void :
 	
 	
 func _on_ExtraClickRoom_event(_viewport, event, _shape_idx, extra): #extra no building remake vem o nome do node
-	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFindExtra==true):
+	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFindExtra==true and GlobalPanel.ePanel.visible==false):
 		print("Gato: ", extra, " tdown: ",tdown.is_stopped())
 		var dist = mouse_pos-get_viewport().get_mouse_position()
 		var distx = abs(dist.x)
@@ -424,11 +453,57 @@ func _on_ExtraClickRoom_event(_viewport, event, _shape_idx, extra): #extra no bu
 		
 		
 
-func wingChange(): #nao sei ainda no que vou usar no remake do Building, mas deixemos aqui
-	pass
+func wingChange(): #no remake do building, usaremos aqui pra ver se o apartamento foi finalizado
+	_mostrafofinho() #mostra pata e da achievement
+	var wAch := "01"
+	if wAndar=="one":
+		wAch = "01"
+	if wAndar=="two":
+		wAch = "02"
+	if wAndar=="three":
+		wAch = "03"
+	if wAndar=="four":
+		wAch = "04"
+	if wAndar=="five":
+		wAch = "05"
+	if wAndar=="roof":
+		wAch = "06"
+	if wAndar=="bunker":
+		wAch = "07"
 	
-func acaba(): #quando identificarmos que achamos tudo... no caso do remake do building, temos que considerar tambem o outro comodo...
-	pass
+	var indexAp = int(wAch)
+	var wAps = apartamentos[indexAp]
+	var achSalaCat := true
+	var achSalaHid := true
+	for wSala in wAps:
+		#print(wSala)
+		var tudo = functions.loadcats(wAps)
+		if tudo[0]!=null:
+			roomDiscover=tudo[0]
+		else:
+			achSalaCat=false
+		if tudo[1]!=null:
+			roomDiscoverHidden=tudo[1]
+		else:
+			achSalaHid=false
+	if achSalaCat==true:
+		GlobalSteam._give(wAch)
+	if achSalaHid==true:
+		GlobalSteam._give(wAch+"extra")
+		
+	if achSalaCat==true and achSalaHid==true :
+		var wFecha:=true
+		if has_fofinho==true:
+			if roomExtras!=[true, true,true]:
+				wFecha=false
+		if wFecha==true:
+			#tweenChange("res://Game/Hall/Hall.tscn")
+			MusicController.playSFX("res://SFX/sucess.mp3")
+			GlobalPanel.mostra()
+		
+func acaba(): 
+	_mostrafofinho()
+	
 
 func reposiciona_limitadores():
 	if from_center!=true:
@@ -512,7 +587,7 @@ func _process(_delta):
 	
 	
 	#if stopscene==false and hinting!=true:
-	if stopscene==false and hinting!=true and pinch_active==false and touches.size()==0:
+	if stopscene==false and hinting!=true and pinch_active==false and touches.size()==0 and GlobalPanel.ePanel.visible==false:
 		
 		##################################
 		#####zoom com joystick:
@@ -628,7 +703,7 @@ func _process(_delta):
 
 func _input(event):
 
-	if stopscene == true:
+	if stopscene == true or GlobalPanel.ePanel.visible==true:
 		return
 
 	########################################################
@@ -867,7 +942,7 @@ func _input(event):
 
 
 func _on_catClickRoom_event(_viewport, event, _shape_idx, extra, firula_nao_some=false): #firula nao some é a gambiarra de ultima hora pros gatos falsos(poster, etc) nao sumirem
-	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFind==true):
+	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFind==true and GlobalPanel.ePanel.visible==false):
 		#print("Gato: ", extra)
 #		var roomcats = $RoallowFindallowFindom/CatsS.get_children()
 		var dist = mouse_pos-get_viewport().get_mouse_position()
@@ -897,6 +972,7 @@ func _on_catClickRoom_event(_viewport, event, _shape_idx, extra, firula_nao_some
 					if firula_nao_some!=true: #teria sido melhor esses gatos da excessao serem pintados no proprio cenario
 						var TweenCat3 : Tween
 						TweenCat3 = create_tween().parallel()
+						TweenCat3.set_parallel(true) #usar isso?
 						TweenCat3.tween_interval(1)
 						TweenCat3.stop()
 						TweenCat3.set_trans(Tween.TRANS_LINEAR)
@@ -943,13 +1019,13 @@ func _on_catClickRoom_event(_viewport, event, _shape_idx, extra, firula_nao_some
 						#GlobalSteam._give(achievment_sala)
 				
 
-				if catsLeft==0 and catsLeftH==0 and extrasLeft==0:
+				if catsLeft==0 and catsLeftH==0:
 					acaba()
 				wingChange()
 		mouse_pos = get_viewport().get_mouse_position()	
 		
 func _on_Hidencat(_viewport, event, _shape_idx, extra):
-	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFind==true):
+	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT && tdown.is_stopped() && stopscene==false and allowFind==true and GlobalPanel.ePanel.visible==false):
 		print("Gatos Hidden achados: ", extra)
 		
 		
@@ -984,6 +1060,7 @@ func _on_Hidencat(_viewport, event, _shape_idx, extra):
 				if hideGood==true: #pra esconder os gatos
 					var TweenCat3 : Tween
 					TweenCat3 = create_tween().parallel()
+					TweenCat3.set_parallel(true) # usar isso?
 					TweenCat3.tween_interval(2)
 					TweenCat3.stop()
 					TweenCat3.set_trans(Tween.TRANS_LINEAR)
@@ -1028,7 +1105,7 @@ func _on_Hidencat(_viewport, event, _shape_idx, extra):
 					
 					
 					
-				if catsLeft==0 and catsLeftH==0 and extrasLeft==0:
+				if catsLeft==0 and catsLeftH==0:
 					iHint.timerhint.stop()
 					acaba()
 					
@@ -1038,7 +1115,7 @@ func _on_Hidencat(_viewport, event, _shape_idx, extra):
 
 func _on_HiddenOpen(_viewport, event, _shape_idx, extra1, extra2=null, extra3=false, extra4="", extra5=[]): #extra2 pra quando houver 2 escondidos sob o mesmo lugar, extra3 é pra forçar abrir mesmo sem "event", extra4 é som especial(apartamento gamer, metal gear na caixa), extra5 é pra quando tem muitos escondidos sob o mesmo lugar/suporte grafico(ver santa ceia do building 2, apartamento do artista)
 	print("hidden SADASDASDASSAD")
-	if (((event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT) or extra3==true) && tdown.is_stopped() && stopscene==false): #and allowFind==true deixa abrir, nao deixa clicar
+	if (((event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT) or extra3==true) && tdown.is_stopped() && stopscene==false and GlobalPanel.ePanel.visible==false): #and allowFind==true deixa abrir, nao deixa clicar
 		print("hidden DENTROOOOOOOOOOO")
 		var dist = mouse_pos-get_viewport().get_mouse_position()
 		var distx = abs(dist.x)

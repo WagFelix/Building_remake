@@ -90,6 +90,8 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gmygr")
+has_fofinho = false
+wAndar = "bunker"
 
 [node name="Room" type="Node2D" parent="." unique_id=464386957]
 

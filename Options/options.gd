@@ -46,6 +46,7 @@ func _ready() -> void:
 	
 	
 	GlobalPanel._hidePanel()
+	GlobalPanel.eCall.visible=false
 	SChanger._LoadNewScene("res://Menu/Menu.tscn", self)
 	Elevador._openE()
 	var credits = functions.loadGeneral("options", "StrayCats")
