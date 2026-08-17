@@ -1,9 +1,9 @@
 extends Node2D
 #var last_position : Vector2
 
-var cursor_images := [load("res://common_textures/Cursor.png"),
+var cursor_images := [load("res://common_textures/cursor.png"),
 ]
-var cursor_images2 := [load("res://common_textures/Cursor2.png"),
+var cursor_images2 := [load("res://common_textures/cursor2.png"),
 ]
 var cursorAtual = 0
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1t3gskuvrybs"]
 
-[ext_resource type="Texture2D" uid="uid://bsg05ubqw6310" path="res://common_textures/Cursor.png" id="1"]
 [ext_resource type="Script" uid="uid://dkx3amcbam3en" path="res://GLOBAL/Mouse_cursor/Mouse_Cursor.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b4ybf3dsy1m5v" path="res://common_textures/cursor.png" id="2_40tu8"]
 
 [sub_resource type="Curve" id="41"]
 _data = [Vector2(0, 0.471591), 0.0, 0.0, 0, 0, Vector2(0.847826, 0.635227), 0.69697, 0.69697, 0, 0, Vector2(1, 0.789773), 0.0, 0.0, 0, 0]
@@ -33,7 +33,7 @@ color_ramp = SubResource("42")
 
 [node name="Sprite_Cursor" type="Sprite2D" parent="." unique_id=214902444]
 position = Vector2(-12, -2)
-texture = ExtResource("1")
+texture = ExtResource("2_40tu8")
 centered = false
 
 [node name="Cooldown" type="Timer" parent="." unique_id=82999577]
