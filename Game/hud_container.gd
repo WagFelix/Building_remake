@@ -9,6 +9,7 @@ var andar : int = 1
 
 func _ready() -> void:
 	andar = GlobalPanel.andar
+	print("ANDARRRRR ", andar)
 	self.position = Vector2(-get_viewport().get_visible_rect().size.x / 2 + hudHight, -get_viewport().get_visible_rect().size.y / 2)
 	$Counters/Counter.add_theme_color_override("font_color", counterColor)
 	$Counters/Hidden/CounterHid.add_theme_color_override("font_color", counterColor)

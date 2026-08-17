@@ -839,7 +839,6 @@ texture = ExtResource("118_hsmic")
 position = Vector2(2185, 42)
 
 [node name="fofis" type="Sprite2D" parent="Room/ExtraAreas/02" unique_id=1723070856]
-position = Vector2(-1870, 431)
 texture = ExtResource("119_7f15c")
 
 [node name="HallDoor" type="Area2D" parent="Room" unique_id=788195196]

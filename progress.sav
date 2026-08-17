@@ -1,96 +1,115 @@
 [RoomVisited]
 
-Four=true
-Fourbath=true
-Five=true
-Fivebath=true
-Three=true
 Bunker=true
-One=true
 Bunkerbath=true
+Roof=true
+Five=true
+One=true
+Onebath=true
 Two=true
 Twobath=true
+Three=true
 Threebath=true
-Roof=true
+Four=true
+Fourbath=true
+Fivebath=true
 
 [roomExtras]
 
-four=[true, true, true]
-five=[true, true, true]
-three=[false, false, false]
 bunker=[false, false, false]
-one=[false, false, false]
-two=[false, false, false]
 roof=[false, false, false]
-
-[Four]
-
-roomDiscover=[false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, false, false, true, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-roomDiscoverHidden=[false, false, true, true, true, true, false, false]
-roomHidden=[false, false, true, true, true, true, false, false]
-
-[Fourbath]
-
-roomDiscover=[false, true, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, true, true, true, true]
-roomDiscoverHidden=[false, false, false]
-roomHidden=[false, false, false]
-
-[Five]
-
-roomDiscover=[false, false, true, false, false, false, true, false, false, false, true, false, true, false, false, false, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-roomDiscoverHidden=[false, false, false, false, false, false]
-roomHidden=[false, false, false, false, false, false]
-
-[Fivebath]
-
-roomDiscover=[false, false, false, true, true, false, true, false, false, false, false, false, false, false, false, false, false, true, false, true, true, true, true, true]
-roomDiscoverHidden=[false, false, false, false]
-roomHidden=[false, false, false, false]
-
-[Three]
-
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false]
-roomDiscoverHidden=[false, false, false, true, false, false]
-roomHidden=[false, false, false, true, false, true]
+five=[true, true, true]
+one=[true, true, true]
+two=[true, true, true]
+three=[true, true, true]
+four=[true, true, true]
 
 [Bunker]
 
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-roomDiscoverHidden=[true, false, false, false, false, false, false, false, false]
-roomHidden=[true, false, false, false, false, false, false, false, false]
-
-[One]
-
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-roomDiscoverHidden=[false, false, false, false, false, false]
-roomHidden=[false, false, false, false, false, false]
+roomDiscover=[false, false, false, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+roomDiscoverHidden=[true, false, true, false, false, false, false, false, false]
+roomHidden=[true, false, true, false, false, false, false, false, false]
 
 [Bunkerbath]
 
-roomDiscover=[false, false, false, false, true, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false]
+roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false]
 roomDiscoverHidden=[false, false, false]
 roomHidden=[false, false, false]
-
-[Two]
-
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, true, false, false, false, false, false, true, false, false, false, false, false, false, true, false, false, false]
-roomDiscoverHidden=[false, true, false, false, true, true, false]
-roomHidden=[false, true, false, false, true, true, false]
-
-[Twobath]
-
-roomDiscover=[false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-roomDiscoverHidden=[false, false, false]
-roomHidden=[false, false, false]
-
-[Threebath]
-
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false]
-roomDiscoverHidden=[false, true, true, true]
-roomHidden=[false, true, true, true]
 
 [Roof]
 
-roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, true, false, true, false, true, false]
+roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, false, false, true, false, false, false, false, false, false, false]
 roomDiscoverHidden=[]
 roomHidden=[]
+
+[Five]
+
+roomDiscover=[true, false, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true, true, true]
+roomDiscoverHidden=[false, false, false, false, false, false]
+roomHidden=[false, true, false, false, false, false]
+
+[One]
+
+roomDiscover=[true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+roomDiscoverHidden=[true, true, true, true, true, true]
+roomHidden=[true, true, true, false, false, true]
+hintLeft=0
+
+[Onebath]
+
+roomDiscover=[true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+roomDiscoverHidden=[true, true, true, true]
+roomHidden=[true, true, true, true]
+hintLeft=0
+
+[Two]
+
+roomDiscover=[true, true, true, false, true, true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+roomDiscoverHidden=[true, true, true, true, true, true, true]
+roomHidden=[true, true, true, true, true, true, true]
+
+[Twobath]
+
+roomDiscover=[true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false]
+roomDiscoverHidden=[true, true, true]
+roomHidden=[true, true, true]
+hintLeft=0
+
+[Three]
+
+roomDiscover=[true, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true, true, false, true, true, true, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true]
+roomDiscoverHidden=[true, true, true, true, true, true]
+roomHidden=[true, true, true, true, true, true]
+
+[Threebath]
+
+roomDiscover=[true, true, true, true, true, true, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true]
+roomDiscoverHidden=[false, true, true, false]
+roomHidden=[false, true, true, false]
+
+[Four]
+
+roomDiscover=[true, true, false, true, true, true, true, true, true, true, true, true, false, false, true, false, false, false, false, true, true, true, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, true]
+roomDiscoverHidden=[false, false, false, false, true, false, false, false]
+roomHidden=[false, false, false, false, true, false, false, false]
+
+[Fourbath]
+
+roomDiscover=[true, true, true, false, true, true, true, true, false, true, false, true, false, true, false, false, false, false, true, true, true, true, true, true, true, true, true]
+roomDiscoverHidden=[false, true, false]
+roomHidden=[false, true, false]
+
+[Fivebath]
+
+roomDiscover=[true, false, true, true, true, true, true, true, true, false, false, true, true, true, false, true, true, true, true, true, true, false, false, true]
+roomDiscoverHidden=[true, true, true, false]
+roomHidden=[true, true, true, false]
+
+[Fofinho]
+
+found=true
+adopted=true
+
+[one]
+
+hintLeft=1

@@ -129,6 +129,12 @@ var safe_distance : float = 20 # pra evitar clique falso
 
 
 func _ready() -> void:
+	functions.whereIWas=self.name
+	print("ANDARRRRRRRRRRRR ", GlobalPanel.andar)
+	if wAndar=="roof":
+		MusicController._playMusic(6)
+		#GlobalPanel.andar=6
+		
 	if SChanger.changeType==1:	
 		Elevador._openE()
 	elif SChanger.changeType==0:
@@ -164,9 +170,9 @@ func _ready() -> void:
 
 	##### aqui os itens achados	
 	if tudo[0]!=null:
-		roomDiscover=tudo[0]
+		roomDiscover=tudo[0] #os gatos
 	if tudo[1]!=null:
-		roomDiscoverHidden=tudo[1]
+		roomDiscoverHidden=tudo[1] #os gatos hiden
 	if tudo[2]!=null:
 		roomHidden=tudo[2]
 	if tudo[3]!=null:
@@ -455,6 +461,7 @@ func _on_ExtraClickRoom_event(_viewport, event, _shape_idx, extra): #extra no bu
 
 func wingChange(): #no remake do building, usaremos aqui pra ver se o apartamento foi finalizado
 	_mostrafofinho() #mostra pata e da achievement
+	print("entrou wingchange")
 	var wAch := "01"
 	if wAndar=="one":
 		wAch = "01"
@@ -476,16 +483,24 @@ func wingChange(): #no remake do building, usaremos aqui pra ver se o apartament
 	var achSalaCat := true
 	var achSalaHid := true
 	for wSala in wAps:
-		#print(wSala)
-		var tudo = functions.loadcats(wAps)
+		print(wSala , " passando em wingchange")
+		var tudo = functions.loadcats(wSala)
 		if tudo[0]!=null:
+			print("TUDO ACHADO ", tudo[0])
 			roomDiscover=tudo[0]
+			if roomDiscover.count(false)>0:
+				achSalaCat=false
 		else:
 			achSalaCat=false
 		if tudo[1]!=null:
 			roomDiscoverHidden=tudo[1]
+			print("TUDO ACHADO ", tudo[1])
+			if roomDiscover.count(false)>0:
+				achSalaCat=false
 		else:
 			achSalaHid=false
+			
+			
 	if achSalaCat==true:
 		GlobalSteam._give(wAch)
 	if achSalaHid==true:
@@ -545,6 +560,7 @@ func newHint():
 		if hintLeft<1:
 			MusicController.playSFX("res://SFX/yes.mp3", 1, .001, 2)
 		hintLeft = 1
+		functions.savecats(self.name, "hintLeft", 1)
 		hint_initialize()	
 
 func hint_initialize():
@@ -1114,7 +1130,7 @@ func _on_Hidencat(_viewport, event, _shape_idx, extra):
 
 
 func _on_HiddenOpen(_viewport, event, _shape_idx, extra1, extra2=null, extra3=false, extra4="", extra5=[]): #extra2 pra quando houver 2 escondidos sob o mesmo lugar, extra3 é pra forçar abrir mesmo sem "event", extra4 é som especial(apartamento gamer, metal gear na caixa), extra5 é pra quando tem muitos escondidos sob o mesmo lugar/suporte grafico(ver santa ceia do building 2, apartamento do artista)
-	print("hidden SADASDASDASSAD")
+	#print("hidden SADASDASDASSAD")
 	if (((event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT) or extra3==true) && tdown.is_stopped() && stopscene==false and GlobalPanel.ePanel.visible==false): #and allowFind==true deixa abrir, nao deixa clicar
 		print("hidden DENTROOOOOOOOOOO")
 		var dist = mouse_pos-get_viewport().get_mouse_position()

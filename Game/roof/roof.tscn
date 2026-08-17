@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dhtpnm3aivn5b" path="res://Game/Back.tscn" id="13_ohnbe"]
 [ext_resource type="Texture2D" uid="uid://bal4uqle3djwf" path="res://Game/roof/textures/06roof/normal/03a.png" id="14_kf8sc"]
 [ext_resource type="Texture2D" uid="uid://4vbw5wooytyd" path="res://Game/roof/textures/06roof/normal/04b.png" id="15_6ej28"]
-[ext_resource type="PackedScene" uid="uid://cmxial1jdsoqa" path="res://Game/hud_container.tscn" id="16_c8cpe"]
 [ext_resource type="Texture2D" uid="uid://c4a52p1qxd0t1" path="res://Game/roof/textures/06roof/normal/04a.png" id="16_hml7r"]
 [ext_resource type="Texture2D" uid="uid://3dys8jlbuxnq" path="res://Game/roof/textures/06roof/normal/05b.png" id="17_cqiyw"]
 [ext_resource type="Texture2D" uid="uid://p0ukpsyis2dj" path="res://Game/roof/textures/06roof/normal/05a.png" id="18_r0cuu"]
@@ -59,10 +58,27 @@
 [ext_resource type="Texture2D" uid="uid://d3cwlhdupasde" path="res://Game/roof/textures/06roof/normal/23a.png" id="54_fglha"]
 [ext_resource type="Texture2D" uid="uid://th0hxepxtxuc" path="res://Game/roof/textures/06roof/normal/24b.png" id="55_7qaby"]
 [ext_resource type="Texture2D" uid="uid://bt6e06kcyyuv4" path="res://Game/roof/textures/06roof/normal/24a.png" id="56_e040o"]
+[ext_resource type="PackedScene" uid="uid://d575ciilphvv" path="res://Game/roof/fofinho.tscn" id="57_6ej28"]
+[ext_resource type="Script" uid="uid://c5tw4s0x0p2ma" path="res://Game/roof/hud_container.gd" id="59_mogxs"]
+[ext_resource type="Texture2D" uid="uid://cwmyuvjrfssul" path="res://Game/_common_textures/counter/floor06-counter.png" id="60_kf8sc"]
+[ext_resource type="Theme" uid="uid://do4rw8vwqdmy" path="res://themes/counter.tres" id="61_6ej28"]
+[ext_resource type="FontFile" uid="uid://b03yf73o1q4j" path="res://Fonts/Adca.ttf" id="62_hml7r"]
+[ext_resource type="Texture2D" uid="uid://cmpxq4i7fl8mk" path="res://Game/_common_textures/fofinopaw.png" id="63_cqiyw"]
+[ext_resource type="Texture2D" uid="uid://7y346raamfc6" path="res://Game/_common_textures/glass/floor6-hint.png" id="64_kf8sc"]
+[ext_resource type="Script" uid="uid://8tgk30hjqcde" path="res://Game/HintCharge.gd" id="65_pvplm"]
+[ext_resource type="Shader" uid="uid://dlwoq8llka43y" path="res://Game/hintShader.gdshader" id="66_5jxao"]
 
 [sub_resource type="Gradient" id="Gradient_mr0lr"]
 offsets = PackedFloat32Array(0.0361111, 0.25)
 colors = PackedColorArray(1, 1, 0.714569, 1, 1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rqkew"]
+shader = ExtResource("66_5jxao")
+shader_parameter/percentage = 0.0
+shader_parameter/masked_alpha = 1.0
+shader_parameter/unmasked_alpha = 0.0
+shader_parameter/horizontal = false
+shader_parameter/invert = true
 
 [node name="Roof" type="Control" unique_id=1264484763]
 layout_mode = 3
@@ -77,6 +93,7 @@ script = ExtResource("1_gmygr")
 wAndar = "roof"
 
 [node name="Room" type="Node2D" parent="." unique_id=464386957]
+position = Vector2(0, 1247)
 
 [node name="BG" type="Polygon2D" parent="Room" unique_id=1594809743]
 polygon = PackedVector2Array(-5187, -1709, -5202, 1703, 5396, 1651, 5388, -1746)
@@ -109,8 +126,9 @@ rect = Rect2(-1, -1, 1, 1)
 
 [node name="roomLine" type="Node2D" parent="Room" unique_id=420891682]
 
-[node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
-texture = ExtResource("3_b160q")
+[node name="Polygon2D" type="Polygon2D" parent="Room/roomLine" unique_id=1999749190]
+color = Color(0.23137255, 0.8784314, 0.8862745, 1)
+polygon = PackedVector2Array(-1371, -2605, -2182, -331, 1999, -415, 1426, -2750)
 
 [node name="sceneA" type="Sprite2D" parent="Room/roomLine" unique_id=1453701809]
 position = Vector2(-3149, 0)
@@ -123,6 +141,10 @@ texture = ExtResource("5_2dr2c")
 [node name="sceneC" type="Sprite2D" parent="Room/roomLine" unique_id=712647504]
 position = Vector2(3150, 0)
 texture = ExtResource("6_bwidv")
+
+[node name="amostra" type="Sprite2D" parent="Room/roomLine" unique_id=642880692]
+visible = false
+texture = ExtResource("3_b160q")
 
 [node name="AreaClicks" type="Node2D" parent="Room" unique_id=1885924706]
 z_index = 1
@@ -402,6 +424,9 @@ color_ramp = SubResource("Gradient_mr0lr")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
+[node name="Fofinho" parent="Room" unique_id=1905938266 instance=ExtResource("57_6ej28")]
+position = Vector2(58, -120)
+
 [node name="TimerCoolDown" type="Timer" parent="." unique_id=1196814168]
 one_shot = true
 
@@ -422,7 +447,122 @@ offset_bottom = 478.0
 preloadScene = "res://Game/Hall/Hall.tscn"
 backSound = "res://SFX/stairs.mp3"
 
-[node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
-layout_mode = 1
+[node name="HudContainer" type="Control" parent="." unique_id=846655761]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("59_mogxs")
+counterColor = Color(1, 0.85490197, 0.19215687, 1)
+
+[node name="Counters" type="Node2D" parent="HudContainer" unique_id=1547449030]
+
+[node name="bg" type="Sprite2D" parent="HudContainer/Counters" unique_id=132918403]
+position = Vector2(161, 100)
+texture = ExtResource("60_kf8sc")
+
+[node name="Counter" type="Label" parent="HudContainer/Counters" unique_id=93664038]
+auto_translate_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 119.5
+offset_top = 70.0
+offset_right = 203.5
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+theme = ExtResource("61_6ej28")
+theme_override_colors/font_color = Color(0.8862616, 0.88626146, 0.8862615, 1)
+text = "49"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hidden" type="Node2D" parent="HudContainer/Counters" unique_id=416833527]
+visible = false
+
+[node name="CounterHid" type="Label" parent="HudContainer/Counters/Hidden" unique_id=247207370]
+auto_translate_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 211.0
+offset_top = 82.0
+offset_right = 260.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("62_hml7r")
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fofinopaw" type="Sprite2D" parent="HudContainer/Counters" unique_id=1429686250]
+visible = false
+position = Vector2(161, 136)
+texture = ExtResource("63_cqiyw")
+
+[node name="Hint" type="Node2D" parent="HudContainer" unique_id=993483683]
+position = Vector2(23, 0)
+
+[node name="Hint" type="Area2D" parent="HudContainer/Hint" unique_id=1109228547]
+position = Vector2(50.5, 99.5)
+
+[node name="HintButton" type="TextureButton" parent="HudContainer/Hint/Hint" unique_id=1919244650]
+offset_left = -38.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Hint2" type="Sprite2D" parent="HudContainer/Hint/Hint" unique_id=810619929]
+position = Vector2(-1, 9)
+texture = ExtResource("64_kf8sc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HudContainer/Hint/Hint" unique_id=578341226]
+visible = false
+position = Vector2(-1, 9)
+polygon = PackedVector2Array(17.5, -39.3, 15.9, -39.5, -3.8, -39.5, -12.8, -36.5, -15.5, -36.5, -26.5, -21.5, -28.1, -21.5, -30.5, -10.7, -30.5, -4.1, -23.5, 10.8, -34.5, 25.5, -35.5, 25.5, -35.5, 38.6, -34.2, 39.5, -20.9, 39.5, -7.5, 24.3, 3.3, 26.5, 4.8, 26.5, 17.8, 22.5, 20.4, 22.5, 31.4, 10.5, 33.1, 10.5, 35.5, 0.5, 35.5, -20.2, 28.5, -29.2, 28.5, -31.7, 17.5, -37.8)
+
+[node name="TimerUnhint" type="Timer" parent="HudContainer/Hint/Hint" unique_id=550964284]
+one_shot = true
+
+[node name="TimerZoom" type="Timer" parent="HudContainer/Hint/Hint" unique_id=2059084980]
+one_shot = true
+
+[node name="HintCharge" type="Sprite2D" parent="HudContainer/Hint" unique_id=392344116 node_paths=PackedStringArray("Hud")]
+self_modulate = Color(1, 1, 1, 0.341176)
+position = Vector2(49.5, 108.5)
+texture = ExtResource("64_kf8sc")
+script = ExtResource("65_pvplm")
+Hud = NodePath("../..")
+
+[node name="HintCharge" type="Sprite2D" parent="HudContainer/Hint/HintCharge" unique_id=525686377]
+material = SubResource("ShaderMaterial_rqkew")
+texture = ExtResource("64_kf8sc")
+
+[node name="CoolDown" type="Timer" parent="HudContainer/Hint/HintCharge" unique_id=756072029]
+one_shot = true
+
+[node name="hide_area" type="Area2D" parent="HudContainer" unique_id=323066880]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HudContainer/hide_area" unique_id=725273173]
+visible = false
+position = Vector2(177, 103)
+polygon = PackedVector2Array(-8.599998, -79, -31.5, -79, -49, -71.3, -57.9, -72, -70, -59.2, -82.5, -52, -106, -30, -112, -18.099998, -112, 19.199997, -108, 28.800003, -96, 41.800003, -69, 63.899994, -62, 69.899994, -47.800003, 71, -31.5, 79, -8.199997, 79, 7.5999985, 71.8, 18.800003, 73, 30, 61.800003, 44.699997, 52, 57, 41, 71, 28, 85, 4, 78, -27, 62, -44, 53, -50, 30.600006, -60, 29, -64, 20, -71, 7.5999985, -71)
 
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
+[connection signal="button_down" from="HudContainer/Hint/Hint/HintButton" to="." method="_on_Hint_input_event_Button"]
+[connection signal="timeout" from="HudContainer/Hint/Hint/TimerUnhint" to="." method="_on_timer_unhint_timeout"]
+[connection signal="timeout" from="HudContainer/Hint/Hint/TimerZoom" to="." method="_on_timer_zoom_timeout"]
+[connection signal="mouse_entered" from="HudContainer/hide_area" to="HudContainer" method="_on_hide_area_mouse_entered"]
+[connection signal="mouse_exited" from="HudContainer/hide_area" to="HudContainer" method="_on_hide_area_mouse_exited"]

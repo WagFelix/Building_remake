@@ -15,6 +15,9 @@ const SAVE_PATH := "res://settings.cfg"
 var arquivoCFG := ConfigFile.new()
 
 
+var whereIWas := "hall"
+
+
 const PROGRESS_PATH : = "res://progress.sav"
 var arquivoPROGRESS : = ConfigFile.new()
 

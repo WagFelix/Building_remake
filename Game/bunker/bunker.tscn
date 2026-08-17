@@ -113,6 +113,7 @@
 [ext_resource type="Texture2D" uid="uid://bu6nbmlif6w27" path="res://Game/bunker/textures/00living/normal/48a.png" id="103_xmg7v"]
 [ext_resource type="Texture2D" uid="uid://7tfdtuecpv36" path="res://Game/bunker/textures/00living/normal/49b.png" id="104_6kpct"]
 [ext_resource type="Texture2D" uid="uid://pyd3k8lhjkno" path="res://Game/bunker/textures/00living/normal/49a.png" id="105_03m06"]
+[ext_resource type="Texture2D" uid="uid://5o12iwhx3mda" path="res://Game/bunker/textures/00living/tvnoise.png" id="108_xpgja"]
 [ext_resource type="Texture2D" uid="uid://c625konj5k4pw" path="res://Game/bunker/textures/00living/hidden/hidden02.png" id="110_qe6l8"]
 [ext_resource type="Texture2D" uid="uid://bf32xyxau2ce4" path="res://Game/bunker/textures/00living/hidden/hidden02a.png" id="111_kaplf"]
 [ext_resource type="Texture2D" uid="uid://chvncp82tvnb0" path="res://Game/bunker/textures/00living/hidden/hidden03.png" id="112_7gnka"]
@@ -127,6 +128,42 @@
 [ext_resource type="Texture2D" uid="uid://baymj4pn8ikxd" path="res://Game/bunker/textures/00living/hidden/hidden07a.png" id="121_rxapf"]
 [ext_resource type="Texture2D" uid="uid://bwaucml83pe3t" path="res://Game/bunker/textures/00living/hidden/hidden08.png" id="122_6gfi8"]
 [ext_resource type="Texture2D" uid="uid://bt01p81ip4btb" path="res://Game/bunker/textures/00living/hidden/hidden08a.png" id="123_xpgja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7v8e"]
+atlas = ExtResource("108_xpgja")
+region = Rect2(0, 0, 150, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p6a6"]
+atlas = ExtResource("108_xpgja")
+region = Rect2(150, 0, 150, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d7g1"]
+atlas = ExtResource("108_xpgja")
+region = Rect2(300, 0, 150, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxapf"]
+atlas = ExtResource("108_xpgja")
+region = Rect2(450, 0, 150, 148)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmy56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7v8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p6a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d7g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxapf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.66
+}]
 
 [sub_resource type="Gradient" id="Gradient_mr0lr"]
 offsets = PackedFloat32Array(0.0361111, 0.25)
@@ -677,6 +714,14 @@ z_index = -1
 texture = ExtResource("9_18eby")
 hframes = 3
 frame = 2
+
+[node name="TvNoise" type="AnimatedSprite2D" parent="Room/hiddenAreas/00/bghid" unique_id=954143683]
+modulate = Color(1, 1, 1, 0.4745098)
+z_index = 1
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_tmy56")
+autoplay = "default"
+frame_progress = 0.19036473
 
 [node name="01" type="Area2D" parent="Room/hiddenAreas" unique_id=655863493]
 position = Vector2(-1847, 68)

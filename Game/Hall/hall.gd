@@ -25,6 +25,7 @@ var stopscene := false
 
 
 func _ready() -> void:
+	functions.whereIWas="hall"
 	GlobalPanel._hidePanel()
 	GlobalPanel.eCall.visible=true
 	GlobalPanel.eCall.modulate=Color(1,1,1,1)
@@ -58,6 +59,7 @@ func _on_door_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 
 func _on_stairs_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if (event is InputEventMouseButton && (event.pressed or Input.is_action_just_released("click")) && event.button_index == MOUSE_BUTTON_LEFT and stopscene!=true):
+		GlobalPanel.andar=6
 		stopscene=true
 		MusicController.playSFX("res://SFX/stairs.mp3", 1, 0.1)
 		var doorScene = doors[6]

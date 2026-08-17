@@ -131,7 +131,7 @@ wAndar = "two"
 [node name="Room" type="Node2D" parent="." unique_id=464386957]
 
 [node name="BG" type="Polygon2D" parent="Room" unique_id=1594809743]
-polygon = PackedVector2Array(-4812, -1711, -4866, 1693, 4896, 1660, 4822, -1643)
+polygon = PackedVector2Array(-4812, -1711, -4866, 1693, 5961, 1712, 5867, -1550)
 script = ExtResource("2_u1ei1")
 cor_top = Color(0.3372549, 0.78039217, 0.5529412, 1)
 cor_bottom = Color(0.99215686, 0.8980392, 0.49411765, 1)

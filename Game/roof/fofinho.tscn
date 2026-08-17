@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d575ciilphvv"]
+
+[ext_resource type="Script" uid="uid://dnygxmlexqyq" path="res://Game/roof/fofinho.gd" id="1_5nr75"]
+[ext_resource type="Texture2D" uid="uid://o2hnkoutk6nr" path="res://Game/roof/textures/ending/thanks/thanksEng.png" id="2_w1enn"]
+[ext_resource type="Texture2D" uid="uid://cc8r8ja48y8cl" path="res://Game/roof/textures/ending/fofino/fofino-foundEng.png" id="3_883to"]
+[ext_resource type="Texture2D" uid="uid://ycww6mvj5vb0" path="res://Game/roof/textures/ending/fofino/fofino-yesEng.png" id="4_tmtcq"]
+[ext_resource type="Texture2D" uid="uid://dhsyy3r13ej4t" path="res://Game/roof/textures/ending/fofino/fofino-select.png" id="4_w1enn"]
+[ext_resource type="Texture2D" uid="uid://dqhvb3fk0cetd" path="res://Game/roof/textures/06roof/fo00b.png" id="5_a7rou"]
+[ext_resource type="Texture2D" uid="uid://spw7u04xqck7" path="res://Game/roof/textures/06roof/fo00a.png" id="6_6bokt"]
+
+[node name="Fofinho" type="Area2D" unique_id=1905938266]
+script = ExtResource("1_5nr75")
+
+[node name="Thanks" type="Sprite2D" parent="." unique_id=1274022885]
+position = Vector2(-58, -1200)
+texture = ExtResource("2_w1enn")
+
+[node name="Found" type="Sprite2D" parent="." unique_id=2013801588]
+position = Vector2(284, -217)
+texture = ExtResource("3_883to")
+
+[node name="yes" type="TextureButton" parent="Found" unique_id=1442379247]
+visible = false
+offset_left = -98.0
+offset_top = 84.0
+offset_right = 2.0
+offset_bottom = 124.0
+texture_pressed = ExtResource("4_w1enn")
+texture_hover = ExtResource("4_w1enn")
+
+[node name="no" type="TextureButton" parent="Found" unique_id=719820391]
+visible = false
+offset_left = 6.0
+offset_top = 84.0
+offset_right = 106.0
+offset_bottom = 124.0
+texture_pressed = ExtResource("4_w1enn")
+texture_hover = ExtResource("4_w1enn")
+
+[node name="Choice" type="Sprite2D" parent="." unique_id=262743533]
+visible = false
+position = Vector2(462, -130)
+texture = ExtResource("4_tmtcq")
+
+[node name="Fo00b" type="Sprite2D" parent="." unique_id=1796111010]
+texture = ExtResource("5_a7rou")
+
+[node name="Fo00a" type="Sprite2D" parent="." unique_id=991600653]
+texture = ExtResource("6_6bokt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=919074413]
+visible = false
+polygon = PackedVector2Array(-119, -132.7, -123.7, -124, -125, -94.9, -130, -79.4, -145, -75.3, -145, -69.8, -140.2, -65, -137.2, -64, -139, -56.800003, -139, -52, -126.2, -54.9, -128, -6, -108, 47, -107.2, 57, -105, 70, -109, 84, -114.9, 93, -117, 104.399994, -110, 110.399994, -91.8, 114, -92, 122.399994, -75.1, 136, -65.9, 136, -45, 116.79999, -32.4, 120, -26, 120, 14, 89.5, 30.300003, 81.600006, 67, 93.2, 106, 102.399994, 131.29999, 100, 142.29999, 88, 145, 75.8, 139, 67.2, 94.5, 64, 38.699997, 39, 36, 3.800003, 36, -2.600006, 27, -26.300003, 5, -48, -27.599998, -62, -25, -68.2, -29.800003, -73, -36.4, -73, -38, -82.5, -32.699997, -102, -36, -119.5, -50.800003, -123, -68.8, -113, -73.7, -113, -90.7, -117, -104, -131.1, -111, -134)
+
+[node name="Acaba" type="TextureButton" parent="." unique_id=1054051774]
+visible = false
+offset_left = -3241.0
+offset_top = -1731.0
+offset_right = 3251.0
+offset_bottom = 2070.0
+
+[node name="Cruel" type="TextureButton" parent="." unique_id=1917170206]
+visible = false
+offset_left = -3241.0
+offset_top = -1731.0
+offset_right = 3251.0
+offset_bottom = 2070.0
+
+[node name="menu" type="TextureButton" parent="." unique_id=1224850821]
+visible = false
+offset_left = -3314.0
+offset_top = -3333.0
+offset_right = 3178.0
+offset_bottom = 468.0
+
+[node name="TimerFecha" type="Timer" parent="." unique_id=1311080757]
+one_shot = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="button_down" from="Found/yes" to="." method="_on_yes_button_down"]
+[connection signal="button_down" from="Found/no" to="." method="_on_no_button_down"]
+[connection signal="button_down" from="Acaba" to="." method="_on_acaba_button_down"]
+[connection signal="button_down" from="Cruel" to="." method="_on_cruel_button_down"]
+[connection signal="button_down" from="menu" to="." method="_on_menu_button_down"]
+[connection signal="timeout" from="TimerFecha" to="." method="_on_timer_fecha_timeout"]

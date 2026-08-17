@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6q6wtogagpa" path="res://Menu/textures/menubg.png" id="2_crea4"]
 [ext_resource type="Texture2D" uid="uid://b6n53ybjayx1l" path="res://Menu/textures/menuAMOSTRA.png" id="3_w32jx"]
 [ext_resource type="Texture2D" uid="uid://ds8wdstmsfuuq" path="res://Menu/textures/windowclosed.png" id="4_0cyjp"]
+[ext_resource type="Script" uid="uid://c4on15ajpd7dj" path="res://Menu/janelas.gd" id="5_kkqmy"]
 [ext_resource type="Texture2D" uid="uid://dgx6til17l73x" path="res://Menu/textures/windowopen.png" id="5_m87qx"]
 [ext_resource type="Texture2D" uid="uid://c7fhg3cc0xklp" path="res://Menu/textures/01l.png" id="6_3c4i7"]
 [ext_resource type="Texture2D" uid="uid://dh2j1sxbwmkxf" path="res://Menu/textures/01r.png" id="7_fipr7"]
@@ -91,6 +92,7 @@ visible = false
 texture = ExtResource("3_w32jx")
 
 [node name="Main" type="Node2D" parent="." unique_id=704332068]
+script = ExtResource("5_kkqmy")
 
 [node name="00" type="Node2D" parent="Main" unique_id=394986521]
 

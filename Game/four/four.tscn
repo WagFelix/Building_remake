@@ -766,6 +766,7 @@ hframes = 3
 [node name="catarea" type="Area2D" parent="Room/hiddenAreas/04/hidden" unique_id=1056292853]
 
 [node name="cat" type="Sprite2D" parent="Room/hiddenAreas/04/hidden/catarea" unique_id=738085224]
+visible = false
 texture = ExtResource("111_f8v7r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/04/hidden/catarea" unique_id=1192083414]
