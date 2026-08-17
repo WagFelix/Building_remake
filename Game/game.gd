@@ -5,6 +5,8 @@ var thisRoom := "0"
 @export var has_fofinho := true
 @export var wAndar := "one"
 
+var justReady=false
+
 var apartamentos := [[null],
 	["One", "Onebath"],
 	["Two", "Twobath"],
@@ -328,6 +330,7 @@ func _ready() -> void:
 	
 	nsp=room_pos_init
 	reposiciona_limitadores()
+	justReady=true
 
 
 func _mostrafofinho(tocasom=false) -> void :
@@ -482,21 +485,24 @@ func wingChange(): #no remake do building, usaremos aqui pra ver se o apartament
 	var wAps = apartamentos[indexAp]
 	var achSalaCat := true
 	var achSalaHid := true
+	var wRoomDiscover
+	var wRoomDiscoverHidden
 	for wSala in wAps:
 		print(wSala , " passando em wingchange")
 		var tudo = functions.loadcats(wSala)
 		if tudo[0]!=null:
-			print("TUDO ACHADO ", tudo[0])
-			roomDiscover=tudo[0]
-			if roomDiscover.count(false)>0:
+			print("TUDO ACHADO 0 ", tudo[0])
+			wRoomDiscover=tudo[0]
+			if wRoomDiscover.count(false)>0:
 				achSalaCat=false
 		else:
 			achSalaCat=false
+			
 		if tudo[1]!=null:
-			roomDiscoverHidden=tudo[1]
-			print("TUDO ACHADO ", tudo[1])
-			if roomDiscover.count(false)>0:
-				achSalaCat=false
+			wRoomDiscoverHidden=tudo[1]
+			print("TUDO ACHADO 1 ", tudo[1])
+			if wRoomDiscoverHidden.count(false)>0:
+				achSalaHid=false
 		else:
 			achSalaHid=false
 			
@@ -513,8 +519,9 @@ func wingChange(): #no remake do building, usaremos aqui pra ver se o apartament
 				wFecha=false
 		if wFecha==true:
 			#tweenChange("res://Game/Hall/Hall.tscn")
-			MusicController.playSFX("res://SFX/sucess.mp3")
-			GlobalPanel.mostra()
+			if justReady==true: #so mostra se for por clique, nao por entrada na sala
+				MusicController.playSFX("res://SFX/sucess.mp3")
+				GlobalPanel.mostra()
 		
 func acaba(): 
 	_mostrafofinho()
@@ -1221,39 +1228,44 @@ func _findHint():
 	nsp= (mousepos*zoomA-(mousepos-scenepos)*des_zoom)/zoomA
 	$HudContainer/Hint/Hint/TimerZoom.start(.75)
 
+func achaGato(arrays: Array) -> Dictionary: #agora vamos buscar o gato do hint aleatoriamente
+	var possibilidades = []
 
+	for array_id in arrays.size():
+		var arr = arrays[array_id]
+
+		for index in arr.size():
+			if !arr[index]:
+				possibilidades.append({
+					"array_id": array_id,
+					"index": index
+				})
+
+	if possibilidades.is_empty():
+		return {}
+
+	return possibilidades.pick_random()
 func _on_timer_zoom_timeout(): #hint system
-	print("TIMERZOOM")
+	print("TIMERZOOM ", roomDiscover)
+	print("TIMERZOOM ", roomDiscoverHidden)
 	zooming = false
-	var findroom = roomDiscover.find(false)
-	var findroomh = roomDiscoverHidden.find(false)
-	var findrooms = roomExtras.find(false)
+	#var findroom = roomDiscover.find(false)
+	#var findroomh = roomDiscoverHidden.find(false)
+	#var findrooms = roomExtras.find(false)
 	
 	var _catposition =  Vector2(0,0)
 	var newroompositionx = 0
 	var newroompositiony = 0
 	var distancex:int = 0
 	var distancey:int = 0
-	if $Room.visible==true and findroom>=0: 
-		print("same Room normal ")
-#		reposRoom=true
-#		tweenRoom=true
-		nodefind = $Room/AreaClicks.get_child(findroom).get_child(1) #Bad cat
-		hinting=true
-		
-	elif $Room.visible==true and findroomh>=0: 
-		print("same Room hidden")
-		nodefind = $Room/hiddenAreas.get_child(findroomh).get_child(1).get_child(0).get_child(0)
-		hinting=true
 	
-
-	
-	## item_quest hint	
-	elif $Room.visible==true and findrooms>=0:
-		print("same Room extras")
-		nodefind = $Room/ExtraAreas.get_child(findrooms).get_child(1) #have to be bad 
+	var gatoAchado = achaGato([roomDiscover,roomDiscoverHidden])
+	if !gatoAchado.is_empty():
+		if gatoAchado.array_id==0:
+			nodefind = get_node("Room/AreaClicks").get_child(gatoAchado.index).get_child(1)
+		elif gatoAchado.array_id==1:
+			nodefind = get_node("Room/hiddenAreas").get_child(gatoAchado.index).get_child(1).get_child(0).get_child(0)
 		hinting=true
-
 	else: 
 		print("nada a achar")
 	#limits()
