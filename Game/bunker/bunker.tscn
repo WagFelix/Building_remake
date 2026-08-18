@@ -755,7 +755,7 @@ hframes = 3
 frame = 2
 
 [node name="02" type="Area2D" parent="Room/hiddenAreas" unique_id=1363055644]
-position = Vector2(-1511, 216)
+position = Vector2(-1519, 216)
 
 [node name="cat" type="Sprite2D" parent="Room/hiddenAreas/02" unique_id=1034582897]
 texture = ExtResource("110_qe6l8")

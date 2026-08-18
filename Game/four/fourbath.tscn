@@ -372,6 +372,7 @@ texture = ExtResource("57_eq2g4")
 texture = ExtResource("58_62bwy")
 
 [node name="hiddenAreas" type="Node2D" parent="Room" unique_id=1921735858]
+visible = false
 z_index = 1
 
 [node name="00" type="Area2D" parent="Room/hiddenAreas" unique_id=1911030440]

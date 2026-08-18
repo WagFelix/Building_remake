@@ -403,7 +403,7 @@ texture = ExtResource("52_i21d7")
 texture = ExtResource("53_ja1k4")
 
 [node name="24" type="Area2D" parent="Room/AreaClicks" unique_id=1557164996]
-position = Vector2(-1002, 679)
+position = Vector2(132, 103)
 
 [node name="good" type="Sprite2D" parent="Room/AreaClicks/24" unique_id=1906854732]
 texture = ExtResource("54_2u5nm")
@@ -910,6 +910,7 @@ offset_right = -308.0
 offset_bottom = 2077.0
 
 [node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
+visible = false
 layout_mode = 1
 
 [connection signal="input_event" from="Room/HallDoor" to="Room/HallDoor" method="_on_door_input_event"]
