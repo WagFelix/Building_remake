@@ -407,11 +407,10 @@ texture = ExtResource("63_kthhg")
 texture = ExtResource("64_4b3ks")
 
 [node name="hiddenAreas" type="Node2D" parent="Room" unique_id=1921735858]
-visible = false
 z_index = 1
 
 [node name="00" type="Area2D" parent="Room/hiddenAreas" unique_id=1145489057]
-position = Vector2(-294, -573)
+position = Vector2(-295, -511)
 
 [node name="cat" type="Sprite2D" parent="Room/hiddenAreas/00" unique_id=78135876]
 texture = ExtResource("65_hs1nq")
@@ -427,13 +426,13 @@ hframes = 3
 [node name="cat" type="Sprite2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=1964548659]
 texture = ExtResource("66_y4buf")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=1155894732]
-visible = false
-polygon = PackedVector2Array(14, 47, 14, 49, 10, 52, 6.199997, 52, 0.6000061, 48, -6.199997, 48, -9.199997, 54, -11, 54, -11, 70, -16, 74, -16, 77.5, -11.899994, 85.79999, -14, 89.399994, -14, 93.79999, -10, 97.79999, -10, 106.5, -18, 127.600006, -18, 134.1, -12, 138.1, -12, 140.6, 4, 136.6, 4, 136, 20.299988, 136, 24.299988, 139, 33.899994, 139, 49.899994, 121, 51.600006, 121, 53.700012, 111, 55.600006, 111, 49.700012, 88.899994, 52, 84.5, 52, 78.100006, 46, 73, 46, 70.20001, 37.700012, 73, 36, 73, 36, 70.399994, 29.700012, 69.100006, 27, 54.600006, 27, 52, 23, 49, 23, 47)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/00/hidden/catarea" unique_id=100825216]
+polygon = PackedVector2Array(16, -15, 16, -13, 12, -10, 8.200012, -10, 2.600006, -14, -4.199997, -14, -7.199997, -8, -9, -8, -9, 8, -14, 12, -14, 15.5, -9.899994, 23.799988, -12, 27.399994, -12, 31.799988, -8, 35.799988, -8, 44.5, -16, 65.600006, -16, 72.100006, -10, 76.100006, -10, 78.600006, 6, 74.600006, 6, 74, 22.299988, 74, 26.299988, 77, 35.899994, 77, 51.899994, 59, 53.600006, 59, 55.700012, 49, 57.600006, 49, 51.700012, 26.899994, 54, 22.5, 54, 16.100006, 48, 11, 48, 8.200012, 39.700012, 11, 38, 11, 38, 8.399994, 31.700012, 7.100006, 29, -7.399994, 29, -10, 25, -13, 25, -15)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/hiddenAreas/00" unique_id=1695763561]
 visible = false
-polygon = PackedVector2Array(-31, 183, -79, 152, -99, 125, -114, -5, -94, -11, -77, -33, -77, -48, 96, -45, 98, -25, 128, -8, 134, 50, 126, 111, 94, 160, 29, 197, 7, 201)
+position = Vector2(0, -56)
+polygon = PackedVector2Array(-31, 183, -79, 152, -99, 125, -111, 43, -129, 30, -207, -9, -211, -56, -207, -135, -178, -65, -172, -125, -180, -176, -157, -217, -153, -180, -128, -221, -121, -173, -134, -66, -128, -25, -94, -11, -77, -33, -77, -48, 96, -45, 98, -25, 128, -8, 157, -44, 153, -139, 143, -206, 164, -207, 209, -187, 192, -77, 210, -151, 232, -123, 231, 4, 150, 37, 134, 50, 126, 111, 94, 160, 29, 197, 7, 201)
 
 [node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/00" unique_id=842812989]
 z_index = -1

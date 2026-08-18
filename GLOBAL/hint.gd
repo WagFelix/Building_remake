@@ -1,6 +1,6 @@
 extends Node2D
 
-var hinttimer : float = 40.0
+var hinttimer : float = 46.6
 var haveTime=true #se tem o item de recharge hint, TRUE
 var hint=true #se tem o item de hint, TRUE
 var getHint=false

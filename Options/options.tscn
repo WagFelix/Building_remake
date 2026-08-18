@@ -642,7 +642,7 @@ offset_top = 4.0
 offset_right = 69.0
 offset_bottom = 61.0
 theme = ExtResource("29_i578d")
-theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.15294118, 0.32156864, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -663,7 +663,7 @@ offset_top = 5.0
 offset_right = 69.0
 offset_bottom = 62.0
 theme = ExtResource("29_i578d")
-theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.15294118, 0.32156864, 1)
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -684,7 +684,7 @@ offset_top = 5.0
 offset_right = 69.0
 offset_bottom = 62.0
 theme = ExtResource("29_i578d")
-theme_override_colors/font_color = Color(0, 0.4745098, 0.7529412, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.15294118, 0.32156864, 1)
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -701,14 +701,13 @@ texture_hover = ExtResource("33_erlvw")
 
 [node name="Label" type="Label" parent="." unique_id=1776702411]
 layout_mode = 0
-offset_left = 885.0
-offset_top = 351.0
-offset_right = 958.0
-offset_bottom = 374.0
-theme_override_colors/font_color = Color(0.2784314, 0.8745098, 1, 1)
-theme_override_colors/font_outline_color = Color(0.11372549, 0.43137255, 0.8156863, 1)
-theme_override_constants/outline_size = 1
+offset_left = 884.0
+offset_top = 514.0
+offset_right = 957.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0.5196209, 0.17272595, 0.3860469, 1)
 text = "V.1.0.0"
+horizontal_alignment = 2
 
 [node name="hiddenCat" type="Area2D" parent="." unique_id=1288104999]
 position = Vector2(432, 387)

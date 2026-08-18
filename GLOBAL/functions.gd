@@ -30,7 +30,7 @@ const PROGRESS_BK13 : = "res://progress_BK13.sbk"
 #var arquivoPROGRESS_BK : = ConfigFile.new()
 
 var savedictionary := {
-	resolution = Vector2(1600, 900),
+	resolution = Vector2(960, 540),
 	scr_pos = Vector2(30, 30),
 	window_mode = 4 , #	 0-window, 1-minimized, 2-maximized, 3-fullscreen , 4-fullscreen exclusive
 	initscreen = 1,

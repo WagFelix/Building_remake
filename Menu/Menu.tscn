@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c4on15ajpd7dj" path="res://Menu/janelas.gd" id="5_kkqmy"]
 [ext_resource type="Texture2D" uid="uid://dgx6til17l73x" path="res://Menu/textures/windowopen.png" id="5_m87qx"]
 [ext_resource type="Texture2D" uid="uid://c7fhg3cc0xklp" path="res://Menu/textures/01l.png" id="6_3c4i7"]
+[ext_resource type="Texture2D" uid="uid://cxui7ph5mcxjv" path="res://Menu/textures/00.png" id="6_qseqb"]
 [ext_resource type="Texture2D" uid="uid://dh2j1sxbwmkxf" path="res://Menu/textures/01r.png" id="7_fipr7"]
 [ext_resource type="Texture2D" uid="uid://dqnrjjgmfqam7" path="res://Menu/textures/02l.png" id="8_8iu1u"]
 [ext_resource type="Texture2D" uid="uid://c5lsnj8hv2b3l" path="res://Menu/textures/02r.png" id="9_xc4fn"]
@@ -95,6 +96,10 @@ texture = ExtResource("3_w32jx")
 script = ExtResource("5_kkqmy")
 
 [node name="00" type="Node2D" parent="Main" unique_id=394986521]
+position = Vector2(599, 357)
+
+[node name="Main" type="Sprite2D" parent="Main/00" unique_id=1710626392]
+texture = ExtResource("6_qseqb")
 
 [node name="01" type="Node2D" parent="Main" unique_id=1668549410]
 
