@@ -910,7 +910,6 @@ offset_right = -308.0
 offset_bottom = 2077.0
 
 [node name="HudContainer" parent="." unique_id=1891576038 instance=ExtResource("16_c8cpe")]
-visible = false
 layout_mode = 1
 
 [connection signal="input_event" from="Room/HallDoor" to="Room/HallDoor" method="_on_door_input_event"]

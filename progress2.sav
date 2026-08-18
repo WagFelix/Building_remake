@@ -1,13 +1,21 @@
 [RoomVisited]
 
 One=true
+Roof=true
 
 [roomExtras]
 
 one=[false, false, false]
+roof=[false, false, false]
 
 [One]
 
 roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 roomDiscoverHidden=[false, false, false, false, true, true]
 roomHidden=[false, false, false, false, true, true]
+
+[Roof]
+
+roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+roomDiscoverHidden=[]
+roomHidden=[]

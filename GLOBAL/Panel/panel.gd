@@ -4,7 +4,7 @@ var tCool : float = .666
 var ttween : float = .666
 @onready var eCall := $Call
 @onready var ePanel := $Panel
-
+var coolDown := 1.6
 
 
 
@@ -76,28 +76,34 @@ func _on_tweenmostra() -> void:
 
 
 func _on_power_button_down() -> void:
-	var eEsquerda = Elevador.get_node("Container/esquerda/quit")
-	var eDireita = Elevador.get_node("Container/direita/quit")
-	eEsquerda.visible=true
-	eDireita.visible=true
-	var spriteD = "res://GLOBAL/Elevador/textures/elevator-leftQuit"+functions.langChoice+".png"
-	var spriteE = "res://GLOBAL/Elevador/textures/elevator-rightQuit"+functions.langChoice+".png"
-	eEsquerda.set_texture(load(spriteE))
-	eDireita.set_texture(load(spriteD))
-	
-	Elevador._closeE()
-	$TimerQuit.start(5.666)
+	if $TimerCoolDown.is_stopped():
+		$TimerCoolDown.start(coolDown)
+		var eEsquerda = Elevador.get_node("Container/esquerda/quit")
+		var eDireita = Elevador.get_node("Container/direita/quit")
+		eEsquerda.visible=true
+		eDireita.visible=true
+		var spriteD = "res://GLOBAL/Elevador/textures/elevator-leftQuit"+functions.langChoice+".png"
+		var spriteE = "res://GLOBAL/Elevador/textures/elevator-rightQuit"+functions.langChoice+".png"
+		eEsquerda.set_texture(load(spriteE))
+		eDireita.set_texture(load(spriteD))
+		
+		Elevador._closeE()
+		$TimerQuit.start(5.666)
 
 
 func _on_panel_button_down(extra: int) -> void:
-	andar=extra
-	SChanger._LoadNewScene("res://Game/Hall/Hall.tscn", self)
-	tweenChange()
+	if $TimerCoolDown.is_stopped():
+		$TimerCoolDown.start(coolDown)
+		andar=extra
+		SChanger._LoadNewScene("res://Game/Hall/Hall.tscn", self)
+		tweenChange()
 
 
 func _go_home() -> void:
-	SChanger._LoadNewScene("res://Menu/Menu.tscn", self)
-	tweenChange()
+	if $TimerCoolDown.is_stopped():
+		$TimerCoolDown.start(coolDown)
+		SChanger._LoadNewScene("res://Menu/Menu.tscn", self)
+		tweenChange()
 
 
 func _on_timer_change_timeout() -> void:
