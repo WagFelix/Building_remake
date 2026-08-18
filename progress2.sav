@@ -1,0 +1,13 @@
+[RoomVisited]
+
+One=true
+
+[roomExtras]
+
+one=[false, false, false]
+
+[One]
+
+roomDiscover=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+roomDiscoverHidden=[false, false, false, false, true, true]
+roomHidden=[false, false, false, false, true, true]

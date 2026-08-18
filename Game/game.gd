@@ -520,7 +520,7 @@ func wingChange(): #no remake do building, usaremos aqui pra ver se o apartament
 		if wFecha==true:
 			#tweenChange("res://Game/Hall/Hall.tscn")
 			if justReady==true: #so mostra se for por clique, nao por entrada na sala
-				MusicController.playSFX("res://SFX/sucess.mp3")
+				MusicController.playSFX("res://SFX/sucess.mp3",1,0,3)
 				GlobalPanel.mostra()
 		
 func acaba(): 
@@ -1245,6 +1245,8 @@ func achaGato(arrays: Array) -> Dictionary: #agora vamos buscar o gato do hint a
 		return {}
 
 	return possibilidades.pick_random()
+	
+	
 func _on_timer_zoom_timeout(): #hint system
 	print("TIMERZOOM ", roomDiscover)
 	print("TIMERZOOM ", roomDiscoverHidden)

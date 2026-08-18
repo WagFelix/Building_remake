@@ -751,7 +751,6 @@ texture = ExtResource("109_fk7qt")
 polygon = PackedVector2Array(-111, -159.3, -111, -156.8, -116.899994, -150, -118.5, -150, -131, -106.3, -136, -107.5, -136, -108.2, -138, -109.3, -143.5, -106, -145.2, -106, -146.3, -103.9, -142, -97.4, -142, -95.8, -134.5, -92, -138.8, -92, -141.8, -89, -145, -89, -142, -81.6, -142, -79.3, -134.2, -78, -128.9, -78, -122, -70.3, -122, -68.8, -120, -67.7, -114.5, -71, -62.199997, -62, -54.699997, -62, -46.699997, -56, -43, -56, -40, -60, -37.600006, -60, -41, -77.4, -41, -81.7, -37.200012, -81, -35.200012, -81, -31.200012, -85, -29.700012, -85, -28.700012, -87.3, -33, -92.7, -33, -94.7, -35.299988, -95.1, -31, -96.6, -31, -103.4, -37.600006, -106, -44.100006, -106, -46, -133.1, -46, -141.6, -51, -149.7, -51, -152, -63.899994, -152, -74.8, -140.3, -77.399994, -142, -88.899994, -142, -92, -147.5, -92, -149.9, -99, -155.9, -99, -157.8)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Room/hiddenAreas/04" unique_id=1237172993]
-visible = false
 polygon = PackedVector2Array(-184, -1, -175, -163, 289, -92, 285, 81)
 
 [node name="bghid" type="Sprite2D" parent="Room/hiddenAreas/04" unique_id=1861328960]
@@ -889,6 +888,7 @@ offset_bottom = 2490.0
 layout_mode = 1
 
 [connection signal="input_event" from="Room/hiddenAreas/04" to="." method="_on_HiddenOpen" binds= [4, 5]]
+[connection signal="input_event" from="Room/hiddenAreas/05" to="." method="_on_HiddenOpen" binds= [4, 5]]
 [connection signal="input_event" from="Room/HallDoor" to="Room/HallDoor" method="_on_door_input_event"]
 [connection signal="input_event" from="Room/BathDoor" to="Room/BathDoor" method="_on_door_input_event"]
 [connection signal="timeout" from="TimerChange" to="." method="_on_timer_change_timeout"]
